@@ -2,6 +2,7 @@
 <LanguageData>
     <Hemogenic.label>Water Drinker</Hemogenic.label>
     <Hemogenic.description>Carriers of this gene require a rare and precious liquid known as water. The resource can be gained in various ways, and if not consumed frequently leads to an eventually fatal condition known as dehydration.\n\nCarriers lose 2 water per day from necessary biological homeostatis.</Hemogenic.description>
+    <Hemogenic.resourceLabel>Water</Hemogenic.resourceLabel>
     <HemogenDrain.label>Chronic Dehydration</HemogenDrain.label>
     <HemogenDrain.description>Carriers lose an additional 8 water per day from accelerated biological homeostatis.</HemogenDrain.description>
 </LanguageData>
