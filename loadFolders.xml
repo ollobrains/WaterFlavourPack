@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <loadFolders>
 	<v1.5>
+		<li>1.5</li>
 		<li>Common</li>
         <li IfModActive="dubwise.dubsbadhygiene">Compatibility/dubwise.dubsbadhygiene</li>
 		<li IfModActive="lts.i">Compatibility/lts.i</li>
