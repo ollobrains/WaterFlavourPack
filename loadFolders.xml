@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders>
+	<v1.5>
+		<li>Common</li>
+        <li IfModActive="dubwise.dubsbadhygiene">Compatibility/dubwise.dubsbadhygiene</li>
+		<li IfModActive="lts.i">Compatibility/lts.i</li>
+		<li IfModActive="vanillaracesexpanded.sanguophage">Compatibility/vanillaracesexpanded.sanguophage</li>
+	</v1.5>
+</loadFolders>

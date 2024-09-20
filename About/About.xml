@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+<name>Thirst Flavour Pack</name>
+<author>Mr Samuel Streamer</author>
+	<packageId>MSS.Thirst</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<description>Woah, I'm so thirsty, I could really go for a Bepsi. What do you mean is coke okay? Nothing could beat the refreshing quenching flavour of Bepsi.</description>
+	<loadAfter>
+		<li>vanillaracesexpanded.sanguophage</li>
+		<li>dubwise.dubsbadhygiene</li>
+		<li>lts.i</li>
+	</loadAfter>
+</ModMetaData>
