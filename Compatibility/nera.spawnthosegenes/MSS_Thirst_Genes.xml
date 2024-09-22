@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName = "Baseliner"]/Groups
+                </xpath>
+                <value>
+                    <li>
+                        <Endogenes>
+                            <hemogenic>1</hemogenic>
+                        </Endogenes>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>
