@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PipeSystem.PipeNetDef[defName="VRE_HemogenNet"]/resource/name</xpath>
+		<value>
+			<name>Safe Water</name>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PipeSystem.PipeNetDef[defName="VRE_HemogenNet"]/resource/color</xpath>
+		<value>
+			<color>(96, 177, 199)</color>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PipeSystem.PipeNetDef[defName="VRE_HemogenNet"]/overlayOptions/overlayColor</xpath>
+		<value>
+			<overlayColor>(96, 177, 199)</overlayColor>
+		</value>
+	</Operation>
+</Patch>	
