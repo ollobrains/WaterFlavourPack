@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThoughtDef[defName="HemogenCraving"]/stages</xpath>
+		<value>
+			<stages>
+				<li>
+				  <label>thirsty</label>
+				  <description>I'm so tired. I really need water.</description>
+				  <baseMoodEffect>-10</baseMoodEffect>
+				</li>
+				<li>
+				  <label>parched</label>
+				  <description>This hurts bad and my head is fuzzy. I would kill for some water. Maybe I should.</description>
+				  <baseMoodEffect>-15</baseMoodEffect>
+				</li>
+				<li>
+				  <label>dehydrated</label>
+				  <description>Can't think. Thirst. Thirst. Must. Have. Water.</description>
+				  <baseMoodEffect>-25</baseMoodEffect>
+				</li>
+			  </stages>
+		</value>
+	</Operation>
+</Patch>

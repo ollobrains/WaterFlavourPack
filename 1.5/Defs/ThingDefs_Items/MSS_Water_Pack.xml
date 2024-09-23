@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef>
+    <defName>MSS_Unsafe_Water</defName>
+    <label>Unsafe Water pack</label>
+    <description>A package of contaminated water. Water drinkers can consume it to restore their internal hemogen stores, but at a tremendous risk of catching the scourge, a potentially deadly bacterial poisoning.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <stackLimit>10</stackLimit>
+    <tickerType>Rare</tickerType>
+    <possessionCount>5</possessionCount>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <graphicData>
+      <texPath>Things/Item/Resource/unsafewaterpack</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <DeteriorationRate>10</DeteriorationRate>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <Nutrition>0.05</Nutrition>
+      <Beauty>-2</Beauty>
+      <MarketValue>5</MarketValue>
+      <FoodPoisonChanceFixedHuman>0.50</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <specialThoughtDirect>IngestedHemogenPack</specialThoughtDirect>
+      <ingestSound>HemogenPack_Consume</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_OffsetHemogen">
+          <offset>0.1</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_FoodPoisonable" />
+    </comps>
+  </ThingDef>
+
+</Defs>

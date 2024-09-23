@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef Name="MSS_Thirst_GatherWaterBase" Abstract="True">
+    <jobString>gathering contaminated water.</jobString>
+    <workAmount>1600</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Recipe_Machining</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <targetCountAdjustment>20</targetCountAdjustment>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>0</workSkillLearnFactor>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="MSS_Thirst_GatherWaterBase">
+    <defName>MSS_Thirst_Gather_Water_Unsafe</defName>
+    <label>Gather contaminated water</label>
+    <description>Gather contaminated water from the environment. </description>
+    <Products>
+      <MSS_Unsafe_Water>1</MSS_Unsafe_Water>
+    </Products>
+  </RecipeDef>
+</Defs>

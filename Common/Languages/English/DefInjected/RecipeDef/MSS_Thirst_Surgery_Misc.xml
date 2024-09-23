@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ExtractHemogenPack.label>Extract Safe Water</ExtractHemogenPack.label>
+    <ExtractHemogenPack.description>Extract a safe water pack from the target. The operation will fail to produce a water pack if the target is dehydrated.\n\nWater packs can be administered to others to reduce dehydration, or simply to increase water levels.</ExtractHemogenPack.description>
+    <ExtractHemogenPack.jobString>Extracting water pack.</ExtractHemogenPack.jobString>
+    <BloodTransfusion.label>Give Water Pack</BloodTransfusion.label>
+    <BloodTransfusion.description>Use safe water packs to reduce the effects of dehydration. Each water pack restore water to water drinking individuals.</BloodTransfusion.description>
+    <BloodTransfusion.jobString>safely administering water pack.</BloodTransfusion.jobString>
+</LanguageData>

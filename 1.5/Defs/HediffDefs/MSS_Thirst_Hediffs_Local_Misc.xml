@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>MSSThirst_Extracted_Water</defName>
+    <label>Forced Dehydration</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <labelNoun>Forced Dehydration</labelNoun>
+    <description>This person has had their bodies water reserves forceably extracted.</description>
+    <tendable>false</tendable>
+    <stages>
+      <capMods>
+        <li>
+          <capacity>Conciousness</capacity>
+          <offset>-0.1</offset>
+        </li>
+      </capMods>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000</disappearsAfterTicks><!-- 6 hours -->
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>
