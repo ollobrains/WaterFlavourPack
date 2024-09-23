@@ -35,9 +35,9 @@ public class QuestNode_Root_WaterVictory_ThirdCycle: QuestNode_Root_WaterVictory
       {
         threatPoints = num2
       };
-      Site site = QuestGen_Sites.GenerateSite(Gen.YieldSingle(new SitePartDefWithParams(SitePartDefOf.Archonexus, parms)), tile, Faction.OfAncients);
+      Site site = QuestGen_Sites.GenerateSite(Gen.YieldSingle(new SitePartDefWithParams(Thirst_Flavour_PackDefOf.MSS_Thirst_WaterSite, parms)), tile, Faction.OfAncients);
       if (num1 <= 0.0 && Find.Storyteller.difficulty.allowViolentQuests)
-        quest.SetSitePartThreatPointsToCurrent(site, SitePartDefOf.Archonexus, map.Parent, threatPointsFactor: ThreatPointsFactor);
+        quest.SetSitePartThreatPointsToCurrent(site, Thirst_Flavour_PackDefOf.MSS_Thirst_WaterSite, map.Parent, threatPointsFactor: ThreatPointsFactor);
       quest.SpawnWorldObject(site);
       slate.Set("factionless", faction == null);
       slate.Set("threatsEnabled", Find.Storyteller.difficulty.allowViolentQuests);

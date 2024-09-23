@@ -16,5 +16,7 @@ public static class Thirst_Flavour_PackDefOf
 
     public static HediffDef MSSThirst_Extracted_Water;
 
+
+    public static SitePartDef MSS_Thirst_WaterSite;
     static Thirst_Flavour_PackDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(Thirst_Flavour_PackDefOf));
 }

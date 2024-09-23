@@ -8,22 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assemblies/MSS_Thirst.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Assemblies/MSS_Thirst.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MSS_Thirst/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MSS_Thirst/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MSS_Thirst/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MSS_Thirst/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MSS_Thirst/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSS_Thirst.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst/DebugLog.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst/HarmonyPatches/Recipe_ExtractHemogen_Patch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst/HarmonyPatches/Recipe_Surgery_Patch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst/MSS_Thirst.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst/MSS_ThirstDefOf.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst/MSS_ThirstMod.cs" beforeDir="false" />
+    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Fixup project structure">
+      <change afterPath="$PROJECT_DIR$/../Defs/SiteParts/MSS_Thirst_WaterGen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_ThirdCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_ThirdCycle.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +40,12 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_SubquestGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Reward.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Reward_ArchonexusMap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/SitePartDefOf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Screen_ArchonexusSettlementCinematics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GameComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingComp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingWithComps.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_NewColonyWater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Screen_WaterSettlementCinematics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0da8a94897c945419a9935a75f4e9b6a531020/50/d058f84b/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -165,7 +155,7 @@
       <workItem from="1727126358298" duration="55000" />
       <workItem from="1727126428692" duration="148000" />
       <workItem from="1727126584066" duration="34000" />
-      <workItem from="1727126627525" duration="68000" />
+      <workItem from="1727126627525" duration="455000" />
     </task>
     <task id="LOCAL-00001" summary="First Pass at Water victory.">
       <option name="closed" value="true" />
@@ -191,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727126258099</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixup project structure">
+      <option name="closed" value="true" />
+      <created>1727126728092</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727126728092</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +217,7 @@
     <MESSAGE value="First Pass at Water victory." />
     <MESSAGE value="&quot;Working&quot; in so far as the quest triggers work." />
     <MESSAGE value="New base title screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="New base title screen" />
+    <MESSAGE value="Fixup project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixup project structure" />
   </component>
 </project>

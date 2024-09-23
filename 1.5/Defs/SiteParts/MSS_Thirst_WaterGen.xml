@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<defs>
+  <SitePartDef>
+    <defName>MSS_Thirst_WaterSite</defName>
+    <label>water generator</label>
+    <description>An ancient archotech device. Some say it is capable of generating enough water for an entire planets population.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
+    <approachOrderString>Investigate {0}</approachOrderString>
+    <approachingReportString>Investigate {0}</approachingReportString>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <tags>
+      <li>Water</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>MSS_Thirst_WaterGen</defName>
+    <linkWithSite>MSS_Thirst_WaterSite</linkWithSite>
+    <order>1000</order>
+    <genStep Class="Thirst_Flavour_Pack.VictoryQuest.GenStep_WaterGenerator" />
+  </GenStepDef>
+</defs>
