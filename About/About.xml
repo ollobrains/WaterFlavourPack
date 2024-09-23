@@ -10,7 +10,7 @@
 	<loadAfter>
 		<li>vanillaracesexpanded.sanguophage</li>
 		<li>dubwise.dubsbadhygiene</li>
-		<li>lts.i</li>
+		<li>lts.i</li><!-- Integrated Implants 3223443793 -->
 		<li>uveren.hemogenextractor</li>
 		<li>vanillaexpanded.vplantsemore</li>
 	</loadAfter>

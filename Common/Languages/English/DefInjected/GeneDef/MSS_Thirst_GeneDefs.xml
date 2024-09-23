@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <Hemogenic.label>Water Drinker</Hemogenic.label>
-    <Hemogenic.description>Carriers of this gene require a rare and precious liquid known as water. The resource can be gained in various ways, and if not consumed frequently leads to an eventually fatal condition known as dehydration.\n\nCarriers lose 2 water per day from necessary biological homeostatis.</Hemogenic.description>
+    <Hemogenic.description>Carriers of this gene require a rare and precious liquid known as water. The resource can be gained in various ways, and if not consumed frequently leads to an eventually fatal condition known as dehydration.\n\nCarriers lose 2 water per day from necessary biological homeostasis.</Hemogenic.description>
     <Hemogenic.resourceLabel>Water</Hemogenic.resourceLabel>
+    <Hemogenic.resourceLabel>water</Hemogenic.resourceLabel>
+    <Hemogenic.resourceDescription>A reserve of biological strength which can be gained and spent in a variety of ways.\n\nWater can be increased by drinking water or consuming water packs. You can obtain water packs using the 'extract water pack' medical operation.\n\nIf water reaches zero, {PAWN_nameDef} will become very unhappy.</Hemogenic.resourceDescription>
+    <Hemogenic.customEffectDescriptions.0>Gives water supply.</Hemogenic.customEffectDescriptions.0>
     <HemogenDrain.label>Chronic Dehydration</HemogenDrain.label>
-    <HemogenDrain.description>Carriers lose an additional 8 water per day from accelerated biological homeostatis.</HemogenDrain.description>
+    <HemogenDrain.description>Carriers lose an additional 8 water per day from accelerated biological homeostasis.</HemogenDrain.description>
 </LanguageData>

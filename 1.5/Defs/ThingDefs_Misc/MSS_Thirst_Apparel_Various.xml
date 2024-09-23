@@ -12,7 +12,7 @@
       <WorkToMake>150000</WorkToMake>
     </statBases>
     <equippedStatOffsets>
-      <BaseHemogenOffset>0.5</BaseHemogenOffset>
+      <BaseHemogenOffset MayRequire="lts.i">0.5</BaseHemogenOffset>
       <HemogenGainFactor>0.5</HemogenGainFactor>
     </equippedStatOffsets>
     <costList>

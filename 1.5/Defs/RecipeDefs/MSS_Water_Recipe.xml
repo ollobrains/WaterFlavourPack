@@ -1,91 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
-  <RecipeDef Name="MSS_Thirst_GatherWaterBase" Abstract="True">
-    <jobString>gathering contaminated water.</jobString>
-    <workAmount>1600</workAmount>
-    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-    <effectWorking>Recipe_Machining</effectWorking>
-    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
-    <targetCountAdjustment>20</targetCountAdjustment>
-    <workSkill>Crafting</workSkill>
-    <workSkillLearnFactor>0</workSkillLearnFactor>
-    <recipeUsers>
-      <li>CraftingSpot</li>
-    </recipeUsers>
-  </RecipeDef>
+    <RecipeDef Name="MSS_Thirst_GatherWaterBase" Abstract="True">
+        <jobString>gathering contaminated water.</jobString>
+        <workAmount>1600</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>Smith</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <targetCountAdjustment>20</targetCountAdjustment>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>0</workSkillLearnFactor>
+        <recipeUsers>
+            <li>CraftingSpot</li>
+        </recipeUsers>
+    </RecipeDef>
 
-  <RecipeDef ParentName="MSS_Thirst_GatherWaterBase">
-    <defName>MSS_Thirst_Gather_Water_Unsafe</defName>
-    <label>Gather contaminated water</label>
-    <description>Gather contaminated water from the environment. </description>
-    <Products>
-      <MSS_Unsafe_Water>1</MSS_Unsafe_Water>
-    </Products>
-  </RecipeDef>
+    <RecipeDef ParentName="MSS_Thirst_GatherWaterBase">
+        <defName>MSS_Thirst_Gather_Water_Unsafe</defName>
+        <label>Gather contaminated water</label>
+        <description>Gather contaminated water from the environment.</description>
+        <products>
+            <MSS_Unsafe_Water>1</MSS_Unsafe_Water>
+        </products>
+    </RecipeDef>
 
-  <RecipeDef>
-    <defName>MSS_Thirst_Refine_Cucumber</defName>
-    <label>refine cucumbers into safe water</label>
-    <description>Extract the water from multiple cucumbers to create a safe water pack.</description>
-    <jobString>refining cucumbers.</jobString>
-    <effectWorking>Cook</effectWorking>
-    <soundWorking>Recipe_CookMeal</soundWorking>
-    <workAmount>2000</workAmount>
-    <workSpeedStat>CookSpeed</workSpeedStat>
-    <ingredients>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>VCE_RawCucumber</li>
-          </thingDefs>
-        </filter>
-        <count>8</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <thingDefs>
-        <li>VCE_RawCucumber</li>
-      </thingDefs>
-    </fixedIngredientFilter>
-    <products>
-      <HemogenPack>1</HemogenPack>
-    </products>
-    <recipeUsers>
-      <li>ElectricStove</li>
-      <li>FueledStove</li>
-      <li>Campfire</li>
-    </recipeUsers>
-  </RecipeDef>
-
-  <RecipeDef>
-    <defName>MSS_Thirst_Refine_Unsafe_Water</defName>
-    <label>refine unsafe water into safe water packs</label>
-    <description>A labour intense process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though a long series of distillation.</description>
-    <jobString>refining unsafe water.</jobString>
-    <effectWorking>Cook</effectWorking>
-    <soundWorking>Recipe_CookMeal</soundWorking>
-    <workAmount>8000</workAmount>
-    <workSpeedStat>CookSpeed</workSpeedStat>
-    <ingredients>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>MSS_Unsafe_Water</li>
-          </thingDefs>
-        </filter>
-        <count>4</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <thingDefs>
-        <li>MSS_Unsafe_Water</li>
-      </thingDefs>
-    </fixedIngredientFilter>
-    <products>
-      <HemogenPack>1</HemogenPack>
-    </products>
-    <recipeUsers>
-      <li>BiofuelRefinery</li>
-    </recipeUsers>
-  </RecipeDef>
+    <RecipeDef>
+        <defName>MSS_Thirst_Refine_Unsafe_Water</defName>
+        <label>refine unsafe water into safe water packs</label>
+        <description>A labour intense process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though a long series of distillation.</description>
+        <jobString>refining unsafe water.</jobString>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_CookMeal</soundWorking>
+        <workAmount>8000</workAmount>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Unsafe_Water</li>
+                    </thingDefs>
+                </filter>
+                <count>4</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MSS_Unsafe_Water</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <HemogenPack>1</HemogenPack>
+        </products>
+        <recipeUsers>
+            <li>BiofuelRefinery</li>
+        </recipeUsers>
+    </RecipeDef>
 </Defs>

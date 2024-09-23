@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <RecipeDef>
+        <defName>MSS_Thirst_Refine_Cucumber</defName>
+        <label>refine cucumbers into safe water</label>
+        <description>Extract the water from multiple cucumbers to create a safe water pack.</description>
+        <jobString>refining cucumbers.</jobString>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_CookMeal</soundWorking>
+        <workAmount>2000</workAmount>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>VCE_RawCucumber</li>
+                    </thingDefs>
+                </filter>
+                <count>8</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>VCE_RawCucumber</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <HemogenPack>1</HemogenPack>
+        </products>
+        <recipeUsers>
+            <li>ElectricStove</li>
+            <li>FueledStove</li>
+            <li>Campfire</li>
+        </recipeUsers>
+    </RecipeDef>
+</Defs>
