@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="ApparelArmorCataphractBase">
+    <defName>MSS_Thirst_Apparel_ArmorWaterlord</defName>
+    <label>waterlord armor</label>
+    <description>A variant of cataphract armour, massively armoured and unparalleled defensive capabilities. This armour was designed and deployed during the final days of the Empire's occupation of the world of Oilrakis, and has built-in water tanks and optimisation facilities, allowing the wearer to both carry a larger water capacity, and to imbibe all water sources much more effectively.</description>
+    <graphicData>
+      <texPath>Things/WaterLordArmor/WaterLordArmor</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <statBases>
+      <WorkToMake>150000</WorkToMake>
+    </statBases>
+    <equippedStatOffsets>
+      <BaseHemogenOffset>0.5</BaseHemogenOffset>
+      <HemogenGainFactor>0.5</HemogenGainFactor>
+    </equippedStatOffsets>
+    <costList>
+      <Gold>18</Gold>
+      <HemogenPack>25</HemogenPack>
+    </costList>
+    <apparel>
+      <tags>
+        <li>PrestigeCombatGear</li>
+      </tags>
+      <wornGraphicPath>Things/WaterLordArmor/WaterLordArmor</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+    </apparel>
+    <tradeTags>
+      <li>Armor</li>
+    </tradeTags>
+    <recipeMaker>
+      <displayPriority>165</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

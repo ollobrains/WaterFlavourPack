@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperatioAdd">
+		<xpath>Defs/ThingDef[defName="VCE_RawCucumber"]/ingestible</xpath>
+		<value>
+			<ingestible>
+				<outcomeDoers>
+					<li Class="IngestionOutcomeDoer_OffsetHemogen">
+					  <offset>0.02</offset>
+					</li>
+				  </outcomeDoers>
+			</ingestible>
+		</value>
+	</Operation>
+</Patch>	

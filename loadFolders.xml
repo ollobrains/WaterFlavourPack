@@ -8,5 +8,6 @@
 		<li IfModActive="vanillaracesexpanded.sanguophage">Compatibility/vanillaracesexpanded.sanguophage</li>
 		<li IfModActive="nera.spawnthosegenes">Compatibility/nera.spawnthosegenes</li>
 		<li IfModActive="uveren.hemogenextractor">Compatibility/uveren.hemogenextractor</li>
+		<li IfModActive="vanillaexpanded.vplantsemore">Compatibility/vanillaexpanded.vplantsemore</li>
 	</v1.5>
 </loadFolders>

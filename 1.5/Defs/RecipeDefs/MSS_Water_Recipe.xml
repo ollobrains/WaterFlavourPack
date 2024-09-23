@@ -22,4 +22,70 @@
       <MSS_Unsafe_Water>1</MSS_Unsafe_Water>
     </Products>
   </RecipeDef>
+
+  <RecipeDef>
+    <defName>MSS_Thirst_Refine_Cucumber</defName>
+    <label>refine cucumbers into safe water</label>
+    <description>Extract the water from multiple cucumbers to create a safe water pack.</description>
+    <jobString>refining cucumbers.</jobString>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>2000</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VCE_RawCucumber</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VCE_RawCucumber</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <HemogenPack>1</HemogenPack>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+      <li>Campfire</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MSS_Thirst_Refine_Unsafe_Water</defName>
+    <label>refine unsafe water into safe water packs</label>
+    <description>A labour intense process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though a long series of distillation.</description>
+    <jobString>refining unsafe water.</jobString>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>8000</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MSS_Unsafe_Water</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MSS_Unsafe_Water</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <HemogenPack>1</HemogenPack>
+    </products>
+    <recipeUsers>
+      <li>BiofuelRefinery</li>
+    </recipeUsers>
+  </RecipeDef>
 </Defs>
