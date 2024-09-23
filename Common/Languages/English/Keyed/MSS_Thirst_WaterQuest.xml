@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <MSS_Thirst_QuestPowerRegRequired>a power regulator to be built</MSS_Thirst_QuestPowerRegRequired>
+
+    <MSS_Thirst_LetterTextReqReached>You have reached the requirement for the quest '{0}'. You can now accept the quest.</MSS_Thirst_LetterTextReqReached>
+</LanguageData>

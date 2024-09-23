@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="ArtBuildingBase">
+        <defName>MSS_PowerRegulator</defName>
+        <label>power regulator</label>
+        <description>An ancient archotech power regulator</description>
+        <castEdgeShadows>true</castEdgeShadows>
+        <graphicData>
+            <graphicClass>Graphic_Random</graphicClass>
+            <texPath>Things/Building/Art/SculptureGrand</texPath>
+            <drawSize>(4,4)</drawSize>
+        </graphicData>
+        <fillPercent>0.5</fillPercent>
+        <rotatable>false</rotatable>
+        <size>(2,2)</size>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Mass>28</Mass>
+            <WorkToMake>105000</WorkToMake>
+            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
+        </statBases>
+        <comps>
+            <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_PowerRegulator"/>
+        </comps>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ArtBuildingBase">
+        <defName>MSS_CatalyticSeparator</defName>
+        <label>Catalytic Separator</label>
+        <description>An ancient archotech catalytic separator</description>
+        <castEdgeShadows>true</castEdgeShadows>
+        <graphicData>
+            <graphicClass>Graphic_Random</graphicClass>
+            <texPath>Things/Building/Art/SculptureGrand</texPath>
+            <drawSize>(4,4)</drawSize>
+        </graphicData>
+        <fillPercent>0.5</fillPercent>
+        <rotatable>false</rotatable>
+        <size>(2,2)</size>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Mass>28</Mass>
+            <WorkToMake>105000</WorkToMake>
+            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
+        </statBases>
+        <comps>
+            <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_CatalyticSeparator"/>
+        </comps>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ArtBuildingBase">
+        <defName>MSS_SterilizationPlant</defName>
+        <label>Sterilization Plant</label>
+        <description>An ancient archotech sterilization plant</description>
+        <castEdgeShadows>true</castEdgeShadows>
+        <graphicData>
+            <graphicClass>Graphic_Random</graphicClass>
+            <texPath>Things/Building/Art/SculptureGrand</texPath>
+            <drawSize>(4,4)</drawSize>
+        </graphicData>
+        <fillPercent>0.5</fillPercent>
+        <rotatable>false</rotatable>
+        <size>(2,2)</size>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Mass>28</Mass>
+            <WorkToMake>105000</WorkToMake>
+            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
+        </statBases>
+        <comps>
+            <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_SterilizationPlant"/>
+        </comps>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+    </ThingDef>
+</Defs>
