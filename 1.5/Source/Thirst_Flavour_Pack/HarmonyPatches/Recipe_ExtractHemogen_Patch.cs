@@ -5,7 +5,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace MSS_Thirst.HarmonyPatches;
+namespace Thirst_Flavour_Pack.HarmonyPatches;
 
 [HarmonyPatch(typeof(Recipe_ExtractHemogen))]
 public static class Recipe_ExtractHemogen_Patch
@@ -15,10 +15,10 @@ public static class Recipe_ExtractHemogen_Patch
 
     public static readonly Lazy<MethodInfo> OnSurgerySuccess =
         new Lazy<MethodInfo>(() => AccessTools.Method(typeof(Recipe_ExtractHemogen), "OnSurgerySuccess"));
-    
+
     public static readonly Lazy<MethodInfo> ReportViolation =
         new Lazy<MethodInfo>(() => AccessTools.Method(typeof(Recipe_ExtractHemogen), "ReportViolation"));
-    
+
     [HarmonyPatch(nameof(Recipe_ExtractHemogen.AvailableOnNow))]
     [HarmonyPrefix]
     public static bool Recipe_ExtractHemogen_AvailableOnNow_Patch(Recipe_ExtractHemogen __instance, Thing thing, BodyPartRecord part, ref bool __result)
@@ -27,7 +27,7 @@ public static class Recipe_ExtractHemogen_Patch
         __result = (thing is Pawn pawn ? pawn.genes : null) == null || Recipe_Surgery_Patch.AvailableOnNow(__instance, thing, part);
         return false;
     }
-    
+
     [HarmonyPatch(nameof(Recipe_ExtractHemogen.ApplyOnPawn))]
     [HarmonyPrefix]
     public static bool Recipe_ExtractHemogen_ApplyOnPawn_Patch(Recipe_ExtractHemogen __instance, Pawn pawn,
@@ -50,7 +50,7 @@ public static class Recipe_ExtractHemogen_Patch
                 {
                     ReportViolation.Value.Invoke(__instance, [pawn, billDoer, pawn.HomeFaction, -1, HistoryEventDefOf.ExtractedHemogenPack]);
                 }
-            }    
+            }
         }
 
         return false;

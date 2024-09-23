@@ -4,7 +4,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace MSS_Thirst.HarmonyPatches;
+namespace Thirst_Flavour_Pack.HarmonyPatches;
 
 [HarmonyPatch(typeof(Recipe_Surgery))]
 public static class Recipe_Surgery_Patch
