@@ -7,7 +7,7 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 
 public class QuestNode_Root_WaterVictory_ThirdCycle: QuestNode_Root_WaterVictory_Cycle
 {
-    protected override int ArchonexusCycle => 3;
+    protected override int WaterCycle => 3;
     protected override string QuestSignal => "SterilizationPlantBuilt";
     protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptSterilizationPlantBuilt();
     protected override QuestPartActivable Part1 => new QuestPart_SterilizationPlant();

@@ -7,6 +7,6 @@ public class QuestPart_RequirementToAcceptPowerRegulatorBuilt: QuestPart_Require
 {
     public override AcceptanceReport CanAccept()
     {
-        return WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt < 1 ? new AcceptanceReport("MSS_Thirst_QuestPowerRegRequired".Translate()) : (AcceptanceReport) true;
+        return WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt < 3 ? new AcceptanceReport("MSS_Thirst_QuestPowerRegRequired".Translate(WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt, 3)) : true;
     }
 }

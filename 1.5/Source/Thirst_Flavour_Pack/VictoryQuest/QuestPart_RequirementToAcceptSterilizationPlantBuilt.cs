@@ -7,6 +7,6 @@ public class QuestPart_RequirementToAcceptSterilizationPlantBuilt: QuestPart_Req
 {
     public override AcceptanceReport CanAccept()
     {
-        return WaterVictoryWorldComponent.Instance.SterilizationPlantsBuilt < 1 ? new AcceptanceReport("MSS_Thirst_QuestPowerRegRequired".Translate()) : (AcceptanceReport) true;
+        return WaterVictoryWorldComponent.Instance.SterilizationPlantsBuilt < 1 ? new AcceptanceReport("MSS_Thirst_QuestSterilizationPlantRequired".Translate(WaterVictoryWorldComponent.Instance.SterilizationPlantsBuilt, 3)) : true;
     }
 }

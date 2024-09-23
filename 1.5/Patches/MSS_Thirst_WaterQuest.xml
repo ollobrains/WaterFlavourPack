@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Defs>
+<Patch>
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps</xpath>
         <value>
             <li Class="StorytellerCompProperties_RefiringUniqueQuest">
-                <minColonyWealth>0</minColonyWealth>
+                <minColonyWealth>500</minColonyWealth>
                 <minDaysPassed>0</minDaysPassed>
-                <incident MayRequire="Ludeon.RimWorld.Ideology">MSS_EndGame_WaterVictory</incident>
+                <incident>MSS_GiveQuest_EndGame_WaterVictory</incident>
                 <allowedTargetTags>
                     <li>World</li>
                 </allowedTargetTags>
@@ -16,4 +16,4 @@
             </li>
         </value>
     </Operation>
-</Defs>
+</Patch>

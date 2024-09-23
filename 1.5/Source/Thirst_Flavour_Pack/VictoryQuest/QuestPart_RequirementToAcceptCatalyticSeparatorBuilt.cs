@@ -7,6 +7,6 @@ public class QuestPart_RequirementToAcceptCatalyticSeparatorBuilt: QuestPart_Req
 {
     public override AcceptanceReport CanAccept()
     {
-        return WaterVictoryWorldComponent.Instance.CatalyticSeparatorsBuilt < 1 ? new AcceptanceReport("MSS_Thirst_QuestPowerRegRequired".Translate()) : (AcceptanceReport) true;
+        return WaterVictoryWorldComponent.Instance.CatalyticSeparatorsBuilt < 3 ? new AcceptanceReport("MSS_Thirst_QuestCatalyticSeparatorRequired".Translate(WaterVictoryWorldComponent.Instance.CatalyticSeparatorsBuilt, 3)) : true;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
@@ -13,11 +14,12 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
     public const int LetterReminderInterval = 3600000;
     protected Map map;
 
-    protected abstract int ArchonexusCycle { get; }
+    protected abstract int WaterCycle { get; }
     protected abstract string QuestSignal { get; }
     protected abstract QuestPart_RequirementsToAccept Requirement { get; }
     protected abstract QuestPartActivable Part1 { get; }
     protected abstract QuestPart_Filter Part3 { get; }
+
 
     protected override void RunInt()
     {
@@ -62,9 +64,9 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
       quest.RewardChoice().choices.Add(new QuestPart_Choice.Choice
       {
         rewards = {
-          new Reward_ArchonexusMap
+          new Reward_WaterMap
           {
-              currentPart = ArchonexusCycle
+              currentPart = WaterCycle
           }
         }
       });

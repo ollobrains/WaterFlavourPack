@@ -9,4 +9,9 @@ public class CompCatalyticSeparator: ThingComp
         if(respawningAfterLoad)return;
         WaterVictoryWorldComponent.Instance.CatalyticSeparatorsBuilt++;
     }
+
+    public override void PostDestroy(DestroyMode mode, Map previousMap)
+    {
+        WaterVictoryWorldComponent.Instance.CatalyticSeparatorsBuilt--;
+    }
 }
