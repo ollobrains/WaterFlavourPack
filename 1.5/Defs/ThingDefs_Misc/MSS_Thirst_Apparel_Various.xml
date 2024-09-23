@@ -5,7 +5,7 @@
     <label>waterlord armor</label>
     <description>A variant of cataphract armour, massively armoured and unparalleled defensive capabilities. This armour was designed and deployed during the final days of the Empire's occupation of the world of Oilrakis, and has built-in water tanks and optimisation facilities, allowing the wearer to both carry a larger water capacity, and to imbibe all water sources much more effectively.</description>
     <graphicData>
-      <texPath>Things/WaterLordArmor/WaterLordArmor</texPath>
+      <texPath>Things/WaterlordArmor/WaterlordArmor</texPath>
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <statBases>
@@ -23,7 +23,7 @@
       <tags>
         <li>PrestigeCombatGear</li>
       </tags>
-      <wornGraphicPath>Things/WaterLordArmor/WaterLordArmor</wornGraphicPath>
+      <wornGraphicPath>Things/WaterlordArmor/WaterlordArmor</wornGraphicPath>
       <useWornGraphicMask>true</useWornGraphicMask>
     </apparel>
     <tradeTags>
