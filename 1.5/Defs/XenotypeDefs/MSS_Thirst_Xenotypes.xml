@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XenotypeDef>
+    <defName>MSS_Thirst_WaterDrinker</defName>
+    <label>Water Drinker</label>
+    <description>Water drinkers are standard humans that suffer from thirst much more rapidly than on most Rimworlds due to the planets inhospitable conditions. They must frequently drink water or quickly succumb to death.</description>
+    <descriptionShort>Water drinkers are standard humans require a constant water supply to avoid fatal dehydration.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Custom/Baseliner_1-1</iconPath>
+    <inheritable>true</inheritable>
+    <genes>
+      <li>Hemogenic</li>
+    </genes>
+  </XenotypeDef>
+  <XenotypeDef>
+    <defName>MSS_Thirst_WaterGuzzler</defName>
+    <label>Water Guzzler</label>
+    <description>Guzzler is the derogatory name given to water drinkers who have adapted to the harsh conditions of the world by persperating more than a standard water drinker. They lose water significantly faster but are much more comfortable in extreme heat as a result.</description>
+    <descriptionShort>Guzzlers are water drinkers who are more adaptable in extreme heat, at the cost of increased thirst.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Custom/Baseliner_8</iconPath>
+    <inheritable>true</inheritable>
+    <genes>
+      <li>Hemogenic</li>
+      <li>HemogenDrain</li>
+      <li>MaxTemp_LargeIncrease</li>
+    </genes>
+  </XenotypeDef>
+</Defs>
