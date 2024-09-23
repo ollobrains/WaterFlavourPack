@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Hemogen>water</Hemogen>
+    <HemogenDesc>Water is a vital part of biological homeostatis, cruely extracted almost exclusively from living plants and animals. Occasionally it can be refined through long, complex industrial processes, with almost all wild water being too contaminated to drink. Baseliner humans cannot produce it endogenously and consume it over time in their own internal balance. Humans unable to consume water for long periods of time will be afflicted with the eventual fatal condition known as dehydration.</HemogenDesc>  
+    <MessagePawnHadNotEnoughBloodToProduceHemogenPack>{PAWN_nameDef} did not have enough internal water to produce a safe water pack. </MessagePawnHadNotEnoughBloodToProduceHemogenPack>
+    <MessageCannotStartHemogenExtraction>{PAWN_nameDef} doesn't have enough internal water to produce a safe water pack.</MessageCannotStartHemogenExtraction>
+    <AutoTakeHemogenDesc>This determines whether {PAWN_nameDef} will automatically ingest safe water packs when {PAWN_possessive} water is below {MIN}.\n\nAutomatic ingestion is currently {ONOFF}.</AutoTakeHemogenDesc>
+    <ConsumeHemogenBelow>Consume water below</ConsumeHemogenBelow>
+    <NeverConsumeHemogen>Never consume water.</NeverConsumeHemogen>
+</LanguageData>
