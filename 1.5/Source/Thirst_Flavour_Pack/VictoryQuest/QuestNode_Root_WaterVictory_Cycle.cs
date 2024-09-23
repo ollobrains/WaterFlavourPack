@@ -96,7 +96,7 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
         Slate slate = QuestGen.slate;
         string newSignal1 = QuestGen.GenerateNewSignal("NewColonyCreated");
         string newSignal2 = QuestGen.GenerateNewSignal("NewColonyCancelled");
-        quest.AddPart(new QuestPart_NewColony
+        quest.AddPart(new QuestPart_NewColonyWater
         {
             inSignal = slate.Get<string>("inSignal"),
             outSignalCompleted = newSignal1,

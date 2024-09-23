@@ -7,4 +7,6 @@
     <MSS_Thirst_LetterTextReqReached>You have reached the requirement for the quest '{0}'. You can now accept the quest.</MSS_Thirst_LetterTextReqReached>
     <MSS_Reward_WaterMapPart>A water map part</MSS_Reward_WaterMapPart>
     <MSS_Reward_WaterMapPartLabel>Water map part {0}/{1}</MSS_Reward_WaterMapPartLabel>
+
+    <MSS_Thirst_SoldColonyDescription>You manage to escape unscathed. Pick your next base carefully!</MSS_Thirst_SoldColonyDescription>
 </LanguageData>
