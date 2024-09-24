@@ -16,11 +16,20 @@ public class Settings : ModSettings
     private string[] buffers = new string[32];
     private int bufferIndex = 0;
 
+    public int WaterQuestBuildingsRequiredFirstCycle = 3;
+    public int WaterQuestBuildingsRequiredSecondCycle = 3;
+    public int WaterQuestBuildingsRequiredThirdCycle = 3;
+
+    public int WaterQuestColonistsAllowed = 10;
+    public int WaterQuestAnimalsAllowed = 10;
+
     public void DoWindowContents(Rect wrect)
     {
         bufferIndex = 0;
         Listing_Standard options = new Listing_Standard();
         options.Begin(wrect);
+
+        options.CheckboxLabeled("Thirst Flavour Pack_Settings_SettingName".Translate(), ref setting);
 
         options.Label("MSS_Thirst_ThirstCasketHediffTickRate".Translate(ThirstCasketHediffTickRate));
         options.IntEntry(ref ThirstCasketHediffTickRate, ref buffers[bufferIndex++], 1);

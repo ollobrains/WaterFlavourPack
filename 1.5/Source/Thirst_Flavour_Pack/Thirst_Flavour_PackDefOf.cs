@@ -10,6 +10,10 @@ public static class Thirst_Flavour_PackDefOf
     // [MayRequireBiotech]
     // public static GeneDef YourPrefix_YourGeneDefName;
 
+    public static QuestScriptDef MSS_EndGame_WaterVictory_Pre;
+    public static QuestScriptDef MSS_EndGame_WaterVictory_PreCycle;
+
+    public static QuestScriptDef MSS_EndGame_WaterVictory;
     public static QuestScriptDef MSS_EndGame_WaterVictory_FirstCycle;
     public static QuestScriptDef MSS_EndGame_WaterVictory_SecondCycle;
     public static QuestScriptDef MSS_EndGame_WaterVictory_ThirdCycle;

@@ -8,7 +8,7 @@ public class QuestNode_Root_WaterVictory_SecondCycle: QuestNode_Root_WaterVictor
     protected override int WaterCycle => 2;
     protected override string QuestSignal => "CatalyticSeparatorBuilt";
     protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptCatalyticSeparatorBuilt();
-    protected override QuestPartActivable Part1 => new QuestPart_CatalyticSeparator();
+    protected override QuestPartActivable Part1 => new QuestPart_CheckCatalyticSeparator();
     protected override QuestPart_Filter Part3 => new QuestPart_Filter_CatalyticSeparator();
     protected override void RunInt()
     {

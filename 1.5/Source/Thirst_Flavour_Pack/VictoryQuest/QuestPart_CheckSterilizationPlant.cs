@@ -3,7 +3,7 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestPart_SterilizationPlant : QuestPartActivable
+public class QuestPart_CheckSterilizationPlant : QuestPartActivable
 {
     public override void QuestPartTick()
     {

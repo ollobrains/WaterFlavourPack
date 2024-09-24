@@ -8,46 +8,83 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Fixup project structure">
-      <change afterPath="$PROJECT_DIR$/../Defs/SiteParts/MSS_Thirst_WaterGen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_ThirdCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_ThirdCycle.cs" afterDir="false" />
-    </list>
+    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="mergefix" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Dialog_ChooseThingsForNewColony.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/FactionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/ISignalReceiver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Planet/WorldComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Quest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestEndOutcome.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_End.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_Filter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_Requirements.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode_EvaluateSimpleCurve.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/Slate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPartActivable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_Filter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_NewColony.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_PassOutInterval.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_QuestEnd.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_RequirementsToAccept.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_SubquestGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Reward.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Reward_ArchonexusMap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Signal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/SignalManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/SitePartDefOf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Screen_ArchonexusSettlementCinematics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GameComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingComp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingWithComps.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Patches/MSS_Thirst_WaterQuest.xml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_NewColonyWater.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Screen_WaterSettlementCinematics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_FirstCycle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_FirstCycle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_FirstCycle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_FirstCycle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_FirstCycle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckPowerRegulator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckPowerRegulator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckPowerRegulator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckPowerRegulator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckPowerRegulator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_NewColonyWater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Screen_WaterSettlementCinematics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/Common/Languages/English/Keyed/MSS_Thirst_WaterQuest.xml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/07655ae2c3b84674896de716a913b2ee7a00/05/f75dacaf/0200000D.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/07655ae2c3b84674896de716a913b2ee7a00/2c/cedd723b/02000009.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/07655ae2c3b84674896de716a913b2ee7a00/76/8a5a92a5/0200000C.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/07655ae2c3b84674896de716a913b2ee7a00/d9/63de395e/0200000A.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/07655ae2c3b84674896de716a913b2ee7a00/eb/624075fd/02000016.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1bc70ba7449246008ae5631126ccc3d57a00/20/52e211ba/0200000A.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/2380a535e57447b4957d45975b057cba7400/08/5dbfdd1f/02000005.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/2380a535e57447b4957d45975b057cba7400/d6/c5541bf2/02000014.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f0ac5eb9b52e4cc396c70fc9a4ee15e5ca1e00/24/ad5a9be2/02000F99pdb3983.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f0ac5eb9b52e4cc396c70fc9a4ee15e5ca1e00/46/571b7bda/020019CBpdb6593.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f0ac5eb9b52e4cc396c70fc9a4ee15e5ca1e00/7a/f36ffeda/02001F48pdb7998.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f0ac5eb9b52e4cc396c70fc9a4ee15e5ca1e00/fd/d3a598df/02000FC3pdb4025.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0da8a94897c945419a9935a75f4e9b6a531020/50/d058f84b/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/388cbae2d6f74d9e93f2a786bd7b2c4917a648/48/785268e5/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83a6362a90a344f1831389f7137844c426200/e4/862427a8/GUI.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,24 +98,25 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2mO531UHtAHzhvZmJPesyrFB3BU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RimWorld.RimWorld.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;7-archonexus-quest-steps&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RimWorld.RimWorld.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "7-archonexus-quest-steps",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="RimWorld.RimWorld">
     <configuration name="MSS_Thirst" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -156,6 +194,7 @@
       <workItem from="1727126428692" duration="148000" />
       <workItem from="1727126584066" duration="34000" />
       <workItem from="1727126627525" duration="455000" />
+      <workItem from="1727195862153" duration="10703000" />
     </task>
     <task id="LOCAL-00001" summary="First Pass at Water victory.">
       <option name="closed" value="true" />
@@ -218,6 +257,25 @@
     <MESSAGE value="&quot;Working&quot; in so far as the quest triggers work." />
     <MESSAGE value="New base title screen" />
     <MESSAGE value="Fixup project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixup project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/PreQuest/QuestNode_Root_WaterVictory_PreCycle.cs</url>
+          <line>60</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WaterFlavourPack\1.5\Source\Thirst_Flavour_Pack\VictoryQuest\PreQuest\QuestNode_Root_WaterVictory_PreCycle.cs" containingFunctionPresentation="Method 'RunInt'">
+            <startOffsets>
+              <option value="2493" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2519" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

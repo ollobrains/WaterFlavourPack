@@ -6,12 +6,8 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class Screen_WaterSettlementCinematics: Screen_ArchonexusSettlementCinematics
+public class Screen_WaterSettlementCinematics(Action cameraJumpAction, Action nextStepAction) : Screen_ArchonexusSettlementCinematics(cameraJumpAction, nextStepAction)
 {
-    public Screen_WaterSettlementCinematics(Action cameraJumpAction, Action nextStepAction) : base(cameraJumpAction, nextStepAction)
-    {
-    }
-
     Lazy<FieldInfo> cameraJumpAction => new Lazy<FieldInfo>(() => AccessTools.Field(typeof(Screen_WaterSettlementCinematics), "cameraJumpAction"));
 
     private bool FadeInLatch;

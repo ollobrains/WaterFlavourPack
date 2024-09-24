@@ -25,7 +25,7 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
     {
       Quest quest = QuestGen.quest;
       Slate slate = QuestGen.slate;
-      this.map = QuestGen_Get.GetMap();
+      map = QuestGen_Get.GetMap();
 
       string newSignal2 = QuestGen.GenerateNewSignal("SendLetterReminder");
       QuestGen.GenerateNewSignal("ActivateLetterReminderSignal");
@@ -52,13 +52,11 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
       quest.CanAcceptQuest((Action) (() =>
       {
         QuestNode_ResolveQuestName.Resolve();
-        string str1 = slate.Get<string>("resolvedQuestName");
-        Quest quest1 = quest;
+        string resolvedQuestName = slate.Get<string>("resolvedQuestName");
         LetterDef positiveEvent = LetterDefOf.PositiveEvent;
-        string str2 = "LetterLabelArchonexusWealthReached".Translate((NamedArgument) str1);
-        string text = "MSS_Thirst_LetterTextReqReached".Translate((NamedArgument) str1);
-        string label = str2;
-        quest1.Letter(positiveEvent, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, text: text, label: label);
+        string label = "LetterLabelArchonexusWealthReached".Translate((NamedArgument) resolvedQuestName);
+        string desc = "MSS_Thirst_LetterTextReqReached".Translate((NamedArgument) resolvedQuestName);
+        quest.Letter(positiveEvent, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, text: desc, label: label);
       }), inSignal: part3.outSignal, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly);
 
       quest.RewardChoice().choices.Add(new QuestPart_Choice.Choice
@@ -70,19 +68,14 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
           }
         }
       });
-      List<MapParent> var = new List<MapParent>();
       List<Map> maps = Find.Maps;
-      for (int index = 0; index < maps.Count; ++index)
-      {
-        Map map = maps[index];
-        if (map.IsPlayerHome)
-          var.Add(map.Parent);
-      }
+
+      List<MapParent> var = (from m in maps where m.IsPlayerHome select m.Parent).ToList();
+
       slate.Set("playerSettlements", var);
       slate.Set("playerSettlementsCount", var.Count);
       slate.Set("colonistsAllowed", 5);
       slate.Set("animalsAllowed", 5);
-      slate.Set("requiredWealth", 350000f);
       slate.Set("map", this.map);
       slate.Set("mapParent", this.map.Parent);
       slate.Set("studyRequirement", false);

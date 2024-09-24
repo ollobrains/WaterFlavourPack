@@ -8,7 +8,7 @@ public class QuestNode_Root_WaterVictory_FirstCycle: QuestNode_Root_WaterVictory
     protected override int WaterCycle => 1;
     protected override string QuestSignal => "PowerRegulatorBuilt";
     protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptPowerRegulatorBuilt();
-    protected override QuestPartActivable Part1 => new QuestPart_PowerRegulator();
+    protected override QuestPartActivable Part1 => new QuestPart_CheckPowerRegulator(3);
     protected override QuestPart_Filter Part3 => new QuestPart_Filter_PowerRegulator();
 
     protected override void RunInt()

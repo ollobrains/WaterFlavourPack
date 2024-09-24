@@ -3,7 +3,7 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestPart_CatalyticSeparator : QuestPartActivable
+public class QuestPart_CheckCatalyticSeparator : QuestPartActivable
 {
     public override void QuestPartTick()
     {
