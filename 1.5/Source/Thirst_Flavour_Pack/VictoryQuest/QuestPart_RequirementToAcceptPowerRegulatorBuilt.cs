@@ -7,13 +7,13 @@ public class QuestPart_RequirementToAcceptPowerRegulatorBuilt(int required = 3) 
 {
     public int Required = required;
 
-    public override AcceptanceReport CanAccept()
-    {
-        return WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt < Required ? new AcceptanceReport("MSS_Thirst_QuestPowerRegRequired".Translate(WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt, Required)) : true;
-    }
-
     public override void ExposeData()
     {
         Scribe_Values.Look(ref Required, "Required");
+    }
+
+    public override AcceptanceReport CanAccept()
+    {
+        return WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt < Required ? new AcceptanceReport("MSS_Thirst_QuestPowerRegRequired".Translate(WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt, Required)) : true;
     }
 }

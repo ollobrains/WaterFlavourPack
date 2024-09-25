@@ -11,17 +11,16 @@ public class QuestPart_CheckPowerRegulator : QuestPartActivable
     {
         this.count = count;
     }
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        Scribe_Values.Look(ref count, "count");
+    }
+
     public override void QuestPartTick()
     {
         if(Find.TickManager.TicksGame % 60 != 0 || WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt < count)
             return;
         Complete();
-    }
-
-
-    public override void ExposeData()
-    {
-        base.ExposeData();
-        Scribe_Values.Look(ref count, "count");
     }
 }

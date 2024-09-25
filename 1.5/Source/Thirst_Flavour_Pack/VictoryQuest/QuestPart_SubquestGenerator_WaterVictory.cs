@@ -8,20 +8,6 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 
 public class QuestPart_SubquestGenerator_WaterVictory : QuestPart_SubquestGenerator//, ISignalReceiver
 {
-    // public bool SigReceived = false;
-    // public void Notify_SignalReceived(Signal signal)
-    // {
-    //     if (signal.tag == QuestNode_Root_WaterVictory_PreCycle.QuestSignal)
-    //     {
-    //         SigReceived = true;;
-    //     }
-    // }
-
-    public override void ExposeData()
-    {
-        base.ExposeData();
-        // Scribe_Values.Look(ref SigReceived, "SigReceived");
-    }
     protected override Slate InitSlate()
     {
         Slate slate = new Slate();

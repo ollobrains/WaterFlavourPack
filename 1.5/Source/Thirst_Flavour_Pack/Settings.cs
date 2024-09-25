@@ -22,6 +22,8 @@ public class Settings : ModSettings
 
     public int WaterQuestColonistsAllowed = 10;
     public int WaterQuestAnimalsAllowed = 10;
+    public int WaterQuestItemsAllowed = 40;
+    public int WaterQuestRelicsAllowed = 10;
 
     public void DoWindowContents(Rect wrect)
     {
@@ -29,6 +31,17 @@ public class Settings : ModSettings
         Listing_Standard options = new Listing_Standard();
         options.Begin(wrect);
 
+        options.Label("MSS_Thirst_WaterQuestColonistsAllowed".Translate(WaterQuestColonistsAllowed));
+        options.IntAdjuster(ref WaterQuestColonistsAllowed, 1, 1);
+
+        options.Label("MSS_Thirst_WaterQuestAnimalsAllowed".Translate(WaterQuestAnimalsAllowed));
+        options.IntAdjuster(ref WaterQuestAnimalsAllowed, 1, 1);
+
+        options.Label("MSS_Thirst_WaterQuestItemsAllowed".Translate(WaterQuestItemsAllowed));
+        options.IntAdjuster(ref WaterQuestItemsAllowed, 1, 1);
+
+        options.Label("MSS_Thirst_WaterQuestRelicsAllowed".Translate(WaterQuestRelicsAllowed));
+        options.IntAdjuster(ref WaterQuestRelicsAllowed, 1, 1);
         options.CheckboxLabeled("Thirst Flavour Pack_Settings_SettingName".Translate(), ref setting);
 
         options.Label("MSS_Thirst_ThirstCasketHediffTickRate".Translate(ThirstCasketHediffTickRate));
@@ -64,6 +77,10 @@ public class Settings : ModSettings
 
     public override void ExposeData()
     {
+        Scribe_Values.Look(ref WaterQuestColonistsAllowed, "WaterQuestColonistsAllowed", 10);
+        Scribe_Values.Look(ref WaterQuestAnimalsAllowed, "WaterQuestAnimalsAllowed", 10);
+        Scribe_Values.Look(ref WaterQuestItemsAllowed, "WaterQuestItemsAllowed", 40);
+        Scribe_Values.Look(ref WaterQuestRelicsAllowed, "WaterQuestRelicsAllowed", 10);
         Scribe_Values.Look(ref ThirstCasketHediffTickRate, "ThirstCasketHediffTickRate", 360);
         Scribe_Values.Look(ref MaxSafeWaterInNet, "MaxSafeWaterInNet", 30);
         Scribe_Values.Look(ref SafeWaterPacks, "SafeWaterPacks", 10);

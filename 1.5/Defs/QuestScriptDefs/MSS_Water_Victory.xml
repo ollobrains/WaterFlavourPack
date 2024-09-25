@@ -26,7 +26,7 @@
         <defaultChallengeRating>4</defaultChallengeRating>
         <questNameRules>
             <rulesStrings>
-                <li>questName->the water generator</li>
+                <li>questName->ab aqua libertas</li>
             </rulesStrings>
         </questNameRules>
     </QuestScriptDef>
@@ -52,10 +52,19 @@
     </QuestScriptDef>
 
 
-    <QuestScriptDef ParentName="MSS_EndGame_WaterVictory_Cycle">
+    <QuestScriptDef>
         <defName>MSS_EndGame_WaterVictory_PreCycle</defName>
         <sendAvailableLetter>true</sendAvailableLetter>
         <affectedByPoints>false</affectedByPoints>
+        <isRootSpecial>true</isRootSpecial>
+        <hideOnCleanup>true</hideOnCleanup>
+        <endOnColonyMove>false</endOnColonyMove>
+        <defaultChallengeRating>4</defaultChallengeRating>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->sic itur ad aquas</li>
+            </rulesStrings>
+        </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
                 <!-- description -->
@@ -102,25 +111,8 @@
     <affectedByPoints>false</affectedByPoints>
     <questDescriptionRules>
       <rulesStrings>
-
         <!-- description -->
-        <li>questDescription-> [WATERTODO] With the first archonexus map part securely recorded, you prepare for the next step of your journey.\n\n[cycle1Faction] told you of the cataclysm that destroyed this world. Humans built a great thinking machine here centuries ago. It turned against the people and there was a great war. Only a few were left when the machine transcended and fell dormant.\n\nThe map to the archonexus has three parts, and you hold one of them. [otherMapPartHolders] also each hold parts of the map. They'll trade their parts to you for a wealthy new colony and all of its recorded research.[descriptionStudyRequirement]\n\nIt's time to get building.</li>
-
-        <!-- pieces -->
-        <li>cycle1Faction(factionless==false)->[civilOutlander_leader_nameDef]</li>
-        <li>cycle1Faction(factionless==true)->The [wildPeople]</li>
-
-        <li>otherMapPartHolders(factionless==false)->[roughOutlander_name] and [roughTribe_name]</li>
-        <li>otherMapPartHolders(factionless==true)->other [wildPeople]</li>
-
-        <li>takeoverPawnsPlural(factionless==false)->[roughOutlander_pawnsPlural]</li>
-        <li>takeoverPawnsPlural(factionless==true)->[wildPeople]</li>
-
-        <li>wildPeople->wild people</li>
-
-        <li>descriptionStudyRequirement(studyRequirement==true)->\n\nThe next map part is encoded in a very strange way. In order to interpret it, you must first learn more about archotechnology by studying the structure here.</li>
-        <li>descriptionStudyRequirement(studyRequirement==false)-></li>
-
+        <li>questDescription-> After escaping from your last colony and regrouping, you begin to analyze the data you recorded. It appears to be part of a map.\n\nAlongside the map, there's scattered references to a great drought, interspersed with references to a grand archotech machine. It appears the two may be related, but you do not yet know how.\n\nThe data also described a set of Catalytic Separators, 3 of which are required for the grand machination. Maybe you'll be able to find them now that you know what you're looking for?</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_WaterVictory_SecondCycle" />
@@ -137,24 +129,14 @@
       <rulesStrings>
 
         <!-- letters -->
-        <li>questAcceptedLetterLabel->[WATERTODO] archonexus discovered</li>
+        <li>questAcceptedLetterLabel-> archospring discovered</li>
         <li>questAcceptedLetterText->[questDescriptionBeforeAccepted]</li>
 
         <!-- quest descriptions -->
-        <li>questDescriptionBeforeAccepted-> [WATERTODO] You have two parts of the archonexus map. [factionName] have the last piece of the map, passed down from the time their ancestors survived the cataclysm. They'll trade it to you for a wealthy new colony along with its recorded research.[descriptionStudyRequirement]\n\nIt's time to get building.</li>
-        <li>questDescriptionAfterAccepted->[descriptionIntro] [WATERTODO]  have given you the last part of the archonexus map. Using your knowledge of archotech info-encoding, you have decoded the map and pinpointed the location of the archonexus.\n\nYour allies don't expect you to return, so after you go there, they will take over [playerSettlements].\n\n[descriptionThreats]Now all that's left is to get to the archonexus, invoke the power of the machine god, and find out whether the stories are real.</li>
+        <li>questDescriptionBeforeAccepted-> You escape just in time, yet again. You do now have two pieces of a map, and yet more data. Based on this new data, you're pretty sure that the archotech machine was an attempt to fix the drought, that was never completed. Some sporadic logs talk of a great war that tore nations apart, and ravaged the climate of this planet. In its wake, some survivors took it upon themselves to try to fix things. While they got much work done, squabbles over resources, especially what water was available eventually tore the group apart. The data also reveals that a set of Sterilization Plants are the last parts required for the machine.\n\nWill you go looking for the parts?</li>
+        <li>questDescriptionAfterAccepted-> You escape just in time, yet again. You do now have two pieces of a map, and yet more data. Based on this new data, you're pretty sure that the archotech machine was an attempt to fix the drought, that was never completed. Some sporadic logs talk of a great war that tore nations apart, and ravaged the climate of this planet. In its wake, some survivors took it upon themselves to try to fix things. While they got much work done, squabbles over resources, especially what water was available eventually tore the group apart. The data also reveals that a set of Sterilization Plants are the last parts required for the machine.\n\nTime to start looking!\n\n[descriptionThreats]</li>
 
-        <!-- pieces -->
-        <li>factionName(factionless==false)->[roughTribe_name]</li>
-        <li>factionName(factionless==true)->The wild people</li>
-
-        <li>descriptionIntro(factionless==false)->[roughTribe_name]'s leader [roughTribe_leader_nameDef] has</li>
-        <li>descriptionIntro(factionless==true)->The wild people have</li>
-
-        <li>descriptionStudyRequirement(studyRequirement==true)->\n\nAs before, the map part is encoded. In order to decode it, you must first study the archotech structure.</li>
-        <li>descriptionStudyRequirement(studyRequirement==false)-></li>
-
-        <li>descriptionThreats(threatsEnabled==true)->The archonexus will likely have mechanoid defenders, so go prepared.\n\n</li>
+        <li>descriptionThreats(threatsEnabled==true)->The archospring will likely have defenders, so go prepared.\n\n</li>
         <li>descriptionThreats(threatsEnabled==false)-></li>
 
       </rulesStrings>

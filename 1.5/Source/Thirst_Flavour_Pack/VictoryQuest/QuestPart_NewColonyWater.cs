@@ -5,28 +5,10 @@ using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
-using RimWorld.QuestGen;
 using UnityEngine;
 using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
-
-[HarmonyPatch(typeof(QuestPart_NewColony))]
-public static class QuestPart_NewColony_Patch
-{
-    [HarmonyPatch("PostThingsSelected")]
-    [HarmonyPrefix]
-    public static bool PostThingsSelected(QuestPart_NewColony __instance, List<Thing> allThings)
-    {
-        if (__instance is QuestPart_NewColonyWater water)
-        {
-            water.NewPostThingsSelected(allThings);
-            return false;
-        }
-
-        return true;
-    }
-}
 
 public class QuestPart_NewColonyWater: QuestPart_NewColony
 {
@@ -42,6 +24,24 @@ public class QuestPart_NewColonyWater: QuestPart_NewColony
                 Find.SignalManager.SendSignal(new Signal(outSignalCancelled, false));
             }));
             ScreenFader.StartFade(Color.clear, 2f);
+        })));
+    }
+
+    public override void Notify_QuestSignalReceived(Signal signal)
+    {
+        if (signal.tag != inSignal)
+            return;
+        Find.MainTabsRoot.EscapeCurrentTab(false);
+        Find.World.renderer.RegenerateLayersIfDirtyInLongEvent();
+        Find.WindowStack.Add(new Dialog_ChooseThingsForNewColony_WaterQuest(NewPostThingsSelected,
+            maxColonists: Thirst_Flavour_PackMod.settings.WaterQuestColonistsAllowed,
+            maxAnimals: Thirst_Flavour_PackMod.settings.WaterQuestAnimalsAllowed,
+            maxItems: Thirst_Flavour_PackMod.settings.WaterQuestItemsAllowed,
+            maxRelics: Thirst_Flavour_PackMod.settings.WaterQuestRelicsAllowed, cancel: (Action) (() =>
+        {
+            if (outSignalCancelled.NullOrEmpty())
+                return;
+            Find.SignalManager.SendSignal(new Signal(outSignalCancelled, false));
         })));
     }
 }

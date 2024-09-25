@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<defs>
+<Defs>
   <SitePartDef>
     <defName>MSS_Thirst_WaterSite</defName>
-    <label>water generator</label>
+    <label>archospring</label>
     <description>An ancient archotech device. Some say it is capable of generating enough water for an entire planets population.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
@@ -21,4 +21,4 @@
     <order>1000</order>
     <genStep Class="Thirst_Flavour_Pack.VictoryQuest.GenStep_WaterGenerator" />
   </GenStepDef>
-</defs>
+</Defs>

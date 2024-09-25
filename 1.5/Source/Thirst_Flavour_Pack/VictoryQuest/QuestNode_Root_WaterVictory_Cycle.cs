@@ -74,8 +74,8 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
 
       slate.Set("playerSettlements", var);
       slate.Set("playerSettlementsCount", var.Count);
-      slate.Set("colonistsAllowed", 5);
-      slate.Set("animalsAllowed", 5);
+      slate.Set("colonistsAllowed", Thirst_Flavour_PackMod.settings.WaterQuestColonistsAllowed);
+      slate.Set("animalsAllowed", Thirst_Flavour_PackMod.settings.WaterQuestColonistsAllowed);
       slate.Set("map", this.map);
       slate.Set("mapParent", this.map.Parent);
       slate.Set("studyRequirement", false);

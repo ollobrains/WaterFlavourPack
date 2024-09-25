@@ -7,6 +7,7 @@ using Verse.Grammar;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
+[StaticConstructorOnStartup]
 public class Reward_WaterMap : Reward
 {
     public int currentPart = 1;
