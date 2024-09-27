@@ -3,7 +3,7 @@
   <ThingDef>
     <defName>MSS_Unsafe_Water</defName>
     <label>Unsafe Water pack</label>
-    <description>A package of contaminated water. Water drinkers can consume it to restore their internal hemogen stores, but at a tremendous risk of catching the scourge, a potentially deadly bacterial poisoning.</description>
+    <description>A package of contaminated water. Water drinkers can consume it to help stave off dehydration, but at a tremendous risk of catching the scourge, a potentially deadly bacterial poisoning.</description>
     <category>Item</category>
     <thingClass>ThingWithComps</thingClass>
     <drawerType>MapMeshOnly</drawerType>

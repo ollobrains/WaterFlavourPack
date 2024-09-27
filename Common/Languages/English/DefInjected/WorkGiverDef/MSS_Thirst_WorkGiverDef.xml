@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <DeliverHemogenToPrisoner.label>deliver water to prisoners</DeliverHemogenToPrisoner.label>
+    <DeliverHemogenToPrisoner.gerund>delivering water for</DeliverHemogenToPrisoner.gerund>
+    <DeliverHemogenToPrisoner.verb>deliver water for</DeliverHemogenToPrisoner.verb>
+
+    <FeedHemogen.label>administer water</FeedHemogen.label>
+    <FeedHemogen.gerund>administering water to</FeedHemogen.gerund>
+    <FeedHemogen.verb>administer water to</FeedHemogen.verb>
+</LanguageData>
