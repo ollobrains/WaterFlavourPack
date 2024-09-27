@@ -18,24 +18,11 @@ public class QuestNode_Root_WaterVictory_PreCycle: QuestNode
       QuestGen.GenerateNewSignal("ActivateLetterReminderSignal");
       quest.AddPart(new QuestPart_RequirementToAcceptPowerRegulatorBuilt(1));
 
-      QuestPartActivable part1 = new QuestPart_CheckPowerRegulator(1);
-      part1.inSignalEnable = quest.AddedSignal;
-      part1.outSignalsCompleted.Add(QuestSignal);
-      part1.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
-      quest.AddPart(part1);
-
-      QuestPart_PassOutInterval part2 = new QuestPart_PassOutInterval();
-      part2.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
-      part2.inSignalEnable = QuestSignal;
-      part2.ticksInterval = new IntRange(0, 0);
-      part2.outSignals.Add(letterReminder);
-      quest.AddPart(part2);
-
-      QuestPart_Filter part3 = new QuestPart_Filter_PowerRegulator(1);
-      part3.inSignal = letterReminder;
-      part3.outSignal = QuestGen.GenerateNewSignal("OuterNodeCompleted");
-      part3.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
-      quest.AddPart(part3);
+      QuestPart_Filter filter = new QuestPart_Filter_PowerRegulator(1);
+      filter.inSignal = letterReminder;
+      filter.outSignal = QuestGen.GenerateNewSignal("OuterNodeCompleted");
+      filter.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
+      quest.AddPart(filter);
       quest.CanAcceptQuest((Action) (() =>
       {
           QuestNode_ResolveQuestName.Resolve();
@@ -44,7 +31,7 @@ public class QuestNode_Root_WaterVictory_PreCycle: QuestNode
           string label = "LetterLabelArchonexusWealthReached".Translate((NamedArgument) resolvedQuestName);
           string text = "MSS_Thirst_LetterTextReqReached".Translate((NamedArgument) resolvedQuestName);
           quest.Letter(positiveEvent, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, text: text, label: label);
-      }), inSignal: part3.outSignal, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly);
+      }), inSignal: filter.outSignal, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly);
 
       quest.RewardChoice().choices.Add(new QuestPart_Choice.Choice
       {

@@ -5,7 +5,7 @@
     <symbol>mssthirstarchospring</symbol>
     <resolvers>
       <li Class="Thirst_Flavour_Pack.VictoryQuest.SymbolResolver_Archospring">
-        <minRectSize>(6, 6)</minRectSize>
+        <minRectSize>(20, 20)</minRectSize>
       </li>
     </resolvers>
   </RuleDef>

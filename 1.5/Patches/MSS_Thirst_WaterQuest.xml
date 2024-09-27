@@ -1,36 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps</xpath>
-        <value>
-            <li Class="StorytellerCompProperties_RefiringUniqueQuest">
-                <minColonyWealth>500</minColonyWealth>
-                <minDaysPassed>0</minDaysPassed>
-                <incident>MSS_GiveQuest_EndGame_WaterVictory_Pre</incident>
-                <allowedTargetTags>
-                    <li>World</li>
-                </allowedTargetTags>
-                <enableIfAnyModActive>
-                    <li>Ludeon.RimWorld.Ideology</li>
-                </enableIfAnyModActive>
-            </li>
-        </value>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps/li/incident[text()="GiveQuest_EndGame_ArchonexusVictory"]</xpath>
+        <value>MSS_GiveQuest_EndGame_WaterVictory</value>
     </Operation>
 
-    <!-- <Operation Class="PatchOperationAdd"> -->
-    <!--     <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps</xpath> -->
-    <!--     <value> -->
-    <!--         <li Class="StorytellerCompProperties_RefiringUniqueQuest"> -->
-    <!--             <minColonyWealth>500</minColonyWealth> -->
-    <!--             <minDaysPassed>0</minDaysPassed> -->
-    <!--             <incident>MSS_GiveQuest_EndGame_WaterVictory</incident> -->
-    <!--             <allowedTargetTags> -->
-    <!--                 <li>World</li> -->
-    <!--             </allowedTargetTags> -->
-    <!--             <enableIfAnyModActive> -->
-    <!--                 <li>Ludeon.RimWorld.Ideology</li> -->
-    <!--             </enableIfAnyModActive> -->
-    <!--         </li> -->
-    <!--     </value> -->
-    <!-- </Operation> -->
 </Patch>

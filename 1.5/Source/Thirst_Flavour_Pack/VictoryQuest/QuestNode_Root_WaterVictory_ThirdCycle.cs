@@ -10,8 +10,7 @@ public class QuestNode_Root_WaterVictory_ThirdCycle: QuestNode_Root_WaterVictory
     protected override int WaterCycle => 3;
     protected override string QuestSignal => "SterilizationPlantBuilt";
     protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptSterilizationPlantBuilt();
-    protected override QuestPartActivable Part1 => new QuestPart_CheckSterilizationPlant();
-    protected override QuestPart_Filter Part3 => new QuestPart_Filter_SterilizationPlant();
+    protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_SterilizationPlant();
 
     private static float ThreatPointsFactor = 0.6f;
 

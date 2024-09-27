@@ -17,8 +17,7 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
     protected abstract int WaterCycle { get; }
     protected abstract string QuestSignal { get; }
     protected abstract QuestPart_RequirementsToAccept Requirement { get; }
-    protected abstract QuestPartActivable Part1 { get; }
-    protected abstract QuestPart_Filter Part3 { get; }
+    protected abstract QuestPart_Filter QuestPartFilter { get; }
 
 
     protected override void RunInt()
@@ -31,24 +30,11 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
       QuestGen.GenerateNewSignal("ActivateLetterReminderSignal");
       quest.AddPart(Requirement);
 
-      QuestPartActivable part1 = Part1;
-      part1.inSignalEnable = quest.AddedSignal;
-      part1.outSignalsCompleted.Add(QuestSignal);
-      part1.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
-      quest.AddPart(part1);
-
-      QuestPart_PassOutInterval part2 = new QuestPart_PassOutInterval();
-      part2.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
-      part2.inSignalEnable = QuestSignal;
-      part2.ticksInterval = new IntRange(3600000, 3600000);
-      part2.outSignals.Add(newSignal2);
-      quest.AddPart(part2);
-
-      QuestPart_Filter part3 = Part3;
-      part3.inSignal = newSignal2;
-      part3.outSignal = QuestGen.GenerateNewSignal("OuterNodeCompleted");
-      part3.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
-      quest.AddPart(part3);
+      QuestPart_Filter filter = QuestPartFilter;
+      filter.inSignal = newSignal2;
+      filter.outSignal = QuestGen.GenerateNewSignal("OuterNodeCompleted");
+      filter.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
+      quest.AddPart(filter);
       quest.CanAcceptQuest((Action) (() =>
       {
         QuestNode_ResolveQuestName.Resolve();
@@ -57,7 +43,7 @@ public abstract class QuestNode_Root_WaterVictory_Cycle: QuestNode
         string label = "LetterLabelArchonexusWealthReached".Translate((NamedArgument) resolvedQuestName);
         string desc = "MSS_Thirst_LetterTextReqReached".Translate((NamedArgument) resolvedQuestName);
         quest.Letter(positiveEvent, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, text: desc, label: label);
-      }), inSignal: part3.outSignal, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly);
+      }), inSignal: filter.outSignal, signalListenMode: QuestPart.SignalListenMode.NotYetAcceptedOnly);
 
       quest.RewardChoice().choices.Add(new QuestPart_Choice.Choice
       {
