@@ -3,7 +3,7 @@ using RimWorld.BaseGen;
 using RimWorld.Planet;
 using Verse;
 
-namespace Thirst_Flavour_Pack.VictoryQuest;
+namespace Thirst_Flavour_Pack.VictoryQuest.MapGen;
 
 public class GenStep_WaterGenerator : GenStep_Archonexus
 {

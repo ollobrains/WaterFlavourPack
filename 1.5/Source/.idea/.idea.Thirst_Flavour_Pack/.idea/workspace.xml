@@ -8,23 +8,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Compatibility/sarg.alphapropsparks/Patches/MSS_Thirst_WaterQuest.xml" afterDir="false" />
+    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Drop old DLLs">
+      <change afterPath="$PROJECT_DIR$/../Defs/MapGeneration/MSS_PlayerMapGenerator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Defs/WorldObjectDefs/MSS_WorldObjects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/HarmonyPatches/StorytellerComp_RefiringUniqueQuest_Patch.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/GenStep_ArchospringResearchBuildings_SecondCycle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/GenStep_ArchospringResearchBuildings_ThirdCycle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/RuleDefs/MSS_Rules_Complex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/RuleDefs/MSS_Rules_Complex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Patches/MSS_Thirst_WaterQuest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Patches/MSS_Thirst_WaterQuest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Water_Victory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Water_Victory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Defs/SiteParts/MSS_Thirst_WaterGen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/SiteParts/MSS_Thirst_WaterGen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Patches/MSS_Thirst_WaterQuest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/PreQuest/QuestNode_Root_WaterVictory_PreCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/PreQuest/QuestNode_Root_WaterVictory_PreCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_Cycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_Cycle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/GenStep_WaterGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/GenStep_WaterGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_FirstCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_FirstCycle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_SecondCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_SecondCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_ThirdCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_WaterVictory_ThirdCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckCatalyticSeparator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckPowerRegulator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_CheckSterilizationPlant.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/SymbolResolver_Archospring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/SymbolResolver_Archospring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../loadFolders.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../loadFolders.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../modlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../modlist.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +36,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,6 +48,8 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Dialog_ChooseThingsForNewColony.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/FactionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/GenStep_Archonexus.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/GenStep_ArchonexusResearchBuildings_SecondCycle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/GenStep_ArchonexusResearchBuildings_ThirdCycle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/ISignalReceiver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Planet/MapParent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Planet/Site.cs" root0="SKIP_HIGHLIGHTING" />
@@ -82,14 +83,19 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/SitePartDef.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/SitePartDefOf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Storyteller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/StorytellerComp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/StorytellerCompProperties.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/StorytellerCompProperties_RefiringUniqueQuest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/StorytellerComp_RefiringUniqueQuest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/TerrainDefOf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/WorldObjectDefOf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Screen_ArchonexusSettlementCinematics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/DestroyMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/FleckManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GameComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Gen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GenRadial.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GenStepDef.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GenStep_Scatterer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GetOrGenerateMapUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GridsUtility.cs" root0="SKIP_HIGHLIGHTING" />
@@ -103,6 +109,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingGrid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingWithComps.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Traversability.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Patches/MSS_Thirst_WaterQuest.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/1.5/Source/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" root0="SKIP_HIGHLIGHTING" />
@@ -286,7 +293,31 @@
       <option name="project" value="LOCAL" />
       <updated>1727295402379</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Map gen in a good place">
+      <option name="closed" value="true" />
+      <created>1727451446758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727451446758</updated>
+    </task>
+    <task id="LOCAL-00008" summary="rebuild">
+      <option name="closed" value="true" />
+      <created>1727451496124</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727451496124</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Drop old DLLs">
+      <option name="closed" value="true" />
+      <created>1727451551165</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1727451551165</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +348,10 @@
     <MESSAGE value="Fixup project structure" />
     <MESSAGE value="Mostly working, needs cleanup" />
     <MESSAGE value="Map gen experiments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Map gen experiments" />
+    <MESSAGE value="Map gen in a good place" />
+    <MESSAGE value="rebuild" />
+    <MESSAGE value="Drop old DLLs" />
+    <MESSAGE value="Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
   </component>
 </project>

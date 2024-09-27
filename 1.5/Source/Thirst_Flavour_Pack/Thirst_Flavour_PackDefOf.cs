@@ -18,6 +18,11 @@ public static class Thirst_Flavour_PackDefOf
     public static QuestScriptDef MSS_EndGame_WaterVictory_SecondCycle;
     public static QuestScriptDef MSS_EndGame_WaterVictory_ThirdCycle;
 
+    public static IncidentDef MSS_GiveQuest_EndGame_WaterVictory_Pre;
+
+    public static WorldObjectDef MSS_Settlement_SecondArchospringCycle;
+    public static WorldObjectDef MSS_Settlement_ThirdArchospringCycle;
+
     public static HediffDef MSSThirst_Extracted_Water;
 
 

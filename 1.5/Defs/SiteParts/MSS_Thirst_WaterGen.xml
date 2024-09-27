@@ -19,6 +19,6 @@
     <defName>MSS_Thirst_WaterGen</defName>
     <linkWithSite>MSS_Thirst_WaterSite</linkWithSite>
     <order>1000</order>
-    <genStep Class="Thirst_Flavour_Pack.VictoryQuest.GenStep_WaterGenerator" />
+    <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_WaterGenerator" />
   </GenStepDef>
 </Defs>

@@ -13,6 +13,6 @@ public class QuestNode_Root_WaterVictory_FirstCycle: QuestNode_Root_WaterVictory
     protected override void RunInt()
     {
         base.RunInt();
-        PickNewColony(WorldObjectDefOf.Settlement_SecondArchonexusCycle);
+        PickNewColony(Thirst_Flavour_PackDefOf.MSS_Settlement_SecondArchospringCycle);
     }
 }

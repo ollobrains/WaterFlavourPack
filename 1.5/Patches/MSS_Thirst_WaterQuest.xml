@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Patch>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps/li/incident[text()="GiveQuest_EndGame_ArchonexusVictory"]</xpath>
-        <value>MSS_GiveQuest_EndGame_WaterVictory</value>
-    </Operation>
-
-</Patch>

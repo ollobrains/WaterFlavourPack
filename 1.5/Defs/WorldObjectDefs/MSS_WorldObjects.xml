@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Settlement">
+        <defName>MSS_Settlement_SecondArchospringCycle</defName>
+        <mapGenerator>MSS_BasePlayer_SecondArchospringCycle</mapGenerator>
+        <worldObjectClass>ArchotechSettlement</worldObjectClass>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="Settlement">
+        <defName>MSS_Settlement_ThirdArchospringCycle</defName>
+        <mapGenerator>MSS_BasePlayer_ThirdArchospringCycle</mapGenerator>
+        <worldObjectClass>ArchotechSettlement</worldObjectClass>
+    </WorldObjectDef>
+
+</Defs>

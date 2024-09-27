@@ -15,6 +15,6 @@ public class QuestNode_Root_WaterVictory_SecondCycle: QuestNode_Root_WaterVictor
         Quest quest = QuestGen.quest;
         quest.DialogWithCloseBehavior("[resolvedQuestDescription]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, closeAction: QuestPartDialogCloseAction.CloseActionKey.ArchonexusVictorySound2nd);
 
-        PickNewColony(WorldObjectDefOf.Settlement_ThirdArchonexusCycle, 2);
+        PickNewColony(Thirst_Flavour_PackDefOf.MSS_Settlement_ThirdArchospringCycle, 2);
     }
 }
