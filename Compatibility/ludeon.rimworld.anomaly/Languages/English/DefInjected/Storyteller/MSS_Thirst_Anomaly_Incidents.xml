@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ShamblerSwarm.label>Shade Swarm</ShamblerSwarm.label>
+    <ShamblerSwarmAnimals.label>Animal Shade Swarm</ShamblerSwarmAnimals.label>
+    <SmallShamblerSwarm.label>Shade Wanderers</SmallShamblerSwarm.label>
+    <SmallShamblerSwarm.letterLabel>Shade's Approach</SmallShamblerSwarm.letterLabel>
+    <SmallShamblerSwarm.letterLabel>A small group of {0} shades are approaching. They will succumb to the harsh desert heat within a day.\n\nIf you can capture one, you can study it for forbidden knowledge. Otherwise, they might not notice you if you leave them alone.</SmallShamblerSwarm.letterLabel>
+    <ShamblerAssault.label>Shade Horde</ShamblerAssault.label>
+</LanguageData>

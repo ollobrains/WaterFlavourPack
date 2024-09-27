@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Shambler.label>Shade of Hades</Shambler.label>
+    <Shambler.description>This human has long succumbed to the baking heat and rampant dehydration found across the world, retaining only their most base instincts. It is believed that Hades has prevented their soul from entering the underword, so as not to spread the contamination to the River Styx. Shades are slow and mindless, and will attack relentlessly. After a few days on their feet, shades die from metabolic exhaustion. Captured Shades can't move and thus won't expire.</Shambler.description>
+    <ShamblerCorpse.label>Shade Corpse</ShamblerCorpse.label>
+    <ShamblerCorpse.description>This creature once was rejected from the underworld and reanimated as a shade.</ShamblerCorpse.description>
+</LanguageData>
