@@ -8,13 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Defs/RuleDefs/MSS_Rules_Complex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/SymbolResolver_Archospring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/GenStep_WaterGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/GenStep_WaterGenerator.cs" afterDir="false" />
-    </list>
+    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,21 +111,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RimWorld.RimWorld.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.43733793",
-    "git-widget-placeholder": "7-archonexus-quest-steps",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RimWorld.RimWorld.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.43733793&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;7-archonexus-quest-steps&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="RimWorld.RimWorld">
     <configuration name="MSS_Thirst" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -252,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727211870079</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Map gen experiments">
+      <option name="closed" value="true" />
+      <created>1727295402379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727295402379</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,23 +284,37 @@
     <MESSAGE value="New base title screen" />
     <MESSAGE value="Fixup project structure" />
     <MESSAGE value="Mostly working, needs cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Map gen experiments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Map gen experiments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/SymbolResolver_Archospring.cs</url>
-          <line>10</line>
+          <line>12</line>
           <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WaterFlavourPack\1.5\Source\Thirst_Flavour_Pack\VictoryQuest\SymbolResolver_Archospring.cs" containingFunctionPresentation="Method 'Resolve'">
             <startOffsets>
-              <option value="233" />
+              <option value="260" />
             </startOffsets>
             <endOffsets>
-              <option value="250" />
+              <option value="345" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="48" />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/GenStep_WaterGenerator.cs</url>
+          <line>14</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WaterFlavourPack\1.5\Source\Thirst_Flavour_Pack\VictoryQuest\GenStep_WaterGenerator.cs" containingFunctionPresentation="Method 'ScatterAt'">
+            <startOffsets>
+              <option value="525" />
+            </startOffsets>
+            <endOffsets>
+              <option value="589" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
