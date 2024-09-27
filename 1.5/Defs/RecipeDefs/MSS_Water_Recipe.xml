@@ -40,7 +40,7 @@
                         <li>MSS_Unsafe_Water</li>
                     </thingDefs>
                 </filter>
-                <count>4</count>
+                <count>10</count>
             </li>
         </ingredients>
         <fixedIngredientFilter>
