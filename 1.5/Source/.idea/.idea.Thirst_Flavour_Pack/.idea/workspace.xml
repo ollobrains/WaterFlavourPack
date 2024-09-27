@@ -9,15 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9348b078-f54d-408a-84ed-e75b8ea108fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Assets/HemogenAnimalPack_a.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Compatibility/vanillaexpanded.vplantsemore/Defs/RecipeDefs/MSS_Water_VEMoreplants_Recipe.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/HediffDefs/MSS_Thirst_Hediffs_Local_Misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/HediffDefs/MSS_Thirst_Hediffs_Local_Misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/RecipeDefs/MSS_Water_Recipe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/RecipeDefs/MSS_Water_Recipe.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/ThingDefs_Misc/MSS_Thirst_Apparel_Various.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/ThingDefs_Misc/MSS_Thirst_Apparel_Various.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../About/About.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../About/About.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Common/Languages/English/DefInjected/GeneDef/MSS_Thirst_GeneDefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Common/Languages/English/DefInjected/GeneDef/MSS_Thirst_GeneDefs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Common/Textures/Item/HemogenPacks/HemogenAnimalPack/HemogenAnimalPack_a.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Compatibility/vanillaexpanded.vplantsemore/Patches/MSS_Cucumber_Comp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Compatibility/vanillaexpanded.vplantsemore/Patches/MSS_Cucumber_Comp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/Languages/English/DefInjected/ThingDef/MSS_Thirst_Sanguo_Renames.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/Languages/English/DefInjected/ThingDef/MSS_Thirst_Sanguo_Renames.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,18 +30,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RimWorld.RimWorld.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RimWorld.RimWorld.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.Thirst_Flavour_Pack">
     <configuration name="Thirst_Flavour_Pack" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -81,6 +74,7 @@
     <list>
       <item itemvalue=".NET Project.Thirst_Flavour_Pack" />
       <item itemvalue="Attach to Unity Editor.Attach to Unity Editor" />
+      <item itemvalue="RimWorld.RimWorld" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

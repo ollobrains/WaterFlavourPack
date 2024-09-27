@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <VRE_HemogenPipe.label>Safe Water Pipe</VRE_HemogenPipe.label>
-    <VRE_HemogenPipe.description>A pipe that’s used to transport extracted safe water between taps, drains, and vats.</VRE_HemogenPipe.description>
-    <VRE_UndergroundHemogenPipe.label>Underground safe sater Pipe</VRE_UndergroundHemogenPipe.label>
-    <VRE_UndergroundHemogenPipe.description>A hidden pipe that’s used to transport extracted safe water between taps, drains, and vats.</VRE_UndergroundHemogenPipe.description>
+    <VRE_HemogenPipe.description>A pipe thatï¿½s used to transport extracted safe water between taps, drains, and vats.</VRE_HemogenPipe.description>
+    <VRE_UndergroundHemogenPipe.label>Underground safe water Pipe</VRE_UndergroundHemogenPipe.label>
+    <VRE_UndergroundHemogenPipe.description>A hidden pipe that's used to transport extracted safe water between taps, drains, and vats.</VRE_UndergroundHemogenPipe.description>
     <VRE_HemogenValve.label>Safe Water Valve</VRE_HemogenValve.label>
     <VRE_HemogenValve.description>A valve to control the flow of safe water in pipes.</VRE_HemogenValve.description>
     <VRE_HemogenVat.label>Safe Water Vat</VRE_HemogenVat.label>
