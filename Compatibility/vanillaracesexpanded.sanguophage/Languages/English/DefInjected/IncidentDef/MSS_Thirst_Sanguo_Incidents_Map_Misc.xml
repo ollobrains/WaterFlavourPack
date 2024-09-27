@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <VRE_BloodMoon.label>What was that?</VRE_BloodMoon.label>
+    <VRE_BloodMoonCondition.label>What was that?</VRE_BloodMoonCondition.label>
+    <VRE_BloodMoonCondition.description>Did something just happen? That was strange. Probably just the wind. How mysterious!</VRE_BloodMoonCondition.description>
+    <VRE_BloodMoonCondition.endMessage>The mysterious circumstance has ended. Whatever it was.</VRE_BloodMoonCondition.endMessage>
+    <VRE_BloodMoonCondition.letterText>Something extremely strange just happened, though you can't quite figure out what, or who, it was. It was as someone walked over your grave, or you heard an echo of your voice that you didn't originally speak. It was as if you could feel a cold finger running down your spine that was forcefully snatched away. As if you had a close brush with something far worse than you could imagine. The gods do work in mysterious ways...</VRE_BloodMoonCondition.letterText>
+</LanguageData>
