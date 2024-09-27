@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <WaterDeep.label>contaminated deep water</WaterDeep.label>
+    <WaterOceanDeep.label>contaminated deep ocean water</WaterOceanDeep.label>
+    <WaterMovingChestDeep.label>contaminated chest-deep moving water</WaterMovingChestDeep.label>
+    <WaterShallow.label>contaminated shallow water</WaterShallow.label>
+    <WaterOceanShallow.label>contaminated shallow ocean water</WaterOceanShallow.label>
+    <WaterMovingShallow.label>contaminated shallow moving water</WaterMovingShallow.label>
+    <Marsh.label>contaminated marsh</Marsh.label>
+</LanguageData>
