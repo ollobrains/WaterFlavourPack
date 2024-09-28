@@ -16,12 +16,4 @@ public static class Recipe_Surgery_Patch
     {
         throw new NotImplementedException("It's a stub");
     }
-
-    [HarmonyPatch(nameof(Recipe_Surgery.AvailableReport))]
-    [HarmonyReversePatch]
-    [MethodImpl(MethodImplOptions.NoInlining)]
-    public static bool AvailableReport(Recipe_Surgery __instance, Thing thing, BodyPartRecord part)
-    {
-        throw new NotImplementedException("It's a stub");
-    }
 }
