@@ -40,7 +40,7 @@
             </li>
             <li>
                 <minSeverity>0.87</minSeverity>
-                <label>extreme</label>
+                <label>critical</label>
                 <lifeThreatening>true</lifeThreatening>
                 <painOffset>0.85</painOffset>
                 <capMods>
