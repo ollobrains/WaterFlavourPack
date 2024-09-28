@@ -8,6 +8,8 @@
     <ConsumeHemogenBelow>Consume water below</ConsumeHemogenBelow>
     <NeverConsumeHemogen>Never consume water.</NeverConsumeHemogen>
 
+    <MSS_Thirst_HasForcedDehydration>Has Forced Dehydration</MSS_Thirst_HasForcedDehydration>
+
     <AbilityDisabledNoHemogenGene>{0_labelShort} is not a water drinker.</AbilityDisabledNoHemogenGene>
     <AbilityDisabledNoHemogen>{0_labelShort} is too dehydrated.</AbilityDisabledNoHemogen>
     <AbilityHemogenCost>Water cost</AbilityHemogenCost>
