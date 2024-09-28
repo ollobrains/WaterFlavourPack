@@ -17,15 +17,23 @@ public static class CompDraincasket_Patch
         bool shouldEject = false;
         if (__instance.parent.IsHashIntervalTick(Thirst_Flavour_PackMod.settings.ThirstCasketHediffTickRate))
         {
-            foreach (Pawn pawn in __instance.innerContainer.OfType<Pawn>())
+            try
             {
-                Hediff hediff = pawn.health.GetOrAddHediff(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water);
-                hediff.Severity += 0.001f;
-
-                if (Mathf.Approximately(hediff.Severity, 1f))
+                foreach (Pawn pawn in __instance.innerContainer.OfType<Pawn>())
                 {
-                    shouldEject = true;
+                    Hediff hediff = pawn.health.GetOrAddHediff(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water);
+                    hediff.Severity += 0.001f;
+
+                    if (Mathf.Approximately(hediff.Severity, 1f))
+                    {
+                        shouldEject = true;
+                    }
                 }
+            }
+            catch (InvalidOperationException e)
+            {
+                // Occasionally seem to get "Collection was modified; enumeration operation may not execute" after eject
+                // It's harmless, so skip
             }
         }
 
