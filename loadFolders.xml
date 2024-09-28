@@ -4,7 +4,7 @@
 		<li>1.5</li>
 		<li>Common</li>
 		<li IfModActive="lts.i">Compatibility/lts.i</li>
-		<li IfModActive="vanillaracesexpanded.sanguophage">Compatibility/vanillaracesexpanded.sanguophage</li>
+		<li IfModActive="vanillaracesexpanded.sanguophage">Compatibility/vanillaracesexpanded.sanguophage/1.5</li>
 		<li IfModActive="uveren.hemogenextractor">Compatibility/uveren.hemogenextractor</li>
 		<li IfModActive="vanillaexpanded.vplantsemore">Compatibility/vanillaexpanded.vplantsemore</li>
 		<li IfModActive="trickity.conversion.staff">Compatibility/trickity.conversion.staff</li>
