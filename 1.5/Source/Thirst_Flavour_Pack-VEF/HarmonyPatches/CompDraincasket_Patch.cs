@@ -1,8 +1,8 @@
-﻿using System;
-using HarmonyLib;
-using VanillaRacesExpandedSanguophage;
+﻿using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
 using UnityEngine;
+using VanillaRacesExpandedSanguophage;
 using Verse;
 
 namespace Thirst_Flavour_Pack.VEF.HarmonyPatches;
@@ -17,23 +17,16 @@ public static class CompDraincasket_Patch
         bool shouldEject = false;
         if (__instance.parent.IsHashIntervalTick(Thirst_Flavour_PackMod.settings.ThirstCasketHediffTickRate))
         {
-            try
+            List<Pawn> pawns = __instance.innerContainer.OfType<Pawn>().ToList();
+            foreach (Pawn pawn in pawns)
             {
-                foreach (Pawn pawn in __instance.innerContainer.OfType<Pawn>())
-                {
-                    Hediff hediff = pawn.health.GetOrAddHediff(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water);
-                    hediff.Severity += 0.001f;
+                Hediff hediff = pawn.health.GetOrAddHediff(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water);
+                hediff.Severity += 0.001f;
 
-                    if (Mathf.Approximately(hediff.Severity, 1f))
-                    {
-                        shouldEject = true;
-                    }
+                if (Mathf.Approximately(hediff.Severity, 1f))
+                {
+                    shouldEject = true;
                 }
-            }
-            catch (InvalidOperationException e)
-            {
-                // Occasionally seem to get "Collection was modified; enumeration operation may not execute" after eject
-                // It's harmless, so skip
             }
         }
 
@@ -43,5 +36,4 @@ public static class CompDraincasket_Patch
             __instance.EjectContents(__instance.parent.Map);
         }
     }
-
 }
