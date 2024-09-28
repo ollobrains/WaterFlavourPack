@@ -11,7 +11,7 @@ namespace Thirst_Flavour_Pack.HarmonyPatches;
 public static class Recipe_ExtractHemogen_Patch
 {
     public static readonly Lazy<MethodInfo> PawnHasEnoughBloodForExtraction = new Lazy<MethodInfo>(() =>
-        AccessTools.Method(typeof(Recipe_ExtractHemogen), "HasEnoughBloodForExtraction"));
+        AccessTools.Method(typeof(Recipe_ExtractHemogen), "PawnHasEnoughBloodForExtraction"));
 
     public static readonly Lazy<MethodInfo> OnSurgerySuccess =
         new Lazy<MethodInfo>(() => AccessTools.Method(typeof(Recipe_ExtractHemogen), "OnSurgerySuccess"));
@@ -23,8 +23,42 @@ public static class Recipe_ExtractHemogen_Patch
     [HarmonyPrefix]
     public static bool Recipe_ExtractHemogen_AvailableOnNow_Patch(Recipe_ExtractHemogen __instance, Thing thing, BodyPartRecord part, ref bool __result)
     {
+        __result = true;
         // Don't prevent extract hemogen on hemogenic pawns
-        __result = (thing is Pawn pawn ? pawn.genes : null) == null || Recipe_Surgery_Patch.AvailableOnNow(__instance, thing, part);
+        if (thing is not Pawn pawn || !Recipe_Surgery_Patch.AvailableOnNow(__instance, thing, part))
+        {
+            return false;
+        }
+
+        // Don't allow extraction when they've been extracted
+        if (pawn.health.hediffSet.GetFirstHediffOfDef(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water) != null)
+        {
+            __result = false;
+        }
+
+        return false;
+    }
+
+    [HarmonyPatch(nameof(Recipe_ExtractHemogen.AvailableReport))]
+    [HarmonyPrefix]
+    public static bool AvailableReport_Patch(Recipe_ExtractHemogen __instance, Thing thing, BodyPartRecord part, ref AcceptanceReport __result)
+    {
+        if (thing is Pawn pawn)
+        {
+            if (pawn.DevelopmentalStage.Baby())
+            {
+                __result = "TooSmall".Translate();
+                return false;
+            }
+            if (pawn.health.hediffSet.GetFirstHediffOfDef(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water) != null)
+            {
+                __result = "MSS_Thirst_HasForcedDehydration".Translate();
+                return false;
+            }
+        }
+
+        __result = Recipe_Surgery_Patch.AvailableReport(__instance, thing, part);
+
         return false;
     }
 
@@ -41,10 +75,13 @@ public static class Recipe_ExtractHemogen_Patch
         {
             if (!(bool)PawnHasEnoughBloodForExtraction.Value.Invoke(__instance, [pawn]))
             {
-                Messages.Message((string) "MessagePawnHadNotEnoughBloodToProduceHemogenPack".Translate(pawn.Named("PAWN")), (LookTargets) (Thing) pawn, MessageTypeDefOf.NeutralEvent);
+                Messages.Message( "MessagePawnHadNotEnoughBloodToProduceHemogenPack".Translate(pawn.Named("PAWN")), (LookTargets) (Thing) pawn, MessageTypeDefOf.NeutralEvent);
             }
             else
             {
+                Hediff hediff = HediffMaker.MakeHediff(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water, pawn);
+                hediff.Severity = 0.45f;
+                pawn.health.AddHediff(hediff);
                 OnSurgerySuccess.Value.Invoke(__instance, [pawn, part, billDoer, ingredients, bill]);
                 if (__instance.IsViolationOnPawn(pawn, part, Faction.OfPlayer))
                 {
