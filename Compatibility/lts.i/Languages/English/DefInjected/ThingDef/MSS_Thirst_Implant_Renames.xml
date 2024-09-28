@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LanguageData>
-    <HemogenicMicrocompressor.label>Water microcompressor</HemogenicMicrocompressor.label>
-    <HemogenicMicrocompressor.labelNoun>Water microcompressor</HemogenicMicrocompressor.labelNoun>
-    <HemogenicMicrocompressor.description>An installed Water microcompressor.</HemogenicMicrocompressor.description>
+    <HemogenicMicrocompressor.label>water microcompressor</HemogenicMicrocompressor.label>
+    <HemogenicMicrocompressor.description>an installed Water microcompressor.</HemogenicMicrocompressor.description>
+
+    <HemoFangs.label>hydro-fangs</HemoFangs.label>
+    <HemoFangs.description>a pair of retractable, spring-loaded plasteel canines, connected to a vacuum pump. The user can bite an enemy, extend the fangs, and suck the water from the target, hydrating themselves directly.\n\nCan only be installed on water drinkers.</HemoFangs.description>
+
+    <HemogenicActivator.label>water filtration glands</HemogenicActivator.label>
+    <HemogenicActivator.description>a set of artificial water filtration glands that allow a water drinker to more efficiently process water.\n\nCan only be installed on water drinkers.</HemogenicActivator.description>
 </LanguageData>

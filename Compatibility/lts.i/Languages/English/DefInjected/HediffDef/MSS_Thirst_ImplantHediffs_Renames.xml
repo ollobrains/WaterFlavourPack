@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+    <HemogenicMicrocompressor.label>water microcompressor</HemogenicMicrocompressor.label>
+    <HemogenicMicrocompressor.labelNoun>a water microcompressor.</HemogenicMicrocompressor.labelNoun>
+    <HemogenicMicrocompressor.description>an installed water microcompressor.</HemogenicMicrocompressor.description>
+
+    <HemogenicActivator.label>water filtration glands</HemogenicActivator.label>
+    <HemogenicActivator.labelNoun>water filtration glands</HemogenicActivator.labelNoun>
+    <HemogenicActivator.description>installed water filtration glands.</HemogenicActivator.description>
+
+    <HemoFangs.label>hydro-fangs</HemoFangs.label>
+    <HemoFangs.labelNoun>a set of hydro-fangs</HemoFangs.labelNoun>
+    <HemoFangs.description>an installed set of hydro-fangs.</HemoFangs.description>
+    <HemoFangs.comps.HediffComp_VerbGiver.tools.0.label>hydro-fangs</HemoFangs.comps.HediffComp_VerbGiver.tools.0.label>
+</LanguageData>
