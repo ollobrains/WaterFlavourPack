@@ -9,12 +9,48 @@
         <labelNoun>Forced Dehydration</labelNoun>
         <description>This person has had their bodies water reserves forceably extracted.</description>
         <tendable>false</tendable>
+        <lethalSeverity>1</lethalSeverity>
+        <initialSeverity>0.001</initialSeverity>
         <stages>
             <li>
+                <label>minor</label>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
                         <offset>-0.1</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.33</minSeverity>
+                <label>major</label>
+                <painOffset>0.08</painOffset>
+            </li>
+            <li>
+                <minSeverity>0.78</minSeverity>
+                <label>extreme</label>
+                <lifeThreatening>true</lifeThreatening>
+                <painOffset>0.12</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.45</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.87</minSeverity>
+                <label>critical</label>
+                <lifeThreatening>true</lifeThreatening>
+                <painOffset>0.85</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>-0.15</offset>
                     </li>
                 </capMods>
             </li>

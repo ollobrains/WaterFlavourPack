@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Thirst_Flavour_Pack.VEF</RootNamespace>
+    <AssemblyName>Thirst_Flavour_Pack-VEF</AssemblyName>
+    <OutputPath>../../../Compatibility/vanillaracesexpanded.sanguophage/1.5/Assemblies/</OutputPath>
+    <ZipFilePath>../../../$(AssemblyName).zip</ZipFilePath>
+    <ReleasePath>../../../Release</ReleasePath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <SteamModsPath>$(RIMWORLD_STEAM_MODS_PATH)</SteamModsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>../../../../../RimWorldWin64_Data/Managed/Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../../../../../RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>../../../../../RimWorldWin64_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="KCSG">
+        <HintPath Condition="Exists('../../../../../VanillaExpandedFramework')">../../../../../VanillaExpandedFramework/1.5/Assemblies/KCSG.dll</HintPath>
+        <HintPath Condition="!Exists('../../../../../VanillaExpandedFramework')">../../../../../../../workshop/content/294100/2023507013/1.5/Assemblies/KCSG.dll</HintPath>
+        <Private>False</Private>
+    </Reference>
+    <Reference Include="PipeSystem">
+        <HintPath Condition="Exists('../../../../../VanillaExpandedFramework')">../../../../../VanillaExpandedFramework/1.5/Assemblies/PipeSystem.dll</HintPath>
+        <HintPath Condition="!Exists('../../../../../VanillaExpandedFramework')">../../../../../../../workshop/content/294100/2023507013/1.5/Assemblies/PipeSystem.dll</HintPath>
+        <Private>False</Private>
+    </Reference>
+    <Reference Include="VEF-Core">
+        <HintPath Condition="Exists('../../../../../VanillaExpandedFramework')">../../../../../VanillaExpandedFramework/1.5/Assemblies/VFECore.dll</HintPath>
+        <HintPath Condition="!Exists('../../../../../VanillaExpandedFramework')">../../../../../../../workshop/content/294100/2023507013/1.5/Assemblies/VFECore.dll</HintPath>
+        <Private>False</Private>
+    </Reference>
+    <Reference Include="VanillaRacesExpanded-Sanguophage.dll">
+        <HintPath Condition="Exists('../../../../../VanillaExpandedFramework')">../../../../../VanillaRacesExpanded-Sanguophage/1.5/Assemblies/VanillaRacesExpanded-Sanguophage.dll</HintPath>
+        <HintPath Condition="!Exists('../../../../../VanillaExpandedFramework')">../../../../../../../workshop/content/294100/2963116383/1.5/Assemblies/VanillaRacesExpanded-Sanguophage.dll</HintPath>
+        <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Thirst_Flavour_Pack/Thirst_Flavour_Pack.csproj" >
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Condition="Exists('../../../../../Data')" Include="../../../../../Data/**/*">
+      <Link>Attached/Rimworld/%(RecursiveDir)/%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+    <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.*" ExcludeAssets="runtime"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'@(Reference->WithMetadataValue('Identity', 'Assembly-CSharp')->Metadata('HintPath')->Exists())' == ''">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5-*"/>
+  </ItemGroup>
+
+</Project>
