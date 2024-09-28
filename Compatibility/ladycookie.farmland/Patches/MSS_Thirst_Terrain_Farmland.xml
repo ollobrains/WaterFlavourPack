@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/TerrainDef[defName="Farmland"]/terrainAffordanceNeeded</xpath>
+		<value>
+			<terrainAffordanceNeeded>DrySoil</terrainAffordanceNeeded>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/TerrainDef[defName="FarmlandRich"]/terrainAffordanceNeeded</xpath>
+		<value>
+			<terrainAffordanceNeeded>DrySoil</terrainAffordanceNeeded>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TerrainDef[defName="FarmlandRich"]</xpath>
+		<value>
+			<costList>
+				<HemogenPack>10</HemogenPack>
+				<HydroponicNutrientSolution MayRequire="xmb.ancienthydroponicfarmfacilities.mo">25</HydroponicNutrientSolution>
+			  </costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TerrainDef[defName="Farmland"]</xpath>
+		<value>
+			<costList>
+				<HemogenPack>5</HemogenPack>
+				<HydroponicNutrientSolution MayRequire="xmb.ancienthydroponicfarmfacilities.mo">10</HydroponicNutrientSolution>
+			  </costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TerrainDef[defName="Farmland"]</xpath>
+		<value>
+			<description>By saturating dry ground with purified water and cultivating the land, this soil is capable of supporting plant life and various crops.</description>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TerrainDef[defName="FarmlandRich"]</xpath>
+		<value>
+			<description>By heavily saturating dry ground with an abundance of purified water, and a tremendous amount of effort, this soil is capable of supporting thriving plant life and an abundance of crops.</description>
+		</value>
+	</Operation>
+</Patch>	

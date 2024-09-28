@@ -9,5 +9,6 @@
 		<li IfModActive="vanillaexpanded.vplantsemore">Compatibility/vanillaexpanded.vplantsemore</li>
 		<li IfModActive="trickity.conversion.staff">Compatibility/trickity.conversion.staff</li>
 		<li IfModActive="ludeon.rimworld.anomaly">Compatibility/ludeon.rimworld.anomaly</li>
+		<li IfModActive="ladycookie.farmland">Compatibility/ladycookie.farmland</li>
 	</v1.5>
 </loadFolders>
