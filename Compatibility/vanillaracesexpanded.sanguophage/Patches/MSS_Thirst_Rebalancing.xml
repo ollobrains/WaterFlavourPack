@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="VRE_Draincasket"]/comps</xpath>
+		<value>
+			<comps>
+				<li Class="PipeSystem.CompProperties_Resource">
+					<pipeNet>VRE_HemogenNet</pipeNet>
+				</li>
+				<li MayRequire="VanillaExpanded.VNutrientE" Class="PipeSystem.CompProperties_Resource">
+					<pipeNet>VNPE_NutrientPasteNet</pipeNet>
+				</li>
+				<li Class="VanillaRacesExpandedSanguophage.CompProperties_Draincasket">
+					<fuelConsumptionRate>25.0</fuelConsumptionRate>
+					<fuelCapacity>25.0</fuelCapacity>
+					<fuelFilter>
+						<categories>
+							<li>Foods</li>
+						</categories>
+						<specialFiltersToDisallow>
+							<li>AllowPlantFood</li>
+						</specialFiltersToDisallow>
+						<disallowedThingDefs>
+							<li>Hay</li>
+							<li>HemogenPack</li>
+						</disallowedThingDefs>
+					</fuelFilter>
+				</li>
+			</comps>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="VRE_HemogenVat"]/comps</xpath>
+		<value>
+			<comps>
+				<li Class="PipeSystem.CompProperties_ResourceStorage">
+					<pipeNet>VRE_HemogenNet</pipeNet>
+					<storageCapacity>5</storageCapacity>
+					<barSize>(0.75, 0.20)</barSize> 
+					<margin>0.05</margin> 
+					<centerOffset>(0, 0, -0.6)</centerOffset>
+				</li>
+			</comps>
+		</value>
+	</Operation>
+</Patch>
