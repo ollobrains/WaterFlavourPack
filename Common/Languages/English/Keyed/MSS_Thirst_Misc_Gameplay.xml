@@ -16,8 +16,4 @@
     <AbilityHemogenGain>Base water gain</AbilityHemogenGain>
 
     <VRE_CarryToDraincasket>Carry {0} to thirstcasket</VRE_CarryToDraincasket>
-
-    <MSS_Thirst_ThirstCasketHediffTickRate>Interval between ticks to bump the Forced Dehydration hediff by 0.1% on the thirstcasket -> {0}ticks</MSS_Thirst_ThirstCasketHediffTickRate>
-
-    <MSS_Thirst_Settings>Thirst Flavour Pack</MSS_Thirst_Settings>
 </LanguageData>

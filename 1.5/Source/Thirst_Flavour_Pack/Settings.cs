@@ -5,21 +5,22 @@ namespace Thirst_Flavour_Pack;
 
 public class Settings : ModSettings
 {
-    public int ThirstCasketHediffTickRate = 360;
+    //Use Mod.settings.setting to refer to this setting.
+    public bool setting = true;
 
     public void DoWindowContents(Rect wrect)
     {
-        Listing_Standard options = new Listing_Standard();
+        var options = new Listing_Standard();
         options.Begin(wrect);
-        options.Label("MSS_Thirst_ThirstCasketHediffTickRate".Translate(ThirstCasketHediffTickRate));
-        options.IntAdjuster(ref ThirstCasketHediffTickRate, 1, 0);
+        
+        options.CheckboxLabeled("Thirst Flavour Pack_Settings_SettingName".Translate(), ref setting);
         options.Gap();
 
         options.End();
     }
-
+    
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref ThirstCasketHediffTickRate, "ThirstCasketHediffTickRate", 360);
+        Scribe_Values.Look(ref setting, "setting", true);
     }
 }

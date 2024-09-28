@@ -39,9 +39,9 @@ public static class Recipe_ExtractHemogen_Patch
         return false;
     }
 
-    [HarmonyPatch("AvailableReport")]
+    [HarmonyPatch(nameof(Recipe_ExtractHemogen.AvailableReport))]
     [HarmonyPrefix]
-    public static bool AvailableReport_Patch(Recipe_ExtractHemogen __instance, ref AcceptanceReport __result, Thing thing, BodyPartRecord part = null)
+    public static bool AvailableReport_Patch(Recipe_ExtractHemogen __instance, Thing thing, BodyPartRecord part, ref AcceptanceReport __result)
     {
         if (thing is Pawn pawn)
         {
@@ -57,7 +57,7 @@ public static class Recipe_ExtractHemogen_Patch
             }
         }
 
-        __result = __instance.AvailableOnNow(thing, part);
+        __result = Recipe_Surgery_Patch.AvailableReport(__instance, thing, part);
 
         return false;
     }

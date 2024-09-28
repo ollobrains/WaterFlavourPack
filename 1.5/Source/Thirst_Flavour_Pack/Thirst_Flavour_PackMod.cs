@@ -14,10 +14,9 @@ public class Thirst_Flavour_PackMod : Mod
         // initialize settings
         settings = GetSettings<Settings>();
 #if DEBUG
-        ModLog.Log("Thirst_Flavour_PackMod");
         Harmony.DEBUG = true;
 #endif
-        Harmony harmony = new Harmony("Feldoh.rimworld.Thirst_Flavour_Pack.main");
+        Harmony harmony = new Harmony("Feldoh.rimworld.Thirst_Flavour_Pack.main");	
         harmony.PatchAll();
     }
 
@@ -29,6 +28,6 @@ public class Thirst_Flavour_PackMod : Mod
 
     public override string SettingsCategory()
     {
-        return "MSS_Thirst_Settings".Translate();
+        return "Thirst Flavour Pack_SettingsCategory".Translate();
     }
 }
