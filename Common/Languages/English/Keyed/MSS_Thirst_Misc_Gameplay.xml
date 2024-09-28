@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LanguageData>
     <Hemogen>water</Hemogen>
     <HemogenDesc>Water is a vital part of biological homeostatis, cruely extracted almost exclusively from living plants and animals. Occasionally it can be refined through long, complex industrial processes, with almost all wild water being too contaminated to drink. Baseliner humans cannot produce it endogenously and consume it over time in their own internal balance. Humans unable to consume water for long periods of time will be afflicted with the eventual fatal condition known as dehydration.</HemogenDesc>
@@ -19,5 +20,15 @@
 
     <MSS_Thirst_ThirstCasketHediffTickRate>Interval between ticks to bump the Forced Dehydration hediff by 0.1% on the thirstcasket -> {0}ticks</MSS_Thirst_ThirstCasketHediffTickRate>
 
+    <MSS_Thirst_Incident_ContaminationNetLetter>Disaster! While quenching {PAWN_possessive} thirst, {PAWN_nameDef} noticed that the water net has been contaminated by a poisonous algae, which grows in environments with abundant water. {PAWN_pronoun} has purged the storage for the safety of the colony.</MSS_Thirst_Incident_ContaminationNetLetter>
+    <MSS_Thirst_Incident_ContaminationLetter>Oh no! While quenching {PAWN_possessive} thirst, {PAWN_nameDef} looked at another {ITEM_label} and noticed that many of them have been contaminated by a corrosive algae, known to proliferate where too much water is present. The algae has eaten through {COUNT} water packs spilling their precious contents.</MSS_Thirst_Incident_ContaminationLetter>
+    <MSS_Thirst_Incident_ContaminationLetterLabel>Water Contaminated!</MSS_Thirst_Incident_ContaminationLetterLabel>
+
     <MSS_Thirst_Settings>Thirst Flavour Pack</MSS_Thirst_Settings>
+    <MSS_Thirst_Settings_MaxSafeWaterInNet>Max water in pipe net before contamination is possible</MSS_Thirst_Settings_MaxSafeWaterInNet>
+    <MSS_Thirst_Settings_SafeWaterPacks>Max water packs on map before contamination possible</MSS_Thirst_Settings_SafeWaterPacks>
+    <MSS_Thirst_Settings_MaxUnsafeWaterPacks>Water packs needed for highest chance of contamination</MSS_Thirst_Settings_MaxUnsafeWaterPacks>
+    <MSS_Thirst_Settings_DaysBetweenWaterDestruction>Min days between water destruction</MSS_Thirst_Settings_DaysBetweenWaterDestruction>
+    <MSS_Thirst_Settings_BadWaterNoticingRollsPerDay>Times per day contamination can be noticed</MSS_Thirst_Settings_BadWaterNoticingRollsPerDay>
+
 </LanguageData>

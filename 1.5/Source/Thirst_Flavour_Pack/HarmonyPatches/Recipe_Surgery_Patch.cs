@@ -6,6 +6,11 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.HarmonyPatches;
 
+/**
+ * Helper to grab the base implementation of AvailableOnNow from Recipe_Surgery.
+ * Lets us use the base impl instead of the overriden one which may have extra conditions we want to skip.
+ */
+
 [HarmonyPatch(typeof(Recipe_Surgery))]
 public static class Recipe_Surgery_Patch
 {

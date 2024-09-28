@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <IncidentDef MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+        <defName>MSS_Thirst_Incident_PipeNetContaminated</defName>
+        <label>water network contaminated</label>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>Thirst_Flavour_Pack.VEF.Incidents.IncidentWorker_WaterContamination</workerClass>
+        <baseChance>4</baseChance>
+        <minRefireDays>1</minRefireDays>
+        <pointsScaleable>false</pointsScaleable>
+    </IncidentDef>
+</Defs>
