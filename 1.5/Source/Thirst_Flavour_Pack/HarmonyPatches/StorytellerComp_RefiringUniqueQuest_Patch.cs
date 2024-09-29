@@ -26,7 +26,7 @@ public static class StorytellerComp_RefiringUniqueQuest_Patch
             return true;
         }
 
-        incident = Thirst_Flavour_PackDefOf.MSS_GiveQuest_EndGame_WaterVictory_Pre;
+        incident = Thirst_Flavour_PackDefOf.MSS_GiveQuest_EndGame_ArchospringVictory;
         Props.incident = incident;
         __result = [];
 

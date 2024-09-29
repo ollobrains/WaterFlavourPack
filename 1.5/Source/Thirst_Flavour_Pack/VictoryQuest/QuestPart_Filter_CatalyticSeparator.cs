@@ -15,6 +15,6 @@ public class QuestPart_Filter_CatalyticSeparator(int count = 3) : QuestPart_Filt
 
     protected override bool Pass(SignalArgs args)
     {
-        return WaterVictoryWorldComponent.Instance.CatalyticSeparatorsBuilt >= Count;
+        return ArchospringVictoryWorldComponent.Instance.CatalyticSeparatorsBuilt >= Count;
     }
 }

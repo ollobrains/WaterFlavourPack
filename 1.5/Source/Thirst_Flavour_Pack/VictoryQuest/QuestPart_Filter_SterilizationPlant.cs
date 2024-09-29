@@ -15,6 +15,6 @@ public class QuestPart_Filter_SterilizationPlant(int count = 3) : QuestPart_Filt
 
     protected override bool Pass(SignalArgs args)
     {
-        return WaterVictoryWorldComponent.Instance.SterilizationPlantsBuilt >= Count;
+        return ArchospringVictoryWorldComponent.Instance.SterilizationPlantsBuilt >= Count;
     }
 }

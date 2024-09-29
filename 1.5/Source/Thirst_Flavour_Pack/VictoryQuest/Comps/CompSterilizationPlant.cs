@@ -7,11 +7,11 @@ public class CompSterilizationPlant: ThingComp
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
         if(respawningAfterLoad)return;
-        WaterVictoryWorldComponent.Instance.SterilizationPlantsBuilt++;
+        ArchospringVictoryWorldComponent.Instance.SterilizationPlantsBuilt++;
     }
 
     public override void PostDestroy(DestroyMode mode, Map previousMap)
     {
-        WaterVictoryWorldComponent.Instance.SterilizationPlantsBuilt--;
+        ArchospringVictoryWorldComponent.Instance.SterilizationPlantsBuilt--;
     }
 }

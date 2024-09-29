@@ -7,11 +7,11 @@ public class CompPowerRegulator: ThingComp
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
         if(respawningAfterLoad)return;
-        WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt++;
+        ArchospringVictoryWorldComponent.Instance.PowerRegulatorsBuilt++;
     }
 
     public override void PostDestroy(DestroyMode mode, Map previousMap)
     {
-        WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt--;
+        ArchospringVictoryWorldComponent.Instance.PowerRegulatorsBuilt--;
     }
 }

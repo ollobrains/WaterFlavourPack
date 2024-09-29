@@ -1,12 +1,10 @@
 ﻿using System.Linq;
 using RimWorld;
 using RimWorld.QuestGen;
-using Thirst_Flavour_Pack.VictoryQuest.PreQuest;
-using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestPart_SubquestGenerator_WaterVictory : QuestPart_SubquestGenerator//, ISignalReceiver
+public class QuestPart_SubquestGenerator_ArchospringVictory : QuestPart_SubquestGenerator//, ISignalReceiver
 {
     protected override Slate InitSlate()
     {

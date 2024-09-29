@@ -8,7 +8,7 @@ using Verse.Grammar;
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
 [StaticConstructorOnStartup]
-public class Reward_WaterMap : Reward
+public class Reward_ArchospringMap : Reward
 {
     public int currentPart = 1;
     private const int totalParts = 3;
@@ -29,7 +29,7 @@ public class Reward_WaterMap : Reward
         get
         {
             yield return QuestPartUtility.GetStandardRewardStackElement(
-                "MSS_Reward_WaterMapPartLabel".Translate(currentPart, 3), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
+                "MSS_Reward_ArchospringMapPartLabel".Translate(currentPart, 3), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
         }
     }
 
@@ -54,7 +54,7 @@ public class Reward_WaterMap : Reward
 
     public override string GetDescription(RewardsGeneratorParams parms)
     {
-        return "MSS_Reward_WaterMapPart".Translate(currentPart, 3);
+        return "MSS_Reward_ArchospringMapPart".Translate(currentPart, 3);
     }
 
     public override void ExposeData()

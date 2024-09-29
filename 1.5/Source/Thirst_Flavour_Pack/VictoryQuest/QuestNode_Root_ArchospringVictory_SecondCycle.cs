@@ -1,14 +1,17 @@
 ﻿using RimWorld;
 using RimWorld.QuestGen;
+using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestNode_Root_WaterVictory_SecondCycle: QuestNode_Root_WaterVictory_Cycle
+public class QuestNode_Root_ArchospringVictory_SecondCycle: QuestNode_Root_ArchospringVictory_Cycle
 {
     protected override int WaterCycle => 2;
     protected override string QuestSignal => "CatalyticSeparatorBuilt";
     protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptCatalyticSeparatorBuilt();
     protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_CatalyticSeparator();
+    protected override ThingDef ArchotechComponent => Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator;
+
     protected override void RunInt()
     {
         base.RunInt();

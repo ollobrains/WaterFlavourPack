@@ -5,13 +5,19 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class WaterVictoryWorldComponent: WorldComponent
+public class ArchospringVictoryWorldComponent(World world) : WorldComponent(world)
 {
-    public static WaterVictoryWorldComponent Instance;
-    public WaterVictoryWorldComponent(World world) : base(world)
-    {
-        Instance = this;
-    }
+    public static ArchospringVictoryWorldComponent Instance => Find.World.GetComponent<ArchospringVictoryWorldComponent>();
+
+    public bool FirstCycleRaidQuestFired = false;
+    public bool FirstCycleRaidQuestComplete = false;
+
+    public bool SecondFirstCycleRaidQuestFired = false;
+    public bool SecondCycleRaidQuestComplete = false;
+
+    public bool ThirdCycleRaidQuestFired = false;
+    public bool ThirdCycleRaidQuestComplete = false;
+
 
     public int powerRegulatorsBuilt = 0;
     public int PowerRegulatorsBuilt
@@ -26,6 +32,7 @@ public class WaterVictoryWorldComponent: WorldComponent
             powerRegulatorsBuilt = Math.Max(0, value);
         }
     }
+
     public int catalyticSeparatorsBuilt = 0;
     public int CatalyticSeparatorsBuilt
     {
@@ -35,6 +42,7 @@ public class WaterVictoryWorldComponent: WorldComponent
             catalyticSeparatorsBuilt = Math.Max(0, value);
         }
     }
+
     public int sterilizationPlantsBuilt = 0;
     public int SterilizationPlantsBuilt
     {

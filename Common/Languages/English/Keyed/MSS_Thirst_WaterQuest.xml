@@ -5,9 +5,9 @@
     <MSS_Thirst_QuestSterilizationPlantRequired>{0} sterilization plants built. You currently have {1}.</MSS_Thirst_QuestSterilizationPlantRequired>
 
     <MSS_Thirst_LetterTextReqReached>You have reached the requirement for the quest '{0}'. You can now accept the quest.</MSS_Thirst_LetterTextReqReached>
-    <MSS_Reward_WaterMapPart>A map part</MSS_Reward_WaterMapPart>
-    <MSS_Reward_WaterMapPartLabel>Map part {0}/{1}</MSS_Reward_WaterMapPartLabel>
-    <MSS_Reward_WaterInfoPart>Information</MSS_Reward_WaterInfoPart>
+    <MSS_Reward_ArchospringMapPart>A map part</MSS_Reward_ArchospringMapPart>
+    <MSS_Reward_ArchospringMapPartLabel>Map part {0}/{1}</MSS_Reward_ArchospringMapPartLabel>
+    <MSS_Reward_ArchospringInfo>Information</MSS_Reward_ArchospringInfo>
 
     <MSS_Thirst_SoldColonyDescription>You manage to escape unscathed. Pick your next base carefully!</MSS_Thirst_SoldColonyDescription>
 

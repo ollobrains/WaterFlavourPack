@@ -1,12 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
 using RimWorld;
+using Thirst_Flavour_Pack.VictoryQuest;
 using UnityEngine;
-using Verse;
 
-namespace Thirst_Flavour_Pack.VictoryQuest;
+namespace Thirst_Flavour_Pack.HarmonyPatches;
+
 
 [HarmonyPatch(typeof(Dialog_ChooseThingsForNewColony))]
 [HarmonyPatch(nameof(Dialog_ChooseThingsForNewColony.DoWindowContents))]
@@ -52,20 +52,13 @@ public static class Dialog_ChooseThingsForNewColony_Patch
 
     private static string GetTranslatedTitle(Dialog_ChooseThingsForNewColony instance)
     {
-        return instance is Dialog_ChooseThingsForNewColony_WaterQuest ? "MSS_Thirst_ChooseThingsForNewColonyTitle"
+        return instance is Dialog_ChooseThingsForNewColony_ArchospringQuest ? "MSS_Thirst_ChooseThingsForNewColonyTitle"
             : "ChooseThingsForNewColonyTitle";
     }
 
     private static string GetTranslatedDesc(Dialog_ChooseThingsForNewColony instance)
     {
-        return instance is Dialog_ChooseThingsForNewColony_WaterQuest ? "MSS_Thirst_ChooseThingsForNewColonyDesc"
+        return instance is Dialog_ChooseThingsForNewColony_ArchospringQuest ? "MSS_Thirst_ChooseThingsForNewColonyDesc"
             : "ChooseThingsForNewColonyDesc";
-    }
-}
-
-public class Dialog_ChooseThingsForNewColony_WaterQuest: Dialog_ChooseThingsForNewColony
-{
-    public Dialog_ChooseThingsForNewColony_WaterQuest(Action<List<Thing>> postAccepted, int maxColonists = 5, int maxAnimals = 5, int maxRelics = 1, int maxItems = 7, Action cancel = null) : base(postAccepted, maxColonists, maxAnimals, maxRelics, maxItems, cancel)
-    {
     }
 }

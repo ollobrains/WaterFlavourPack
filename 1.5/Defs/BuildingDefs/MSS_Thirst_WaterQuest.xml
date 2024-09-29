@@ -3,6 +3,7 @@
 
     <ThingDef ParentName="ArtBuildingBase">
         <defName>MSS_PowerRegulator</defName>
+        <minifiedDef>MinifiedThing</minifiedDef>
         <label>power regulator</label>
         <description>An ancient archotech power regulator</description>
         <castEdgeShadows>true</castEdgeShadows>
@@ -11,13 +12,14 @@
             <texPath>Things/Building/Art/SculptureGrand</texPath>
             <drawSize>(4,4)</drawSize>
         </graphicData>
+
         <fillPercent>0.5</fillPercent>
         <rotatable>false</rotatable>
         <size>(2,2)</size>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
-            <Mass>28</Mass>
+            <Mass>1</Mass>
             <WorkToMake>105000</WorkToMake>
             <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
         </statBases>
@@ -27,10 +29,14 @@
         <stuffCategories>
             <li>Metallic</li>
         </stuffCategories>
+        <thingCategories>
+            <li>BuildingsPower</li>
+        </thingCategories>
     </ThingDef>
 
     <ThingDef ParentName="ArtBuildingBase">
         <defName>MSS_CatalyticSeparator</defName>
+        <minifiedDef>MinifiedThing</minifiedDef>
         <label>Catalytic Separator</label>
         <description>An ancient archotech catalytic separator</description>
         <castEdgeShadows>true</castEdgeShadows>
@@ -39,13 +45,14 @@
             <texPath>Things/Building/Art/SculptureGrand</texPath>
             <drawSize>(4,4)</drawSize>
         </graphicData>
+
         <fillPercent>0.5</fillPercent>
         <rotatable>false</rotatable>
         <size>(2,2)</size>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
-            <Mass>28</Mass>
+            <Mass>1</Mass>
             <WorkToMake>105000</WorkToMake>
             <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
         </statBases>
@@ -55,10 +62,14 @@
         <stuffCategories>
             <li>Metallic</li>
         </stuffCategories>
+        <thingCategories>
+            <li>BuildingsProduction</li>
+        </thingCategories>
     </ThingDef>
 
     <ThingDef ParentName="ArtBuildingBase">
         <defName>MSS_SterilizationPlant</defName>
+        <minifiedDef>MinifiedThing</minifiedDef>
         <label>Sterilization Plant</label>
         <description>An ancient archotech sterilization plant</description>
         <castEdgeShadows>true</castEdgeShadows>
@@ -67,13 +78,14 @@
             <texPath>Things/Building/Art/SculptureGrand</texPath>
             <drawSize>(4,4)</drawSize>
         </graphicData>
+
         <fillPercent>0.5</fillPercent>
         <rotatable>false</rotatable>
         <size>(2,2)</size>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
-            <Mass>28</Mass>
+            <Mass>1</Mass>
             <WorkToMake>105000</WorkToMake>
             <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
         </statBases>
@@ -83,5 +95,8 @@
         <stuffCategories>
             <li>Metallic</li>
         </stuffCategories>
+        <thingCategories>
+            <li>BuildingsProduction</li>
+        </thingCategories>
     </ThingDef>
 </Defs>

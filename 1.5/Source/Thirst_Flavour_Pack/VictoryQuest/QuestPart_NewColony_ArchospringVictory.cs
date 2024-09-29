@@ -10,12 +10,12 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestPart_NewColonyWater: QuestPart_NewColony
+public class QuestPart_NewColony_ArchospringVictory: QuestPart_NewColony
 {
     public Lazy<MethodInfo> TileChosen = new Lazy<MethodInfo>(() => AccessTools.Method(typeof(QuestPart_NewColony), "TileChosen"));
     public void NewPostThingsSelected(List<Thing> allThings)
     {
-        Find.WindowStack.Add(new Screen_WaterSettlementCinematics((Action) (() => CameraJumper.TryJump(CameraJumper.GetWorldTarget((GlobalTargetInfo) allThings.First(t => t is Pawn)))), (Action) (() =>
+        Find.WindowStack.Add(new Screen_Archospring_SettlementCinematics((Action) (() => CameraJumper.TryJump(CameraJumper.GetWorldTarget((GlobalTargetInfo) allThings.First(t => t is Pawn)))), (Action) (() =>
         {
             MoveColonyUtility.PickNewColonyTile(choseTile => TileChosen.Value.Invoke(this, [choseTile, allThings]), (Action) (() =>
             {
@@ -33,7 +33,7 @@ public class QuestPart_NewColonyWater: QuestPart_NewColony
             return;
         Find.MainTabsRoot.EscapeCurrentTab(false);
         Find.World.renderer.RegenerateLayersIfDirtyInLongEvent();
-        Find.WindowStack.Add(new Dialog_ChooseThingsForNewColony_WaterQuest(NewPostThingsSelected,
+        Find.WindowStack.Add(new Dialog_ChooseThingsForNewColony_ArchospringQuest(NewPostThingsSelected,
             maxColonists: Thirst_Flavour_PackMod.settings.WaterQuestColonistsAllowed,
             maxAnimals: Thirst_Flavour_PackMod.settings.WaterQuestAnimalsAllowed,
             maxItems: Thirst_Flavour_PackMod.settings.WaterQuestItemsAllowed,

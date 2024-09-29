@@ -5,12 +5,13 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestNode_Root_WaterVictory_ThirdCycle: QuestNode_Root_WaterVictory_Cycle
+public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_ArchospringVictory_Cycle
 {
     protected override int WaterCycle => 3;
     protected override string QuestSignal => "SterilizationPlantBuilt";
     protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptSterilizationPlantBuilt();
     protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_SterilizationPlant();
+    protected override ThingDef ArchotechComponent => Thirst_Flavour_PackDefOf.MSS_SterilizationPlant;
 
     private static float ThreatPointsFactor = 0.6f;
 

@@ -5,7 +5,7 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.PreQuest;
 
-public class QuestNode_Root_WaterVictory_PreCycle: QuestNode
+public class QuestNode_Root_ArchospringVictory_PreCycle: QuestNode
 {
     public static string QuestSignal = "FirstPowerRegulatorBuilt";
 
@@ -36,7 +36,7 @@ public class QuestNode_Root_WaterVictory_PreCycle: QuestNode
       quest.RewardChoice().choices.Add(new QuestPart_Choice.Choice
       {
         rewards = {
-          new Reward_WaterInfo
+          new Reward_ArchospringInfo
           {
               currentPart = 1
           }

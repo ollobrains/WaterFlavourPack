@@ -18,7 +18,8 @@ public static class Thirst_Flavour_PackDefOf
     public static QuestScriptDef MSS_EndGame_WaterVictory_SecondCycle;
     public static QuestScriptDef MSS_EndGame_WaterVictory_ThirdCycle;
 
-    public static IncidentDef MSS_GiveQuest_EndGame_WaterVictory_Pre;
+    public static IncidentDef MSS_GiveQuest_EndGame_ArchospringVictory_Pre;
+    public static IncidentDef MSS_GiveQuest_EndGame_ArchospringVictory;
 
     public static WorldObjectDef MSS_Settlement_SecondArchospringCycle;
     public static WorldObjectDef MSS_Settlement_ThirdArchospringCycle;
@@ -27,5 +28,12 @@ public static class Thirst_Flavour_PackDefOf
 
 
     public static SitePartDef MSS_Thirst_WaterSite;
+
+    public static ThingDef MSS_PowerRegulator;
+    public static ThingDef MSS_CatalyticSeparator;
+    public static ThingDef MSS_SterilizationPlant;
+
+    public static SitePartDef MSS_Thirst_BarbCamp;
+
     static Thirst_Flavour_PackDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(Thirst_Flavour_PackDefOf));
 }

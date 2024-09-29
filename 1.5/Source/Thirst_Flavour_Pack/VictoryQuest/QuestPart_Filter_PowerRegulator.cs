@@ -15,6 +15,6 @@ public class QuestPart_Filter_PowerRegulator(int count = 3) : QuestPart_Filter
 
     protected override bool Pass(SignalArgs args)
     {
-        return WaterVictoryWorldComponent.Instance.PowerRegulatorsBuilt >= Count;
+        return ArchospringVictoryWorldComponent.Instance.PowerRegulatorsBuilt >= Count;
     }
 }

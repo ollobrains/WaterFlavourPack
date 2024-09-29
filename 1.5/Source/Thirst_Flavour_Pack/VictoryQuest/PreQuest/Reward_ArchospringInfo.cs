@@ -7,7 +7,7 @@ using Verse.Grammar;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.PreQuest;
 
-public class Reward_WaterInfo : Reward
+public class Reward_ArchospringInfo : Reward
 {
     public int currentPart = 0;
     private const int totalParts = 1;
@@ -28,7 +28,7 @@ public class Reward_WaterInfo : Reward
         get
         {
             yield return QuestPartUtility.GetStandardRewardStackElement(
-                "MSS_Reward_WaterInfoPart".Translate(), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
+                "MSS_Reward_ArchospringInfo".Translate(), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
         }
     }
 
@@ -53,7 +53,7 @@ public class Reward_WaterInfo : Reward
 
     public override string GetDescription(RewardsGeneratorParams parms)
     {
-        return "MSS_Reward_WaterInfoPart".Translate();
+        return "MSS_Reward_ArchospringInfo".Translate();
     }
 
     public override void ExposeData()
