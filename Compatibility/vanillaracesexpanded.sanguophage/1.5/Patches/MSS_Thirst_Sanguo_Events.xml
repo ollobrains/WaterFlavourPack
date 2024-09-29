@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/IncidentDef[defName="VRE_BloodMoon"]/gameCondition</xpath>
+		<xpath>Defs/GameConditionDef[defName="VRE_BloodMoonCondition"]/conditionClass</xpath>
         <value>
-            <gameCondition>Eclipse</gameCondition>
+            <conditionClass>GameCondition_NoSunlight</conditionClass>
         </value>
 	</Operation>
 </Patch>
