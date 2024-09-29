@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Bloodfeed.label>Acetabula</Bloodfeed.label>
+    <Bloodfeed.description>This person has developed cephalopod-like suction cups, allowing them to grab the target and extract water directly from their intracellular fluid. The target will become dehydrated and will be horrified by the interaction, but will be otherwise unharmed. A fast-acting coagulant will seal the wound to prevent bleeding.\n\nWater gain is affected by the target's body size.</Bloodfeed.description>
+    <Coagulate.label>Iasis</Coagulate.label>
+    <Coagulate.description>By expending their internal water supplies, this person can release a potent salve from their suction cup covered fingers, rapidly healing the targets injuries.</Coagulate.description>
+    <PiercingSpine.label>Beak Spine</PiercingSpine.label>
+    <PiercingSpine.description>Pressurise internal stores of water to launch a keratinous beak at the target. The beak extrudes from the center of the palm and regrows rapidly.</PiercingSpine.description>
+    <Resurrect.label>Hydra Senescence</Resurrect.label>
+    <Resurrect.description>Using genetics incorporated from cnidarian marine life, this person can infuse a corpse's body with new life. The older and worse-preserved the corpse is, the more likely it is that they will come back with memory loss or health conditions. This ability is exceptionally taxing on the user, so can only be used rarely. </Resurrect.description>
+    <Longjump.label>Jet Propulsion</Longjump.label>
+    <Longjump.description>By pressurising internal stores of water and releasing them from beaks embedded in their hands, this person can launch themselves over long distances.</Longjump.description>
+</LanguageData>
