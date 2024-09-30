@@ -9,7 +9,6 @@ namespace Thirst_Flavour_Pack.VEF.Incidents;
 
 public class IncidentWorker_WaterContamination : IncidentWorker
 {
-    public static float SafeLevel = 3;
     protected static PipeNet TargetNet;
 
     protected override bool CanFireNowSub(IncidentParms parms) => OverSafeCapacity((Map) parms.target);
@@ -32,7 +31,7 @@ public class IncidentWorker_WaterContamination : IncidentWorker
 
     public static bool OverSafeCapacity(Map map)
     {
-        TargetNet ??= map?.GetComponent<PipeNetManager>()?.pipeNets?.Find(p => p.def.defName == "VRE_HemogenNet");
-        return (TargetNet?.CurrentStored() ?? 0) > SafeLevel;
+        TargetNet = map?.GetComponent<PipeNetManager>()?.pipeNets?.Where(p => p.def.defName == "VRE_HemogenNet").MaxByWithFallback(n => n.CurrentStored(), TargetNet);
+        return (TargetNet?.CurrentStored() ?? 0) > Thirst_Flavour_PackMod.settings.MaxSafeWaterInNet;
     }
 }
