@@ -32,6 +32,11 @@ public static class CompDraincasket_Patch
                 {
                     shouldEject = true;
                 }
+
+                // InsertPawn was inlined, so do this here
+                Gene_Hemogen gene = (Gene_Hemogen)pawn.genes.GetGene(GeneDefOf.Hemogenic);
+                if(gene != null)
+                    GeneResourceDrainUtility.OffsetResource(gene, -1f);
             }
         }
 
