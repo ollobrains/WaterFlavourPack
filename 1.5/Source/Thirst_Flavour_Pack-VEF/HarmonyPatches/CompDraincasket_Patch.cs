@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using HarmonyLib;
+using RimWorld;
 using UnityEngine;
 using VanillaRacesExpandedSanguophage;
 using Verse;
@@ -10,6 +13,8 @@ namespace Thirst_Flavour_Pack.VEF.HarmonyPatches;
 [HarmonyPatch(typeof(CompDraincasket))]
 public static class CompDraincasket_Patch
 {
+    public static Lazy<FieldInfo> contentsKnown = new Lazy<FieldInfo>(() => AccessTools.Field(typeof(CompDraincasket), "contentsKnown"));
+
     [HarmonyPatch(nameof(CompDraincasket.CompTick))]
     [HarmonyPostfix]
     public static void CompTick_Patch(CompDraincasket __instance)
@@ -30,10 +35,39 @@ public static class CompDraincasket_Patch
             }
         }
 
-        // Don't change the list during iteration
-        if (shouldEject)
+        if (!shouldEject)
         {
-            __instance.EjectContents(__instance.parent.Map);
+            return;
         }
+
+        // Don't change the list during iteration
+        foreach (Pawn pawn in __instance.innerContainer.OfType<Pawn>())
+        {
+            PawnComponentsUtility.AddComponentsForSpawn(pawn);
+            pawn.filth.GainFilth(ThingDefOf.Filth_Slime);
+            Hediff hediff = pawn.health.GetOrAddHediff(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water);
+            pawn.Kill(new DamageInfo?(), hediff);
+        }
+        __instance.innerContainer.TryDropAll(__instance.parent.InteractionCell, __instance.parent.Map, ThingPlaceMode.Near);
+        contentsKnown.Value.SetValue(__instance, true);
+    }
+
+    [HarmonyPatch(nameof(CompDraincasket.EjectContents))]
+    [HarmonyPrefix]
+    public static void EjectContents_Patch(CompDraincasket __instance)
+    {
+        foreach (Pawn pawn in __instance.innerContainer.OfType<Pawn>())
+        {
+            PawnComponentsUtility.AddComponentsForSpawn(pawn);
+            pawn.filth.GainFilth(ThingDefOf.Filth_Slime);
+            if (pawn.RaceProps.IsFlesh)
+            {
+                pawn.health.AddHediff(InternalDefOf.VRE_DraincasketSickness);
+                Hediff hediff = pawn.health.GetOrAddHediff(Thirst_Flavour_PackDefOf.MSSThirst_Extracted_Water);
+                hediff.Severity += 0.1f;
+            }
+        }
+        __instance.innerContainer.TryDropAll(__instance.parent.InteractionCell, __instance.parent.Map, ThingPlaceMode.Near);
+        contentsKnown.Value.SetValue(__instance, true);
     }
 }
