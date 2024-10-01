@@ -8,6 +8,7 @@
 	</supportedVersions>
 	<description>Woah, I'm so thirsty, I could really go for a Bepsi. What do you mean is coke okay? Nothing could beat the refreshing quenching flavour of Bepsi.</description>
 	<loadAfter>
+		<li>ludeon.rimworld.ideology</li>
 		<li>vanillaracesexpanded.sanguophage</li>
 		<li>dubwise.dubsbadhygiene</li>
 		<li>lts.i</li><!-- Integrated Implants 3223443793 -->

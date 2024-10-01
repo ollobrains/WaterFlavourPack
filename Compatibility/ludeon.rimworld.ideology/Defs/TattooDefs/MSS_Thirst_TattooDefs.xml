@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TattooDef>
+    <defName>MSS_Thirst_Face_Spartan</defName>
+    <label>Spartan</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Spartan/Face_Spartan</texPath>
+    <tattooType>Face</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>MSS_Thirst_Body_Spartan</defName>
+    <label>Spartan</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Spartan/Body_Spartan</texPath>
+    <tattooType>Body</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooBodyTribal</li>
+    </styleTags>
+  </TattooDef>
+</Defs>
