@@ -42,7 +42,6 @@ public class Settings : ModSettings
 
         options.Label("MSS_Thirst_WaterQuestRelicsAllowed".Translate(WaterQuestRelicsAllowed));
         options.IntAdjuster(ref WaterQuestRelicsAllowed, 1, 1);
-        options.CheckboxLabeled("Thirst Flavour Pack_Settings_SettingName".Translate(), ref setting);
 
         options.Label("MSS_Thirst_ThirstCasketHediffTickRate".Translate(ThirstCasketHediffTickRate));
         options.IntEntry(ref ThirstCasketHediffTickRate, ref buffers[bufferIndex++], 1);
