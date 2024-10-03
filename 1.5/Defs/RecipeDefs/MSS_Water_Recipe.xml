@@ -1,38 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-    <RecipeDef Name="MSS_Thirst_GatherWaterBase" Abstract="True">
-        <jobString>gathering contaminated water.</jobString>
-        <workAmount>1600</workAmount>
-        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-        <effectWorking>Smith</effectWorking>
-        <soundWorking>Recipe_Machining</soundWorking>
-        <targetCountAdjustment>20</targetCountAdjustment>
-        <workSkill>Crafting</workSkill>
-        <workSkillLearnFactor>0</workSkillLearnFactor>
-        <recipeUsers>
-            <li>CraftingSpot</li>
-        </recipeUsers>
-    </RecipeDef>
-
-    <RecipeDef ParentName="MSS_Thirst_GatherWaterBase">
-        <defName>MSS_Thirst_Gather_Water_Unsafe</defName>
-        <label>Gather contaminated water</label>
-        <description>Gather contaminated water from the environment.</description>
-        <products>
-            <MSS_Unsafe_Water>1</MSS_Unsafe_Water>
-        </products>
-    </RecipeDef>
-
     <RecipeDef>
         <defName>MSS_Thirst_Refine_Unsafe_Water</defName>
         <label>refine unsafe water into safe water packs</label>
-        <description>A labour intense process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though a long series of distillation.</description>
+        <description>A process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though complex distillation.</description>
         <jobString>refining unsafe water.</jobString>
         <effectWorking>Cook</effectWorking>
-        <soundWorking>Recipe_CookMeal</soundWorking>
-        <workAmount>8000</workAmount>
-        <workSpeedStat>CookSpeed</workSpeedStat>
+        <soundWorking>Recipe_Cremate</soundWorking>
+        <workAmount>2500</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
         <ingredients>
             <li>
                 <filter>
@@ -54,5 +31,152 @@
         <recipeUsers>
             <li>BiofuelRefinery</li>
         </recipeUsers>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>MSS_Thirst_Refine_Unsafe_Water_Tribal</defName>
+        <label>boil unsafe water into safe water packs</label>
+        <description>An extremely slow process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water by condensing droplets of steam on primative metal panels.</description>
+        <jobString>refining unsafe water.</jobString>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Cremate</soundWorking>
+        <workAmount>10000</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Unsafe_Water</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MSS_Unsafe_Water</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <HemogenPack>1</HemogenPack>
+        </products>
+        <recipeUsers>
+            <li>Campfire</li>
+            <li>FueledStove</li>
+        </recipeUsers>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>MSS_Thirst_Refine_Unsafe_Water_Industrial</defName>
+        <label>condense unsafe water into safe water packs</label>
+        <description>A slow process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though a long series of boiling and reboiling in sterile pots.</description>
+        <jobString>refining unsafe water.</jobString>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Cremate</soundWorking>
+        <workAmount>6000</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Unsafe_Water</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MSS_Unsafe_Water</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <HemogenPack>1</HemogenPack>
+        </products>
+        <recipeUsers>
+            <li>ElectricStove</li>
+        </recipeUsers>
+    </RecipeDef>
+
+    <!-- Water gathering recipes -->
+
+    <RecipeDef>
+        <defName>MSS_Thirst_Drill_Water</defName>
+        <label>Drill for Water</label>
+        <description>Tap into underground reservoirs of contaminated water supplies and collect it for refining.</description>
+        <jobString>drilling for unsafe water.</jobString>
+        <effectWorking>Smelt</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <workAmount>1000</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <products>
+            <MSS_Unsafe_Water>5</MSS_Unsafe_Water>
+        </products>
+        <recipeUsers>
+            <li>MSS_Thirst_Industrial_Water_Drill</li>
+        </recipeUsers>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>MSS_Thirst_Bucket_Water</defName>
+        <label>Crank well for Water</label>
+        <description>Cast a bucket down into an aquifier of contaminated water and collect it for refining.</description>
+        <jobString>cracking well for unsafe water.</jobString>
+        <effectWorking>Smelt</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <workAmount>1000</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <products>
+            <MSS_Unsafe_Water>3</MSS_Unsafe_Water>
+        </products>
+        <recipeUsers>
+            <li>MSS_Thirst_Water_Well</li>
+        </recipeUsers>
+    </RecipeDef>
+
+    <RecipeDef Name="MSS_Thirst_GatherWaterDig" Abstract="True">
+        <jobString>digging for contaminated water.</jobString>
+        <workAmount>1600</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>Smith</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <targetCountAdjustment>20</targetCountAdjustment>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>0</workSkillLearnFactor>
+        <recipeUsers>
+            <li>CraftingSpot</li>
+        </recipeUsers>
+    </RecipeDef>
+
+    <RecipeDef ParentName="MSS_Thirst_GatherWaterDig">
+        <defName>MSS_Thirst_Dig_Water_Unsafe</defName>
+        <label>Dig for contaminated water</label>
+        <description>Dig holes to extract contaminated water from the environment. Yields less water than gathering directly from water sources at a Water Spot.</description>
+        <products>
+            <MSS_Unsafe_Water>1</MSS_Unsafe_Water>
+        </products>
+    </RecipeDef>
+
+    <RecipeDef Name="MSS_Thirst_GatherWaterBase" Abstract="True">
+        <jobString>gathering contaminated water.</jobString>
+        <workAmount>1000</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>Smith</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <targetCountAdjustment>20</targetCountAdjustment>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>0</workSkillLearnFactor>
+        <recipeUsers>
+            <li>MSS_Thirst_WaterSpot</li>
+        </recipeUsers>
+    </RecipeDef>
+
+    <RecipeDef ParentName="MSS_Thirst_GatherWaterBase">
+        <defName>MSS_Thirst_Gather_Water_Unsafe</defName>
+        <label>Gather contaminated water</label>
+        <description>Gather contaminated water from available water sources.</description>
+        <products>
+            <MSS_Unsafe_Water>3</MSS_Unsafe_Water>
+        </products>
     </RecipeDef>
 </Defs>

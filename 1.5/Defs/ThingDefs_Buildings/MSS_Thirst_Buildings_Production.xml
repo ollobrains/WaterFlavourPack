@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Industrial Stuff  -->
+
+  <ThingDef ParentName="BenchBase">
+    <defName>MSS_Thirst_Drill</defName>
+    <label>Water Drill</label>
+    <description>A water well with an automated lift and fill system that removes all manual labour required with a standard well, but still requires a person to operate the lift and remove the water when collected.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/IndustrialWell</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>3000</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(1,1)</size>
+    <designationCategory>Production</designationCategory>
+    <uiOrder>2520</uiOrder>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <recipes>
+      <li>MSS_Thirst_Drill_Water</li>
+    </recipes>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>Machining</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <WorkGiverDef>
+		<defName>MSS_Thirst_Drill_Water</defName>
+		<label>drill for water</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Mining</workType>
+		<priorityInType>50</priorityInType>
+		<fixedBillGiverDefs>
+			<li>MSS_Thirst_Drill</li>
+		</fixedBillGiverDefs>
+		<verb>drilling</verb>
+		<gerund>drilling water at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+    <!-- Tribal Stuff  -->
+
+    <ThingDef ParentName="BuildingBase">
+      <defName>MSS_Thirst_Dig_Spot</defName>
+      <label>Water Gathering Spot</label>
+      <description>A point on an open body of water designated for colonists to gather contaminated water for refining.</description>
+      <thingClass>Building_WorkTable</thingClass>
+      <graphicData>
+        <texPath>Things/Building/Production/WaterSpot</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <drawSize>(1,1)</drawSize>
+      </graphicData>
+      <altitudeLayer>FloorEmplacement</altitudeLayer>
+      <statBases>
+        <WorkToBuild>0</WorkToBuild>
+        <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
+      </statBases>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+      <useHitPoints>false</useHitPoints>
+      <size>(1,1)</size>
+      <designationCategory>Production</designationCategory>
+      <uiOrder>2000</uiOrder>
+      <passability>Standable</passability>
+      <terrainAffordanceNeeded>ShallowWater</terrainAffordanceNeeded>
+      <hasInteractionCell>True</hasInteractionCell>
+      <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+      <surfaceType>Item</surfaceType>
+      <recipes>
+        <li>MSS_Thirst_Gather_Water_Unsafe</li>
+      </recipes>
+      <inspectorTabs>
+        <li>ITab_Bills</li>
+      </inspectorTabs>
+      <building>
+        <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        <sowTag>SupportPlantsOnly</sowTag>
+        <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+        <ai_chillDestination>false</ai_chillDestination>
+        <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+        <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+        <buildingTags>
+          <li>Production</li>
+        </buildingTags>
+      </building>
+      <comps>
+        <li Class="CompProperties_AffectedByFacilities">
+          <linkableFacilities>
+            <li>ToolCabinet</li>
+          </linkableFacilities>
+        </li>
+        <li Class="CompProperties_ReportWorkSpeed">
+          <workSpeedStat>WorkTableWorkSpeedFactor</workSpeedStat>
+        </li>
+      </comps>
+      <designationHotKey>Misc1</designationHotKey>
+      <placeWorkers>
+        <li>PlaceWorker_ShowFacilitiesConnections</li>
+        <li>PlaceWorker_ReportWorkSpeedPenalties</li>
+        <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+      </placeWorkers>
+    </ThingDef>
+
+  <WorkGiverDef>
+    <defName>MSS_Thirst_Dig_Spot_Work</defName>
+    <label>potting contaminated water</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>50</priorityInType>
+    <fixedBillGiverDefs>
+      <li>MSS_Thirst_Dig_Spot</li>
+    </fixedBillGiverDefs>
+    <verb>potting</verb>
+    <gerund>potting contaminated water at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <!-- Medieval Stuff  -->
+
+  <ThingDef ParentName="BenchBase">
+    <defName>MSS_Thirst_Water_Well</defName>
+    <label>Water Well</label>
+    <description>A hand-cranked water well that taps into a contaminated underground aquifier, allowing for vast amounts of contaminated water to be gathered fairly quickly.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/TribalWell</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>3000</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(1,1)</size>
+    <designationCategory>Production</designationCategory>
+    <uiOrder>2520</uiOrder>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <recipes>
+      <!-- <li>MSS_Thirst_Bucket_Water</li> -->
+    </recipes>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <WorkGiverDef>
+    <defName>MSS_Thirst_Water_Well_Crank</defName>
+    <label>using well for contaminated water</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>50</priorityInType>
+    <fixedBillGiverDefs>
+      <li>MSS_Thirst_Water_Well</li>
+    </fixedBillGiverDefs>
+    <verb>cranking</verb>
+    <gerund>cranking well for contaminated water at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <!-- Ultratech Stuff  -->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MSS_Thirst_Moisture_Vaporator</defName>
+    <label>Moisture Collector</label>
+    <description>Slowly generates clean water by a complex series of chemical reactions, using atoms extracted from the air.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/MoistureVaporator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,2)</drawSize>
+      <shadowData>
+        <volume>(0.6, 1.0, 1.6)</volume>
+        <offset>(-0.1,0,-0.08)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(2,0.15,1,1.4)</rect>
+      </damageData>
+    </graphicData>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <costList>
+      <Steel>250</Steel>
+      <Plasteel>250</Plasteel>
+      <HemogenPack>15</HemogenPack>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>true</requiresPower>
+        <thingToSpawn>HemogenPack</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange><min>120000</min><max>120000</max></spawnIntervalRange>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>8</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+      </li>
+    </comps>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>-10</Beauty>
+      <Mass>35</Mass>
+      <WorkToBuild>8000</WorkToBuild>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tickerType>Normal</tickerType>
+    <size>(7,2)</size>
+    <fillPercent>1.0</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <passability>Impassable</passability>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+  </ThingDef>
+  
+</Defs>
