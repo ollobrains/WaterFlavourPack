@@ -3,9 +3,9 @@
     <option name="commandLineOptions" value="" />
     <option name="modListPath" value="$PROJECT_DIR$/../../modlist.xml" />
     <option name="saveFilePath" value="" />
-    <option name="scriptName" value="$PROJECT_DIR$\..\..\..\..\RimWorldWin64.exe" />
+    <option name="scriptName" value="$PROJECT_DIR$/../Source\..\..\..\..\RimWorldWin64.exe" />
     <method v="2">
-      <option name="Build" default="false" projectName="MSS_Thirst" projectPath="$PROJECT_DIR$/Thirst/MSS_Thirst.csproj" />
+      <option name="Build Solution" enabled="true" />
     </method>
   </configuration>
 </component>

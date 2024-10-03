@@ -9,72 +9,7 @@
         <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
     </IncidentDef>
 
-    <IncidentDef ParentName="GiveQuestBase">
-        <defName>MSS_GiveQuest_EndGame_ArchospringVictory_Pre</defName>
-        <label>archospring victory</label>
-        <letterLabel>archospring victory</letterLabel>
-        <questScriptDef>MSS_EndGame_WaterVictory_Pre</questScriptDef>
-        <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
-    </IncidentDef>
-
-
-    <!-- Archonexus subquests -->
-    <QuestScriptDef Abstract="True" Name="MSS_EndGame_ArchospringVictory_Cycle">
-        <isRootSpecial>true</isRootSpecial>
-        <hideOnCleanup>true</hideOnCleanup>
-        <endOnColonyMove>false</endOnColonyMove>
-        <sendAvailableLetter>false</sendAvailableLetter>
-        <defaultChallengeRating>4</defaultChallengeRating>
-        <questNameRules>
-            <rulesStrings>
-                <li>questName->ab aqua libertas</li>
-            </rulesStrings>
-        </questNameRules>
-    </QuestScriptDef>
-
     <!-- Hidden quest that generates the subquests below -->
-    <QuestScriptDef>
-        <defName>MSS_EndGame_WaterVictory_Pre</defName>
-        <isRootSpecial>true</isRootSpecial>
-        <defaultHidden>true</defaultHidden>
-        <autoAccept>true</autoAccept>
-        <endOnColonyMove>false</endOnColonyMove>
-        <questNameRules>
-            <rulesStrings>
-                <li>questName-></li>
-            </rulesStrings>
-        </questNameRules>
-        <questDescriptionRules>
-            <rulesStrings>
-                <li>questDescription-></li>
-            </rulesStrings>
-        </questDescriptionRules>
-        <root Class="Thirst_Flavour_Pack.VictoryQuest.PreQuest.QuestNode_Root_ArchospringVictoryPre" />
-    </QuestScriptDef>
-
-
-    <QuestScriptDef>
-        <defName>MSS_EndGame_WaterVictory_PreCycle</defName>
-        <sendAvailableLetter>true</sendAvailableLetter>
-        <affectedByPoints>false</affectedByPoints>
-        <isRootSpecial>true</isRootSpecial>
-        <hideOnCleanup>true</hideOnCleanup>
-        <endOnColonyMove>false</endOnColonyMove>
-        <defaultChallengeRating>4</defaultChallengeRating>
-        <questNameRules>
-            <rulesStrings>
-                <li>questName->sic itur ad aquas</li>
-            </rulesStrings>
-        </questNameRules>
-        <questDescriptionRules>
-            <rulesStrings>
-                <!-- description -->
-                <li>questDescription->You've heard rumours about an archotech Power Regulator. The murmerings seem to hint at something related to water. Some think that it may be contributing to the lack of water. Some think it's a cure. Nobody really knows. Maybe you'll find one, and maybe you'll find answers.</li>
-            </rulesStrings>
-        </questDescriptionRules>
-        <root Class="Thirst_Flavour_Pack.VictoryQuest.PreQuest.QuestNode_Root_ArchospringVictory_PreCycle" />
-    </QuestScriptDef>
-
     <QuestScriptDef>
         <defName>MSS_EndGame_WaterVictory</defName>
         <epic>true</epic>
@@ -93,6 +28,20 @@
             </rulesStrings>
         </questDescriptionRules>
         <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_ArchospringVictory" />
+    </QuestScriptDef>
+
+    <!-- Archonexus subquests -->
+    <QuestScriptDef Abstract="True" Name="MSS_EndGame_ArchospringVictory_Cycle">
+        <isRootSpecial>true</isRootSpecial>
+        <hideOnCleanup>true</hideOnCleanup>
+        <endOnColonyMove>false</endOnColonyMove>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <defaultChallengeRating>4</defaultChallengeRating>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->ab aqua libertas</li>
+            </rulesStrings>
+        </questNameRules>
     </QuestScriptDef>
 
   <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">

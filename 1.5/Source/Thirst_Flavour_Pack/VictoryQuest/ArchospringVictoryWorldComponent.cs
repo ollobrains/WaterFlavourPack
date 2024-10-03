@@ -9,6 +9,8 @@ public class ArchospringVictoryWorldComponent(World world) : WorldComponent(worl
 {
     public static ArchospringVictoryWorldComponent Instance => Find.World.GetComponent<ArchospringVictoryWorldComponent>();
 
+    public bool ArchoComponentSeenByPlayer = false;
+
     public bool FirstCycleRaidQuestFired = false;
     public bool FirstCycleRaidQuestComplete = false;
 

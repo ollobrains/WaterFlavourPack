@@ -13,8 +13,35 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
         Quest quest = QuestGen.quest;
         Slate slate = QuestGen.slate;
 
+        string playerFoundArchoComponent = QuestGen.GenerateNewSignal("PlayerFoundArchoComponent");
+        string outerNodeCompleted = QuestGen.GenerateNewSignal("OuterNodeCompleted");
+        string newSignal2 = RimWorld.QuestGen.QuestGen.GenerateNewSignal("SendLetterReminder");
+
+        // quest.AddPart(new QuestPart_RequirementToAcceptAnyArchoComponent());
+
+        // QuestPart_Activable_ArchoComponent part1 = new QuestPart_Activable_ArchoComponent();
+        // part1.inSignalEnable = quest.AddedSignal;
+        // part1.outSignalsCompleted.Add(playerFoundArchoComponent);
+        // part1.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
+        // quest.AddPart(part1);
+
+        QuestPart_PassOutInterval part2 = new QuestPart_PassOutInterval(); // Keep retrying until we move on.
+        part2.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted; // The hidden outer quest is automatically accepted
+        part2.inSignalEnable = quest.AddedSignal; //playerFoundArchoComponent;
+        part2.inSignalsDisable.Add(outerNodeCompleted);
+        part2.ticksInterval = new IntRange(60, 60);
+        part2.outSignals.Add(playerFoundArchoComponent);
+        quest.AddPart(part2);
+
+        QuestPart_Filter_ArchoComponent part3 = new QuestPart_Filter_ArchoComponent();
+        part3.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted; // The hidden outer quest is automatically accepted
+        part3.inSignal = playerFoundArchoComponent;
+        part3.outSignal = outerNodeCompleted;
+
+        quest.AddPart(part3);
+
         QuestPart_SubquestGenerator_ArchospringVictory archospringVictory = new QuestPart_SubquestGenerator_ArchospringVictory();
-        archospringVictory.inSignalEnable = slate.Get<string>("inSignal");
+        archospringVictory.inSignalEnable = part3.outSignal; //slate.Get<string>("inSignal");
         archospringVictory.interval = new IntRange(0, 0);
         archospringVictory.maxSuccessfulSubquests = 3;
         archospringVictory.maxActiveSubquests = 1;
