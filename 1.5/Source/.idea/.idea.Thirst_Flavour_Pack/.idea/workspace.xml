@@ -9,23 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Fix Settings.cs">
-      <change afterPath="$PROJECT_DIR$/../Defs/ThingDefs_Items/MSS_Water_Archocomponent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/HarmonyPatches/ThingStyleHelper_Patch.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Activable_ArchoComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Filter_ArchoComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_RequirementToAcceptAnyArchoComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPlan.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Thing_ComponentArcho.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Archospring_Victory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Archospring_Victory.xml" afterDir="false" />
+    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Working pre-quest">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.run/RimWorld.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.run/RimWorld.run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/Thirst_Flavour_PackDefOf.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/ArchospringVictoryWorldComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/ArchospringVictoryWorldComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/PreQuest/QuestNode_Root_ArchospringVictoryPre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/PreQuest/QuestNode_Root_ArchospringVictoryPre.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/1.5/Assemblies/Thirst_Flavour_Pack-VEF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/1.5/Assemblies/Thirst_Flavour_Pack-VEF.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,7 +330,7 @@
       <workItem from="1727195862153" duration="10703000" />
       <workItem from="1727280281806" duration="4114000" />
       <workItem from="1727602817714" duration="18625000" />
-      <workItem from="1728069065261" duration="4596000" />
+      <workItem from="1728069065261" duration="4679000" />
     </task>
     <task id="LOCAL-00001" summary="First Pass at Water victory.">
       <option name="closed" value="true" />
@@ -434,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727970898773</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Working pre-quest">
+      <option name="closed" value="true" />
+      <created>1728074794480</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728074794480</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +464,8 @@
     <MESSAGE value="Drop old DLLs" />
     <MESSAGE value="Testing" />
     <MESSAGE value="Fix Settings.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Settings.cs" />
+    <MESSAGE value="Working pre-quest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working pre-quest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
