@@ -12,5 +12,6 @@
 		<li IfModActive="ladycookie.farmland">Compatibility/ladycookie.farmland</li>
 		<li IfModActive="mlie.lootboxes">Compatibility/mlie.lootboxes</li>
 		<li IfModActive="ludeon.rimworld.ideology">Compatibility/ludeon.rimworld.ideology</li>
+		<li IfModActive="garryflowers.moreslaverystuff">Compatibility/garryflowers.moreslaverystuff</li>
 	</v1.5>
 </loadFolders>

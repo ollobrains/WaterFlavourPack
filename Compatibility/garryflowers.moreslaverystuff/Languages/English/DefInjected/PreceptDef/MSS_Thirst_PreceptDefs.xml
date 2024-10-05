@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <GarryFlowers_Slavery_StatusSymbol.label>Plebeians</GarryFlowers_Slavery_StatusSymbol.label>
+    <GarryFlowers_Slavery_StatusSymbol.description>We do not have slaves, but instead have a hightened class of senators, and a lower class of workers known as plebeians. 
+    
+    Plebeians will not start rebellions against their senatorial overlords unless the majority have significant break risks. 
+        
+    Senators will get a mood bonus for having maintaining high moods amongst the Plebians.</GarryFlowers_Slavery_StatusSymbol.description>
+</LanguageData>
