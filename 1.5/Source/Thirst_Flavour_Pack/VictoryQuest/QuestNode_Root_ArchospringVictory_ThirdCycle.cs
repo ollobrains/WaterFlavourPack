@@ -9,11 +9,13 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
 {
     protected override int WaterCycle => 3;
     protected override string QuestSignal => "SterilizationPlantBuilt";
-    protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptSterilizationPlantBuilt();
-    protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_SterilizationPlant();
-    protected override ThingDef ArchotechComponent => Thirst_Flavour_PackDefOf.MSS_SterilizationPlant;
+    protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator, 3);
+
+    protected override QuestPart_RequirementToAcceptBuildingHasComponents Requirement =>
+        new QuestPart_RequirementToAcceptBuildingHasComponents(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator);
 
     private static float ThreatPointsFactor = 0.6f;
+    protected override bool SetSuccess => false;
 
     protected override void RunInt()
     {

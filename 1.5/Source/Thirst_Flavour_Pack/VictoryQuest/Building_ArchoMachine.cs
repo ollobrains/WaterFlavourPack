@@ -54,6 +54,7 @@ public class Building_ArchoMachine : Building,
     public void Notify_ItemAdded(Thing_ComponentArcho item)
     {
         MapHeld.listerHaulables.Notify_AddedThing(item);
+        Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingComponentCount.SetOrAdd(def, innerContainer.Count);
     }
 
     public void Notify_ItemRemoved(Thing_ComponentArcho item)
@@ -83,7 +84,8 @@ public class Building_ArchoMachine : Building,
     {
         foreach (FloatMenuOption floatMenuOption in HaulSourceUtility.GetFloatMenuOptions(this, selPawn))
             yield return floatMenuOption;
-        foreach (Thing component in (IEnumerable<Thing_ComponentArcho>) innerContainer.InnerListForReading)
+
+        foreach (Thing_ComponentArcho component in (IEnumerable<Thing_ComponentArcho>) innerContainer.InnerListForReading)
         {
             foreach (FloatMenuOption floatMenuOption in component.GetFloatMenuOptions(selPawn))
                 yield return floatMenuOption;
@@ -104,9 +106,25 @@ public class Building_ArchoMachine : Building,
     {
         StringBuilder sb = new StringBuilder(base.GetInspectString());
 
-        sb.Append("\n");
         sb.Append("MSS_Thirst_BuildingContainsComponents".Translate(innerContainer.Count));
 
         return sb.ToString();
+    }
+
+    public override void SetFaction(Faction newFaction, Pawn recruiter = null)
+    {
+        base.SetFaction(newFaction, recruiter);
+
+        Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.SetOrAdd(def, true);
+    }
+
+    public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+    {
+        base.Destroy(mode);
+
+        if(innerContainer.Count < 3)
+            Find.SignalManager.SendSignal(new Signal(QuestNode_Root_ArchospringVictory_PreCycle.PowerRegulatorDestroyed, global: true));
+
+        Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.SetOrAdd(def, false);
     }
 }

@@ -1,162 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef ParentName="ArtBuildingBase">
+
+    <ThingDef Name="MSS_ArchoQuestBuilding" ParentName="BuildingBase" Abstract="True">
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
+        <castEdgeShadows>true</castEdgeShadows>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <useHitPoints>true</useHitPoints>
+        <rotatable>false</rotatable>
+        <size>(3,3)</size>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>30000</MaxHitPoints>
+            <Mass>1</Mass>
+            <Flammability>0</Flammability>
+            <WorkToMake>105000</WorkToMake>
+            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
+        </statBases>
+        <thingCategories>
+            <li>BuildingsPower</li>
+        </thingCategories>
+
+        <building>
+            <fixedStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </fixedStorageSettings>
+
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+    </ThingDef>
+
+    <ThingDef ParentName="MSS_ArchoQuestBuilding">
         <defName>MSS_PowerRegulator</defName>
         <minifiedDef>MinifiedThing</minifiedDef>
         <label>power regulator</label>
         <description>An ancient archotech power regulator</description>
-        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
-        <castEdgeShadows>true</castEdgeShadows>
+
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <texPath>Things/Building/Special/MSS_Water_PowerRegulator</texPath>
             <drawSize>(3,3)</drawSize>
         </graphicData>
 
-        <fillPercent>0.5</fillPercent>
-        <rotatable>false</rotatable>
-        <size>(3,3)</size>
-        <canOverlapZones>false</canOverlapZones>
-        <statBases>
-            <MaxHitPoints>300</MaxHitPoints>
-            <Mass>1</Mass>
-            <WorkToMake>105000</WorkToMake>
-            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
-        </statBases>
         <comps>
             <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_PowerRegulator"/>
         </comps>
-        <stuffCategories>
-            <li>Metallic</li>
-        </stuffCategories>
-        <thingCategories>
-            <li>BuildingsPower</li>
-        </thingCategories>
-        <building>
-            <fixedStorageSettings>
-                <priority>Preferred</priority>
-                <filter>
-                    <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
-                    </thingDefs>
-                </filter>
-            </fixedStorageSettings>
-
-            <defaultStorageSettings>
-                <priority>Preferred</priority>
-                <filter>
-                    <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
-                    </thingDefs>
-                </filter>
-            </defaultStorageSettings>
-        </building>
     </ThingDef>
 
-    <ThingDef ParentName="ArtBuildingBase">
+    <ThingDef ParentName="MSS_ArchoQuestBuilding">
         <defName>MSS_CatalyticSeparator</defName>
-        <minifiedDef>MinifiedThing</minifiedDef>
         <label>Catalytic Separator</label>
         <description>An ancient archotech catalytic separator</description>
-        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
-        <castEdgeShadows>true</castEdgeShadows>
+
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <texPath>Things/Building/Special/MSS_Water_CatalyticSeparator</texPath>
             <drawSize>(3,3)</drawSize>
         </graphicData>
 
-        <fillPercent>0.5</fillPercent>
-        <rotatable>false</rotatable>
-        <size>(3,3)</size>
-        <canOverlapZones>false</canOverlapZones>
-        <statBases>
-            <MaxHitPoints>300</MaxHitPoints>
-            <Mass>1</Mass>
-            <WorkToMake>105000</WorkToMake>
-            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
-        </statBases>
         <comps>
             <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_CatalyticSeparator"/>
         </comps>
-        <stuffCategories>
-            <li>Metallic</li>
-        </stuffCategories>
-        <thingCategories>
-            <li>BuildingsProduction</li>
-        </thingCategories>
-        <building>
-            <fixedStorageSettings>
-                <priority>Preferred</priority>
-                <filter>
-                    <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
-                    </thingDefs>
-                </filter>
-            </fixedStorageSettings>
-
-            <defaultStorageSettings>
-                <priority>Preferred</priority>
-                <filter>
-                    <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
-                    </thingDefs>
-                </filter>
-            </defaultStorageSettings>
-        </building>
     </ThingDef>
 
-    <ThingDef ParentName="ArtBuildingBase">
+    <ThingDef ParentName="MSS_ArchoQuestBuilding">
         <defName>MSS_SterilizationPlant</defName>
-        <minifiedDef>MinifiedThing</minifiedDef>
         <label>Sterilization Plant</label>
         <description>An ancient archotech sterilization plant</description>
-        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
-        <castEdgeShadows>true</castEdgeShadows>
+
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <texPath>Things/Building/Special/MSS_Water_SterilizationPlant</texPath>
             <drawSize>(3,3)</drawSize>
         </graphicData>
 
-        <fillPercent>0.5</fillPercent>
-        <rotatable>false</rotatable>
-        <size>(3,3)</size>
-        <canOverlapZones>false</canOverlapZones>
-        <statBases>
-            <MaxHitPoints>300</MaxHitPoints>
-            <Mass>1</Mass>
-            <WorkToMake>105000</WorkToMake>
-            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
-        </statBases>
         <comps>
             <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_SterilizationPlant"/>
         </comps>
-        <stuffCategories>
-            <li>Metallic</li>
-        </stuffCategories>
-        <thingCategories>
-            <li>BuildingsProduction</li>
-        </thingCategories>
-        <building>
-            <fixedStorageSettings>
-                <priority>Preferred</priority>
-                <filter>
-                    <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
-                    </thingDefs>
-                </filter>
-            </fixedStorageSettings>
-
-            <defaultStorageSettings>
-                <priority>Preferred</priority>
-                <filter>
-                    <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
-                    </thingDefs>
-                </filter>
-            </defaultStorageSettings>
-        </building>
     </ThingDef>
 </Defs>

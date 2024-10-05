@@ -5,7 +5,7 @@ using UnityEngine;
 using Verse;
 using Verse.Grammar;
 
-namespace Thirst_Flavour_Pack.VictoryQuest;
+namespace Thirst_Flavour_Pack.VictoryQuest.Rewards;
 
 [StaticConstructorOnStartup]
 public class Reward_ArchospringMap : Reward

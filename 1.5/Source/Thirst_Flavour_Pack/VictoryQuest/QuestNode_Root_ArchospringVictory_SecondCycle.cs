@@ -8,16 +8,16 @@ public class QuestNode_Root_ArchospringVictory_SecondCycle: QuestNode_Root_Archo
 {
     protected override int WaterCycle => 2;
     protected override string QuestSignal => "CatalyticSeparatorBuilt";
-    protected override QuestPart_RequirementsToAccept Requirement => new QuestPart_RequirementToAcceptCatalyticSeparatorBuilt();
-    protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_CatalyticSeparator();
-    protected override ThingDef ArchotechComponent => Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator;
+    protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator, 3);
 
+    protected override QuestPart_RequirementToAcceptBuildingHasComponents Requirement =>
+        new QuestPart_RequirementToAcceptBuildingHasComponents(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator);
+
+    protected override bool SetSuccess => true;
     protected override void RunInt()
     {
         base.RunInt();
         Quest quest = QuestGen.quest;
         quest.DialogWithCloseBehavior("[resolvedQuestDescription]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, closeAction: QuestPartDialogCloseAction.CloseActionKey.ArchonexusVictorySound2nd);
-
-        PickNewColony(Thirst_Flavour_PackDefOf.MSS_Settlement_ThirdArchospringCycle, 2);
     }
 }

@@ -7,8 +7,12 @@
     <MSS_Thirst_LetterTextReqReached>You have reached the requirement for the quest '{0}'. You can now accept the quest.</MSS_Thirst_LetterTextReqReached>
     <MSS_Reward_ArchospringMapPart>A map part</MSS_Reward_ArchospringMapPart>
     <MSS_Reward_ArchospringMapPartLabel>Map part {0}/{1}</MSS_Reward_ArchospringMapPartLabel>
-    <MSS_Reward_ArchospringMapPartSingleLabel>Map part</MSS_Reward_ArchospringMapPartSingleLabel>
+    <MSS_Reward_ArchospringSignalLocationLabel>Signal Location</MSS_Reward_ArchospringSignalLocationLabel>
+    <MSS_Reward_ArchospringSignalLocationDesc>The location of the signal that the Archotech component is interacting with</MSS_Reward_ArchospringSignalLocationDesc>
     <MSS_Reward_ArchospringInfo>Information</MSS_Reward_ArchospringInfo>
+
+    <MSS_Thirst_BuildingRequiresComponents>The {0} has {1}/{2} of it's required components.</MSS_Thirst_BuildingRequiresComponents>
+    <MSS_Thirst_BuildingRequired>No {0} available.</MSS_Thirst_BuildingRequired>
 
     <MSS_Thirst_SoldColonyDescription>You manage to escape unscathed. Pick your next base carefully!</MSS_Thirst_SoldColonyDescription>
 
@@ -21,4 +25,6 @@
     <MSS_Thirst_WaterQuestRelicsAllowed>Relics allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestRelicsAllowed>
 
     <MSS_Thirst_BuildingContainsComponents>Contains {0} components</MSS_Thirst_BuildingContainsComponents>
+
+    <MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>You have {0}/{1} of the required Archotech Components for the {2}</MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>
 </LanguageData>

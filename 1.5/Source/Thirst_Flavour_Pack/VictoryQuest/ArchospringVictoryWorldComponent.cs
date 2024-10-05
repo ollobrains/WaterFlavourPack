@@ -23,6 +23,9 @@ public class ArchospringVictoryWorldComponent(World world) : WorldComponent(worl
     public bool ThirdCycleRaidQuestFired = false;
     public bool ThirdCycleRaidQuestComplete = false;
 
+    public Dictionary<ThingDef, int> BuildingComponentCount = new Dictionary<ThingDef, int>();
+    public Dictionary<ThingDef, bool> BuildingAvailable = new Dictionary<ThingDef, bool>();
+
 
     public int powerRegulatorsBuilt = 0;
     public int PowerRegulatorsBuilt

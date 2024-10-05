@@ -16,10 +16,10 @@ public class SitePartWorker_BarbCamp: SitePartWorker
     {
         base.Init(site, sitePart);
 
-        ThingDef compDef = QuestGen.slate.Get<ThingDef>("archotechComponent");
+        ThingDef compDef = QuestGen.slate.Get<ThingDef>("archospringComponent");
         sitePart.things = new ThingOwner<Thing>(sitePart);
 
-        component = ThingMaker.MakeThing(compDef, ThingDefOf.Steel);
+        component = ThingMaker.MakeThing(compDef);
         component = component.MakeMinified();
         sitePart.things.TryAdd(component);
     }
