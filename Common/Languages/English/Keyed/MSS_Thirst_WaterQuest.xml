@@ -19,4 +19,6 @@
     <MSS_Thirst_WaterQuestAnimalsAllowed>Animals allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestAnimalsAllowed>
     <MSS_Thirst_WaterQuestItemsAllowed>Items allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestItemsAllowed>
     <MSS_Thirst_WaterQuestRelicsAllowed>Relics allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestRelicsAllowed>
+
+    <MSS_Thirst_BuildingContainsComponents>Contains {0} components</MSS_Thirst_BuildingContainsComponents>
 </LanguageData>

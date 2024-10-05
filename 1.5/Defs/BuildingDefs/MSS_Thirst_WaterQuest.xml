@@ -6,6 +6,7 @@
         <minifiedDef>MinifiedThing</minifiedDef>
         <label>power regulator</label>
         <description>An ancient archotech power regulator</description>
+        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
         <castEdgeShadows>true</castEdgeShadows>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
@@ -32,6 +33,25 @@
         <thingCategories>
             <li>BuildingsPower</li>
         </thingCategories>
+        <building>
+            <fixedStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </fixedStorageSettings>
+
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
     </ThingDef>
 
     <ThingDef ParentName="ArtBuildingBase">
@@ -39,6 +59,7 @@
         <minifiedDef>MinifiedThing</minifiedDef>
         <label>Catalytic Separator</label>
         <description>An ancient archotech catalytic separator</description>
+        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
         <castEdgeShadows>true</castEdgeShadows>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
@@ -65,6 +86,25 @@
         <thingCategories>
             <li>BuildingsProduction</li>
         </thingCategories>
+        <building>
+            <fixedStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </fixedStorageSettings>
+
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
     </ThingDef>
 
     <ThingDef ParentName="ArtBuildingBase">
@@ -72,6 +112,7 @@
         <minifiedDef>MinifiedThing</minifiedDef>
         <label>Sterilization Plant</label>
         <description>An ancient archotech sterilization plant</description>
+        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
         <castEdgeShadows>true</castEdgeShadows>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
@@ -98,5 +139,24 @@
         <thingCategories>
             <li>BuildingsProduction</li>
         </thingCategories>
+        <building>
+            <fixedStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </fixedStorageSettings>
+
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Water_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
     </ThingDef>
 </Defs>

@@ -7,6 +7,7 @@ using Verse.Grammar;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.PreQuest;
 
+[StaticConstructorOnStartup]
 public class Reward_ArchospringInfo : Reward
 {
     public int currentPart = 0;
