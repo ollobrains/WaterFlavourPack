@@ -8,14 +8,14 @@
         <description>An ancient archotech power regulator</description>
         <castEdgeShadows>true</castEdgeShadows>
         <graphicData>
-            <graphicClass>Graphic_Random</graphicClass>
-            <texPath>Things/Building/Art/SculptureGrand</texPath>
-            <drawSize>(4,4)</drawSize>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/Special/MSS_Water_PowerRegulator</texPath>
+            <drawSize>(3,3)</drawSize>
         </graphicData>
 
         <fillPercent>0.5</fillPercent>
         <rotatable>false</rotatable>
-        <size>(2,2)</size>
+        <size>(3,3)</size>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
@@ -41,14 +41,14 @@
         <description>An ancient archotech catalytic separator</description>
         <castEdgeShadows>true</castEdgeShadows>
         <graphicData>
-            <graphicClass>Graphic_Random</graphicClass>
-            <texPath>Things/Building/Art/SculptureGrand</texPath>
-            <drawSize>(4,4)</drawSize>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/Special/MSS_Water_CatalyticSeparator</texPath>
+            <drawSize>(3,3)</drawSize>
         </graphicData>
 
         <fillPercent>0.5</fillPercent>
         <rotatable>false</rotatable>
-        <size>(2,2)</size>
+        <size>(3,3)</size>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
@@ -74,14 +74,14 @@
         <description>An ancient archotech sterilization plant</description>
         <castEdgeShadows>true</castEdgeShadows>
         <graphicData>
-            <graphicClass>Graphic_Random</graphicClass>
-            <texPath>Things/Building/Art/SculptureGrand</texPath>
-            <drawSize>(4,4)</drawSize>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/Special/MSS_Water_SterilizationPlant</texPath>
+            <drawSize>(3,3)</drawSize>
         </graphicData>
 
         <fillPercent>0.5</fillPercent>
         <rotatable>false</rotatable>
-        <size>(2,2)</size>
+        <size>(3,3)</size>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>

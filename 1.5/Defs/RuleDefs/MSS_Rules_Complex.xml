@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <RuleDef>
-    <defName>MSS_Thirst_Archospring</defName>
-    <symbol>mssthirstarchospring</symbol>
-    <resolvers>
-      <li Class="Thirst_Flavour_Pack.VictoryQuest.SymbolResolver_Archospring">
-        <minRectSize>(20, 20)</minRectSize>
-      </li>
-    </resolvers>
-  </RuleDef>
+    <RuleDef>
+        <defName>MSS_Thirst_Archospring</defName>
+        <symbol>mssthirstarchospring</symbol>
+        <resolvers>
+            <li Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.SymbolResolver_Archospring">
+                <minRectSize>(20, 20)</minRectSize>
+            </li>
+        </resolvers>
+    </RuleDef>
+
+
+    <RuleDef>
+        <defName>MSS_Thirst_PowerRegulator</defName>
+        <symbol>mssthirstpowerregulator</symbol>
+        <resolvers>
+            <li Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.SymbolResolver_PowerRegulator">
+                <minRectSize>(10, 10)</minRectSize>
+            </li>
+        </resolvers>
+    </RuleDef>
 </Defs>

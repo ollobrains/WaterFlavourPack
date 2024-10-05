@@ -11,6 +11,7 @@ public static class Thirst_Flavour_PackDefOf
     // public static GeneDef YourPrefix_YourGeneDefName;
 
     public static QuestScriptDef MSS_EndGame_WaterVictory;
+    public static QuestScriptDef MSS_EndGame_WaterVictory_PreCycle;
     public static QuestScriptDef MSS_EndGame_WaterVictory_FirstCycle;
     public static QuestScriptDef MSS_EndGame_WaterVictory_SecondCycle;
     public static QuestScriptDef MSS_EndGame_WaterVictory_ThirdCycle;
@@ -23,7 +24,8 @@ public static class Thirst_Flavour_PackDefOf
     public static HediffDef MSSThirst_Extracted_Water;
 
 
-    public static SitePartDef MSS_Thirst_WaterSite;
+    public static SitePartDef MSS_Thirst_ArchospringSite;
+    public static SitePartDef MSS_Thirst_Archospring_PowerRegulator_Site;
 
     public static ThingDef MSS_PowerRegulator;
     public static ThingDef MSS_CatalyticSeparator;

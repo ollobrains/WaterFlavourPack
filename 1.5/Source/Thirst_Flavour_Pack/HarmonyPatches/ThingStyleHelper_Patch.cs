@@ -14,7 +14,7 @@ public static class ThingStyleHelper_Patch
     {
         if (everSeenByPlayer && thing is Thing_ComponentArcho)
         {
-            Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentSeenByPlayer = true;
+            Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentsSeenByPlayer.Add(thing);
         }
     }
 

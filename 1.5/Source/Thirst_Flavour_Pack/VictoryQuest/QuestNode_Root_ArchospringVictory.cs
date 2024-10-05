@@ -36,6 +36,7 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
         archospringVictory.interval = new IntRange(0, 0);
         archospringVictory.maxSuccessfulSubquests = 3;
         archospringVictory.maxActiveSubquests = 1;
+        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_PreCycle);
         archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_FirstCycle);
         archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_SecondCycle);
         archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_ThirdCycle);

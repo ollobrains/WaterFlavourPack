@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
@@ -9,7 +10,9 @@ public class ArchospringVictoryWorldComponent(World world) : WorldComponent(worl
 {
     public static ArchospringVictoryWorldComponent Instance => Find.World.GetComponent<ArchospringVictoryWorldComponent>();
 
-    public bool ArchoComponentSeenByPlayer = false;
+    public bool ArchoComponentSeenByPlayer => !ArchoComponentsSeenByPlayer.NullOrEmpty();
+
+    public List<Thing> ArchoComponentsSeenByPlayer = [];
 
     public bool FirstCycleRaidQuestFired = false;
     public bool FirstCycleRaidQuestComplete = false;
@@ -62,5 +65,6 @@ public class ArchospringVictoryWorldComponent(World world) : WorldComponent(worl
         Scribe_Values.Look(ref powerRegulatorsBuilt, "PowerRegulatorsBuilt", 0);
         Scribe_Values.Look(ref catalyticSeparatorsBuilt, "CatalyticSeparatorsBuilt", 0);
         Scribe_Values.Look(ref sterilizationPlantsBuilt, "SterilizationPlantsBuilt", 0);
+        Scribe_Collections.Look(ref ArchoComponentsSeenByPlayer, "ArchoComponentsSeenByPlayer", LookMode.Reference);
     }
 }

@@ -6,7 +6,7 @@ using RimWorld.BaseGen;
 using UnityEngine;
 using Verse;
 
-namespace Thirst_Flavour_Pack.VictoryQuest;
+namespace Thirst_Flavour_Pack.VictoryQuest.MapGen;
 
 public class SymbolResolver_Archospring: SymbolResolver
 {

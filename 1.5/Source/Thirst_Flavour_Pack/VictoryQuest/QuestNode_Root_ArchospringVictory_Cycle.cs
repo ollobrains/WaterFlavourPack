@@ -21,6 +21,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
 
     public string subquestsCompletedSignal;
 
+
     protected override void RunInt()
     {
       Quest quest = QuestGen.quest;

@@ -37,11 +37,37 @@
         <endOnColonyMove>false</endOnColonyMove>
         <sendAvailableLetter>false</sendAvailableLetter>
         <defaultChallengeRating>4</defaultChallengeRating>
+    </QuestScriptDef>
+
+    <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">
+        <defName>MSS_EndGame_WaterVictory_PreCycle</defName>
+        <sendAvailableLetter>true</sendAvailableLetter>
+        <affectedByPoints>false</affectedByPoints>
         <questNameRules>
             <rulesStrings>
-                <li>questName->ab aqua libertas</li>
+                <li>questName->aqua machina vetus</li>
             </rulesStrings>
         </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <!-- description -->
+                <li>questDescription->One of your colonists has discovered an ancient Archotech Component. It appears to be receiving a signal from an unknown origin. Rumours have linked these components to water somehow - maybe you should investigate? </li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <questContentRules>
+            <rulesStrings>
+
+                <!-- letters -->
+                <li>questAcceptedLetterLabel-> archotech power regulator discovered</li>
+                <li>questAcceptedLetterText->[questDescriptionBeforeAccepted]</li>
+
+                <!-- quest descriptions -->
+                <li>questDescriptionBeforeAccepted-> [questDescription]</li>
+                <li>questDescriptionAfterAccepted-> [questDescription]</li>
+
+            </rulesStrings>
+        </questContentRules>
+        <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_ArchospringVictory_PreCycle" />
     </QuestScriptDef>
 
   <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">

@@ -16,6 +16,21 @@ public class QuestPart_SubquestGenerator_ArchoHunt : QuestPart_SubquestGenerator
 
     public string componentLostSignal;
 
+    public override IEnumerable<GlobalTargetInfo> QuestLookTargets
+    {
+        get => Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentsSeenByPlayer.Select(t=>(GlobalTargetInfo)t);
+    }
+    public override IEnumerable<Dialog_InfoCard.Hyperlink> Hyperlinks
+    {
+        get
+        {
+            foreach (Dialog_InfoCard.Hyperlink hyperlink in base.Hyperlinks)
+                yield return hyperlink;
+            foreach (Thing outerThing in QuestLookTargets)
+                yield return new Dialog_InfoCard.Hyperlink(outerThing.GetInnerIfMinified().def);
+        }
+    }
+
     protected override Slate InitSlate()
     {
         float var = 0.0f;
