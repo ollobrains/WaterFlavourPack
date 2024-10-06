@@ -11,16 +11,20 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 
 public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
 {
-    public const int LetterReminderInterval = 3600000;
     protected Map map;
+
+    public static string BuildingDestroyedGlobalSignal = "ArchoBuildingDestroyed";
 
     protected abstract int WaterCycle { get; }
     protected abstract string QuestSignal { get; }
-    protected abstract QuestPart_Filter QuestPartFilter { get; }
+    protected abstract QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding { get; }
     protected abstract QuestPart_RequirementToAcceptBuildingHasComponents Requirement { get; }
+    protected abstract QuestPartActivable_BuildingUnavailable BuildingFilter { get; }
+    protected abstract ThingDef BuildingDef { get; }
 
-    public string subquestsCompletedSignal;
+    protected abstract SitePartDef CurrentSitePartDef { get; }
 
+    protected abstract bool SpawnSite { get; }
     protected abstract bool SetSuccess { get; }
 
 
@@ -30,16 +34,47 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       Slate slate = QuestGen.slate;
       map = QuestGen_Get.GetMap();
 
-      slate.Set("archospringComponent", Thirst_Flavour_PackDefOf.MSS_Water_ComponentArcho);
-      string componentLostSignal = QuestGen.GenerateNewSignal("ComponentLost");
-      subquestsCompletedSignal = QuestGen.GenerateNewSignal("SubquestsCompleted");
-      quest.End(QuestEndOutcome.Fail, inSignal: componentLostSignal, sendStandardLetter: true);
+      string activated = QuestGen.GenerateNewSignal("ArchoBuildingComplete");
+      string mapVisitedSignal = BuildingDef.defName + "_MapVisited";
 
-      quest.AddPart(Requirement);
+      if (SpawnSite)
+      {
+          int tile;
+          TryFindSiteTile(out tile);
 
+          SitePartParams parms = new SitePartParams();
+          Site site = QuestGen_Sites.GenerateSite(Gen.YieldSingle(new SitePartDefWithParams(CurrentSitePartDef, parms)), tile, Faction.OfAncients);
+
+          //Don't spawn the site until we accept.
+          quest.SpawnWorldObject(site, null, quest.InitiateSignal);
+
+          //Don't send the letter until we accept.
+          quest.Letter(
+              LetterDefOf.RelicHuntInstallationFound,
+              text: "MSS_Thirst_Letter_Site_Found_Title".Translate(CurrentSitePartDef.label),
+              label: "MSS_Thirst_Letter_Site_Found_Text".Translate(CurrentSitePartDef.label),
+              inSignal:quest.InitiateSignal);
+      }
+
+      // Set the description based on quest accepted/not accepted
+      quest.DescriptionPart("[questDescriptionBeforeAccepted]", quest.AddedSignal, mapVisitedSignal, QuestPart.SignalListenMode.OngoingOrNotYetAccepted);
+      quest.DescriptionPart("[questDescriptionAfterAccepted]", mapVisitedSignal, signalListenMode: QuestPart.SignalListenMode.OngoingOrNotYetAccepted);
+
+
+      // Intercept the building destroyed signal, and check if it applies to us. If so, reset the quest to not accepted so we can try again.
+      string bldDestroyedSignal = QuestGen.GenerateNewSignal("Building_Destroyed");
+      QuestPartActivable_BuildingUnavailable filter = BuildingFilter;
+      filter.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
+      filter.inSignalEnable = QuestGen.GenerateNewSignal(BuildingDestroyedGlobalSignal);
+      filter.outSignalsCompleted.Add(bldDestroyedSignal);
+      quest.SetQuestNotYetAccepted(bldDestroyedSignal);
+
+      // quest.AddPart(Requirement);
+
+      // Spawn subquests at random intervals that can give components
       QuestPart_SubquestGenerator_ArchoHunt part1 = new QuestPart_SubquestGenerator_ArchoHunt();
-      part1.componentLostSignal = componentLostSignal;
-      part1.inSignalEnable = QuestGen.slate.Get<string>("inSignal");
+      part1.inSignalEnable = mapVisitedSignal;
+      part1.inSignalDisable = activated;
       part1.interval = new IntRange(600, 600);
       part1.archotechComponentDef = Thirst_Flavour_PackDefOf.MSS_Water_ComponentArcho;
       part1.archotechComponentSlateName = "archotechComponent";
@@ -48,21 +83,24 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       part1.maxSuccessfulSubquests = 1;
       part1.subquestDefs.AddRange(GetAllSubquests(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory));
 
-      part1.signalListenMode = QuestPart.SignalListenMode.NotYetAcceptedOnly;
+      part1.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       quest.AddPart(part1);
 
-      QuestPart_Filter filter = QuestPartFilter;
-      filter.signalListenMode = QuestPart.SignalListenMode.OngoingOnly;
-      filter.inSignal = QuestGen.slate.Get<string>("inSignal");
-      filter.outSignal = QuestGen.GenerateNewSignal("FilterComplete");
+      // Check if the 3 components are in place, then fire the ArchoBuildingComplete signal
+      QuestPart_Activable_ArchoSpringBuilding buildingComplete = Activable_ArchoSpringBuilding;
+      buildingComplete.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
+      // always listen, just in case the player beats us to adding the components before accepting
+      buildingComplete.inSignalEnable = mapVisitedSignal;
+      buildingComplete.outSignalsCompleted.Add(activated);
+      quest.AddPart(buildingComplete);
 
-      quest.AddPart(filter);
-
+      // End the quest here if appropriate
       if (SetSuccess)
-          quest.End(QuestEndOutcome.Success, inSignal:filter.outSignal, sendStandardLetter: true);
+          quest.End(QuestEndOutcome.Success, inSignal:activated, sendStandardLetter: true);
 
+      // set up the "reward"
       QuestPart_Choice choice = quest.RewardChoice();
-      choice.inSignalChoiceUsed = subquestsCompletedSignal;
+      choice.inSignalChoiceUsed = activated;
       choice.choices.Add(new QuestPart_Choice.Choice
       {
         rewards = {
@@ -74,9 +112,13 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       });
       List<Map> maps = Find.Maps;
 
-      List<MapParent> var = (from m in maps where m.IsPlayerHome select m.Parent).ToList();
+      slate.Set("inSignal", activated);
+    }
 
-      slate.Set("inSignal", subquestsCompletedSignal);
+
+    public bool TryFindSiteTile(out int tile, bool exitOnFirstTileFound = false)
+    {
+        return TileFinder.TryFindNewSiteTile(out tile, 10, 40, exitOnFirstTileFound: exitOnFirstTileFound);
     }
 
     protected override bool TestRunInt(Slate slate) => QuestGen_Get.GetMap() != null;

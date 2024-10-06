@@ -1,32 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
-  <SitePartDef>
-    <defName>MSS_Thirst_ArchospringSite</defName>
-    <label>archospring</label>
-    <description>An ancient archotech device. Some say it is capable of generating enough water for an entire planets population.</description>
-    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
-    <approachOrderString>Investigate {0}</approachOrderString>
-    <approachingReportString>Investigate {0}</approachingReportString>
-    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
-    <wantsThreatPoints>true</wantsThreatPoints>
-    <tags>
-      <li>Water</li>
-    </tags>
-  </SitePartDef>
-
-  <GenStepDef>
-    <defName>MSS_Thirst_WaterGen</defName>
-    <linkWithSite>MSS_Thirst_ArchospringSite</linkWithSite>
-    <order>1000</order>
-    <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_WaterGenerator" />
-  </GenStepDef>
-
-
     <SitePartDef>
-        <defName>MSS_Thirst_Archospring_PowerRegulator_Site</defName>
-        <label>power regulator site</label>
-        <description>An ancient archotech device.</description>
+        <defName>MSS_Thirst_ArchospringSite</defName>
+        <label>archospring</label>
+        <description>An ancient archotech device. Some say it is capable of generating enough water for an entire planets population.</description>
         <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
         <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
         <approachOrderString>Investigate {0}</approachOrderString>
@@ -39,9 +17,87 @@
     </SitePartDef>
 
     <GenStepDef>
+        <defName>MSS_Thirst_WaterGen</defName>
+        <linkWithSite>MSS_Thirst_ArchospringSite</linkWithSite>
+        <order>1000</order>
+        <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_WaterGenerator" />
+    </GenStepDef>
+
+
+    <SitePartDef>
+        <defName>MSS_Thirst_Archospring_PowerRegulator_Site</defName>
+        <label>power regulator site</label>
+        <description>An ancient archotech device.</description>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
+        <approachOrderString>Investigate {0}</approachOrderString>
+        <approachingReportString>Investigate {0}</approachingReportString>
+        <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <workerClass>Thirst_Flavour_Pack.VictoryQuest.MapGen.SitePartWorker_ArchoSite</workerClass>
+        <tags>
+            <li>Water</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
         <defName>MSS_Thirst_PowerRegulator</defName>
         <linkWithSite>MSS_Thirst_Archospring_PowerRegulator_Site</linkWithSite>
         <order>1000</order>
-        <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_PowerRegulator" />
+        <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchoBuilding">
+            <BuildingDef>MSS_PowerRegulator</BuildingDef>
+        </genStep>
+    </GenStepDef>
+
+
+    <SitePartDef>
+        <defName>MSS_Thirst_Archospring_CatalyticSeparator_Site</defName>
+        <label>catalytic separator site</label>
+        <description>An ancient archotech device.</description>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
+        <approachOrderString>Investigate {0}</approachOrderString>
+        <approachingReportString>Investigate {0}</approachingReportString>
+        <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <workerClass>Thirst_Flavour_Pack.VictoryQuest.MapGen.SitePartWorker_ArchoSite</workerClass>
+        <tags>
+            <li>Water</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>MSS_Thirst_CatalyticSeparator</defName>
+        <linkWithSite>MSS_Thirst_Archospring_CatalyticSeparator_Site</linkWithSite>
+        <order>1000</order>
+        <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchoBuilding">
+            <BuildingDef>MSS_CatalyticSeparator</BuildingDef>
+        </genStep>
+    </GenStepDef>
+
+
+    <SitePartDef>
+        <defName>MSS_Thirst_Archospring_SterilizationPlant_Site</defName>
+        <label>sterilization plant site</label>
+        <description>An ancient archotech device.</description>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
+        <approachOrderString>Investigate {0}</approachOrderString>
+        <approachingReportString>Investigate {0}</approachingReportString>
+        <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <workerClass>Thirst_Flavour_Pack.VictoryQuest.MapGen.SitePartWorker_ArchoSite</workerClass>
+        <tags>
+            <li>Water</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>MSS_Thirst_SterilizationPlant</defName>
+        <linkWithSite>MSS_Thirst_Archospring_SterilizationPlant_Site</linkWithSite>
+        <order>1000</order>
+        <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchoBuilding">
+            <BuildingDef>MSS_SterilizationPlant</BuildingDef>
+        </genStep>
     </GenStepDef>
 </Defs>

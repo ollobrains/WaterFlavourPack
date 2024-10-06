@@ -26,6 +26,8 @@ public static class Thirst_Flavour_PackDefOf
 
     public static SitePartDef MSS_Thirst_ArchospringSite;
     public static SitePartDef MSS_Thirst_Archospring_PowerRegulator_Site;
+    public static SitePartDef MSS_Thirst_Archospring_CatalyticSeparator_Site;
+    public static SitePartDef MSS_Thirst_Archospring_SterilizationPlant_Site;
 
     public static ThingDef MSS_Water_ComponentArcho;
 

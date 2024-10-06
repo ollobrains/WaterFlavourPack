@@ -12,10 +12,10 @@
 
 
     <RuleDef>
-        <defName>MSS_Thirst_PowerRegulator</defName>
-        <symbol>mssthirstpowerregulator</symbol>
+        <defName>MSS_Thirst_ArchoBuilding</defName>
+        <symbol>mssthirstarchobuilding</symbol>
         <resolvers>
-            <li Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.SymbolResolver_PowerRegulator">
+            <li Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.SymbolResolver_ArchoBuilding">
                 <minRectSize>(10, 10)</minRectSize>
             </li>
         </resolvers>

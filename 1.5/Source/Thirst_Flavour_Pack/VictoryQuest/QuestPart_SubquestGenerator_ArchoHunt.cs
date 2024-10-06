@@ -14,8 +14,6 @@ public class QuestPart_SubquestGenerator_ArchoHunt : QuestPart_SubquestGenerator
     public string archotechComponentSlateName;
     public MapParent useMapParentThreatPoints;
 
-    public string componentLostSignal;
-
     public override IEnumerable<GlobalTargetInfo> QuestLookTargets
     {
         get => Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentsSeenByPlayer.Select(t=>(GlobalTargetInfo)t);

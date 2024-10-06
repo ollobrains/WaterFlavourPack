@@ -52,7 +52,12 @@
         <questDescriptionRules>
             <rulesStrings>
                 <!-- description -->
-                <li>questDescription->One of your colonists has discovered an ancient Archotech Component. It appears to be receiving a signal from an unknown origin. Rumours have linked these components to water somehow - maybe you should investigate?\n\nClaim the building you find and investigate.</li>
+                <li>questDescription->One of your colonists has discovered an ancient Archotech Component. It appears to be receiving a signal from an unknown origin. Rumours have linked these components to water somehow - maybe you should investigate?</li>
+
+
+                <!-- quest descriptions -->
+                <li>questDescriptionBeforeAccepted-> [questDescription]</li>
+                <li>questDescriptionAfterAccepted-> [questDescription]</li>
             </rulesStrings>
         </questDescriptionRules>
         <questContentRules>
@@ -61,10 +66,6 @@
                 <!-- letters -->
                 <li>questAcceptedLetterLabel-> archotech power regulator discovered</li>
                 <li>questAcceptedLetterText->[questDescriptionBeforeAccepted]</li>
-
-                <!-- quest descriptions -->
-                <li>questDescriptionBeforeAccepted-> [questDescription]</li>
-                <li>questDescriptionAfterAccepted-> [questDescription]</li>
 
             </rulesStrings>
         </questContentRules>
@@ -82,8 +83,10 @@
       </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
+          <li>questDescription-></li>
         <!-- description -->
-        <li>questDescription->Upon arriving at the location of the signal you find some kind of Archotech Power Regulator. You've heard rumours about there Power Regulators. The murmerings seem to hint at something related to water. Some investigation of the power regulator reveals three slots that appear to be for Archotech Components.\nSome think that it may be contributing to the water contamination. Some think it's a cure for the contamination. Nobody really knows. Maybe you'll find one, and maybe you'll find answers.\n\nAdd 3 Archotech Components to the Power Regulator.</li>
+        <li>questDescriptionBeforeAccepted->You've discovered the source of the signal's response. Investigate the site, and claim what you discover!\n\nEnter the site and claim the building as your own.</li>
+        <li>questDescriptionAfterAccepted->The site holds what appears to be an archotech machine. As far as you can tell, it's linked to something beneath the surface, something big.\nOn closer inspection, you find slots that look like the archotech component you found would fit perfectly. There's 3 of them. Maybe try connecting them all up?</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_ArchospringVictory_FirstCycle" />
@@ -100,8 +103,10 @@
       </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
+          <li>questDescription-></li>
         <!-- description -->
-        <li>questDescription->After inserting the last component, the Power Regulator whirred into action. To what end - you have no idea.\n\nAn interface on the building came online showing what appeared to be logs and notes. In them, there's scattered references to a great drought, interspersed with references to a grand Archotech machine. It appears the two may be related, but you do not yet know how.\n\nThe data described a Catalytic Separator, required for the grand machination.\n Shortly after reading this, the machine began emitting a new signal. To your surprise, it got a response! The signal leads you to the next building.\n\nAdd 3 Archotech Components to the Catalytic Separator.</li>
+        <li>questDescriptionBeforeAccepted->After inserting the last component, the Power Regulator whirred into action. To what end - you have no idea.\n\nAn interface on the building came online showing what appeared to be logs and notes. In them, there's scattered references to a great drought, interspersed with references to a grand Archotech machine. It appears the two may be related, but you do not yet know how.\n\nThe data described a Catalytic Separator, required for the grand machination.\n Shortly after reading this, the machine began emitting a new signal. To your surprise, it got a response!\n\nClaim what you find and investigate.</li>
+        <li>questDescriptionAfterAccepted->This time, you've found what appears to be some form of catalytic separator. You're not sure what it's purpose is, but as before, you see 3 familiar slots.\n\nAdd 3 Archotech Components to the Catalytic Separator.</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_ArchospringVictory_SecondCycle" />
@@ -122,14 +127,15 @@
     </questDescriptionRules>
     <questContentRules>
       <rulesStrings>
+          <li>questDescription-></li>
 
         <!-- letters -->
         <li>questAcceptedLetterLabel-> archospring discovered</li>
         <li>questAcceptedLetterText->[questDescriptionBeforeAccepted]</li>
 
         <!-- quest descriptions -->
-        <li>questDescriptionBeforeAccepted->As before, the Catalytic Separator comes to life, and as before, you have no idea what it's doing. You find another interface terminal, and begin gathering data.\nBased on this new data, you're pretty sure that the archotech machine was an attempt to fix the drought, that was never completed. Some sporadic logs talk of a great war that tore nations apart, and ravaged the climate of this planet. In its wake, some survivors took it upon themselves to try to fix things. While they got much work done, squabbles over resources, especially what water was available eventually tore the group apart.\nA signal goes out, and receives a response. This might ne it, the great machine you've been searching for.\nYou yet again trace the signal, this time to a Sterilization plant.\n\nAdd 3 Archotech Components to the Catalytic Separator.</li>
-        <li>questDescriptionAfterAccepted->The Sterilization plant comes online. This time the signal it emits is extraordinary. More powerful than any signal you've seen before, and containing data beyond your comprehension. What you can make out talks of the Archospring. A thing of legend, that no-one believed was real. The stories say that it can cleanse the planet's water, but in the wrong hands, could make someone very powerful. Either way, you have the coordinates. Time to find out what lies at the end of the road!\n\n[descriptionThreats]</li>
+        <li>questDescriptionBeforeAccepted->As before, the Catalytic Separator comes to life, and as before, you have no idea what it's doing. You find another interface terminal, and begin gathering data.\nBased on this new data, you're pretty sure that the archotech machine was an attempt to fix the drought, that was never completed. Some sporadic logs talk of a great war that tore nations apart, and ravaged the climate of this planet. In its wake, some survivors took it upon themselves to try to fix things. While they got much work done, squabbles over resources, especially what water was available eventually tore the group apart.\nA signal goes out, and receives a response.\n\nClaim what you find and investigate.</li>
+        <li>questDescriptionAfterAccepted->You yet again trace the signal, this time to a Sterilization plant. Yet again, there's 3 slots. Connect them up!</li>
 
         <li>descriptionThreats(threatsEnabled==true)->The archospring will likely have defenders, so go prepared.\n\n</li>
         <li>descriptionThreats(threatsEnabled==false)-></li>

@@ -27,4 +27,7 @@
     <MSS_Thirst_BuildingContainsComponents>Contains {0} components</MSS_Thirst_BuildingContainsComponents>
 
     <MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>You have {0}/{1} of the required Archotech Components for the {2}</MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>
+
+    <MSS_Thirst_Letter_Site_Found_Title>{0} found!</MSS_Thirst_Letter_Site_Found_Title>
+    <MSS_Thirst_Letter_Site_Found_Text>A {0} has been found!</MSS_Thirst_Letter_Site_Found_Text>
 </LanguageData>

@@ -8,7 +8,7 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.MapGen;
 
-public class SymbolResolver_PowerRegulator: SymbolResolver
+public class SymbolResolver_ArchoBuilding: SymbolResolver
 {
     private const int SuperstructureDistance = 11;
     private const int MinorSuperstructureDistance = 28;
@@ -60,8 +60,8 @@ public class SymbolResolver_PowerRegulator: SymbolResolver
       // Add the archonexus core
       ResolveParams powerRegulatorParams = rp with
       {
-        rect = CellRect.CenteredOn(rp.rect.CenterCell, Thirst_Flavour_PackDefOf.MSS_PowerRegulator.size.x, Thirst_Flavour_PackDefOf.MSS_PowerRegulator.size.z),
-        singleThingDef = Thirst_Flavour_PackDefOf.MSS_PowerRegulator,
+        rect = CellRect.CenteredOn(rp.rect.CenterCell, rp.singleThingDef.size.x, rp.singleThingDef.size.z),
+        singleThingDef = rp.singleThingDef,
         floorDef = BaseTerrainDef
       };
       BaseGen.symbolStack.Push("thing", powerRegulatorParams);

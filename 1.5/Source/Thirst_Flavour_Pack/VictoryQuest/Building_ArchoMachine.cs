@@ -122,9 +122,9 @@ public class Building_ArchoMachine : Building,
     {
         base.Destroy(mode);
 
-        if(innerContainer.Count < 3)
-            Find.SignalManager.SendSignal(new Signal(QuestNode_Root_ArchospringVictory_PreCycle.PowerRegulatorDestroyed, global: true));
-
         Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.SetOrAdd(def, false);
+
+        if(innerContainer.Count < 3)
+            Find.SignalManager.SendSignal(new Signal(QuestNode_Root_ArchospringVictory_Cycle.BuildingDestroyedGlobalSignal, new SignalArgs(new NamedArgument(def, "buildingDef")), global: true));
     }
 }

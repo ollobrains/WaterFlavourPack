@@ -8,16 +8,21 @@ public class QuestNode_Root_ArchospringVictory_SecondCycle: QuestNode_Root_Archo
 {
     protected override int WaterCycle => 2;
     protected override string QuestSignal => "CatalyticSeparatorBuilt";
-    protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator, 3);
+    protected override QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding => new QuestPart_Activable_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator, 3);
 
     protected override QuestPart_RequirementToAcceptBuildingHasComponents Requirement =>
         new QuestPart_RequirementToAcceptBuildingHasComponents(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator);
 
+    protected override QuestPartActivable_BuildingUnavailable BuildingFilter => new QuestPartActivable_BuildingUnavailable(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator);
+    protected override ThingDef BuildingDef => Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator;
+    protected override SitePartDef CurrentSitePartDef => Thirst_Flavour_PackDefOf.MSS_Thirst_Archospring_CatalyticSeparator_Site;
+
+    protected override bool SpawnSite => true;
     protected override bool SetSuccess => true;
     protected override void RunInt()
     {
         base.RunInt();
         Quest quest = QuestGen.quest;
-        quest.DialogWithCloseBehavior("[resolvedQuestDescription]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, closeAction: QuestPartDialogCloseAction.CloseActionKey.ArchonexusVictorySound2nd);
+        quest.DialogWithCloseBehavior("[questDescriptionBeforeAccepted]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, closeAction: QuestPartDialogCloseAction.CloseActionKey.ArchonexusVictorySound2nd);
     }
 }

@@ -21,7 +21,7 @@ public class QuestPart_Filter_ArchoComponent : QuestPart_Filter
 
     public override IEnumerable<GlobalTargetInfo> QuestLookTargets
     {
-        get => Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentsSeenByPlayer.Select(t=>(GlobalTargetInfo)t);
+        get => Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentsSeenByPlayer.Select(t=>(GlobalTargetInfo)t).Take(3);
     }
 
     protected override bool Pass(SignalArgs args)

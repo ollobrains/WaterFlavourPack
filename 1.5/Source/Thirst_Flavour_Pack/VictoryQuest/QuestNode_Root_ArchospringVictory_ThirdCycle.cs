@@ -9,12 +9,17 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
 {
     protected override int WaterCycle => 3;
     protected override string QuestSignal => "SterilizationPlantBuilt";
-    protected override QuestPart_Filter QuestPartFilter => new QuestPart_Filter_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator, 3);
+    protected override QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding => new QuestPart_Activable_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_SterilizationPlant, 3);
 
     protected override QuestPart_RequirementToAcceptBuildingHasComponents Requirement =>
-        new QuestPart_RequirementToAcceptBuildingHasComponents(Thirst_Flavour_PackDefOf.MSS_CatalyticSeparator);
+        new QuestPart_RequirementToAcceptBuildingHasComponents(Thirst_Flavour_PackDefOf.MSS_SterilizationPlant);
+
+    protected override SitePartDef CurrentSitePartDef => Thirst_Flavour_PackDefOf.MSS_Thirst_Archospring_SterilizationPlant_Site;
+    protected override QuestPartActivable_BuildingUnavailable BuildingFilter => new QuestPartActivable_BuildingUnavailable(Thirst_Flavour_PackDefOf.MSS_SterilizationPlant);
+    protected override ThingDef BuildingDef => Thirst_Flavour_PackDefOf.MSS_SterilizationPlant;
 
     private static float ThreatPointsFactor = 0.6f;
+    protected override bool SpawnSite => true;
     protected override bool SetSuccess => false;
 
     protected override void RunInt()
@@ -30,8 +35,6 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
       if (faction != null)
         quest.RequirementsToAcceptFactionRelation(faction, FactionRelationKind.Ally, true);
       quest.DialogWithCloseBehavior("[questDescriptionBeforeAccepted]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, closeAction: QuestPartDialogCloseAction.CloseActionKey.ArchonexusVictorySound3rd);
-      quest.DescriptionPart("[questDescriptionBeforeAccepted]", quest.AddedSignal, quest.InitiateSignal, QuestPart.SignalListenMode.OngoingOrNotYetAccepted);
-      quest.DescriptionPart("[questDescriptionAfterAccepted]", quest.InitiateSignal, signalListenMode: QuestPart.SignalListenMode.OngoingOrNotYetAccepted);
       quest.Letter(LetterDefOf.PositiveEvent, text: "[questAcceptedLetterText]", label: "[questAcceptedLetterLabel]");
       float num2 = Find.Storyteller.difficulty.allowViolentQuests ? num1 * ThreatPointsFactor : 0.0f;
       SitePartParams parms = new SitePartParams
@@ -44,11 +47,6 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
       quest.SpawnWorldObject(site);
       slate.Set("factionless", faction == null);
       slate.Set("threatsEnabled", Find.Storyteller.difficulty.allowViolentQuests);
-    }
-
-    private bool TryFindSiteTile(out int tile, bool exitOnFirstTileFound = false)
-    {
-      return TileFinder.TryFindNewSiteTile(out tile, 10, 40, exitOnFirstTileFound: exitOnFirstTileFound);
     }
 
     protected override bool TestRunInt(Slate slate)
