@@ -26,7 +26,7 @@ public class Reward_ArhcospringBuildingSiteMap : Reward
         get
         {
             yield return QuestPartUtility.GetStandardRewardStackElement(
-                "MSS_Reward_ArchospringSignalLocationLabel".Translate(), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
+                "MSS_Thirst_Reward_ArchospringSignalLocationLabel".Translate(), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
         }
     }
 
@@ -51,6 +51,6 @@ public class Reward_ArhcospringBuildingSiteMap : Reward
 
     public override string GetDescription(RewardsGeneratorParams parms)
     {
-        return "MSS_Reward_ArchospringSignalLocationDesc".Translate();
+        return "MSS_Thirst_Reward_ArchospringSignalLocationDesc".Translate();
     }
 }

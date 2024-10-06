@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <QuestScriptDef>
-    <defName>MSS_Archospring_TradeRequest</defName>
+    <defName>MSS_Thirst_Archospring_TradeRequest</defName>
     <rootSelectionWeight>1.1</rootSelectionWeight>
     <rootMinProgressScore>8</rootMinProgressScore>
-      <epicParent>MSS_EndGame_WaterVictory</epicParent>
+      <epicParent>MSS_Thirst_EndGame_WaterVictory</epicParent>
     <defaultChallengeRating>1</defaultChallengeRating>
     <expireDaysRange>4~8</expireDaysRange>
     <questNameRules>
@@ -79,7 +79,7 @@
         <!-- Rewards -->
         <li Class="QuestNode_GenerateThing">
             <storeAs>componentReward</storeAs>
-            <def>MSS_Water_ComponentArcho</def>
+            <def>MSS_Thirst_ComponentArcho</def>
             <stackCount>1</stackCount>
         </li>
 

@@ -10,16 +10,16 @@ public static class Thirst_Flavour_PackDefOf
     // [MayRequireBiotech]
     // public static GeneDef YourPrefix_YourGeneDefName;
 
-    public static QuestScriptDef MSS_EndGame_WaterVictory;
-    public static QuestScriptDef MSS_EndGame_WaterVictory_PreCycle;
-    public static QuestScriptDef MSS_EndGame_WaterVictory_FirstCycle;
-    public static QuestScriptDef MSS_EndGame_WaterVictory_SecondCycle;
-    public static QuestScriptDef MSS_EndGame_WaterVictory_ThirdCycle;
+    public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory;
+    public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory_PreCycle;
+    public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory_FirstCycle;
+    public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory_SecondCycle;
+    public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory_ThirdCycle;
 
-    public static IncidentDef MSS_GiveQuest_EndGame_ArchospringVictory;
+    public static IncidentDef MSS_Thirst_GiveQuest_EndGame_ArchospringVictory;
 
-    public static WorldObjectDef MSS_Settlement_SecondArchospringCycle;
-    public static WorldObjectDef MSS_Settlement_ThirdArchospringCycle;
+    public static WorldObjectDef MSS_Thirst_Settlement_SecondArchospringCycle;
+    public static WorldObjectDef MSS_Thirst_Settlement_ThirdArchospringCycle;
 
     public static HediffDef MSSThirst_Extracted_Water;
 
@@ -29,11 +29,11 @@ public static class Thirst_Flavour_PackDefOf
     public static SitePartDef MSS_Thirst_Archospring_CatalyticSeparator_Site;
     public static SitePartDef MSS_Thirst_Archospring_SterilizationPlant_Site;
 
-    public static ThingDef MSS_Water_ComponentArcho;
+    public static ThingDef MSS_Thirst_ComponentArcho;
 
-    public static ThingDef MSS_PowerRegulator;
-    public static ThingDef MSS_CatalyticSeparator;
-    public static ThingDef MSS_SterilizationPlant;
+    public static ThingDef MSS_Thirst_PowerRegulator;
+    public static ThingDef MSS_Thirst_CatalyticSeparator;
+    public static ThingDef MSS_Thirst_SterilizationPlant;
 
     public static SitePartDef MSS_Thirst_BarbCamp;
 

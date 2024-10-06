@@ -3,22 +3,22 @@
 
 
     <MapGeneratorDef ParentName="Base_Player">
-        <defName>MSS_BasePlayer_SecondArchospringCycle</defName>
+        <defName>MSS_Thirst_BasePlayer_SecondArchospringCycle</defName>
         <genSteps>
-            <li>MSS_GenStep_ArchospringResearchBuildings_SecondCycle</li>
+            <li>MSS_Thirst_GenStep_ArchospringResearchBuildings_SecondCycle</li>
         </genSteps>
     </MapGeneratorDef>
 
     <MapGeneratorDef ParentName="Base_Player">
-        <defName>MSS_BasePlayer_ThirdArchospringCycle</defName>
+        <defName>MSS_Thirst_BasePlayer_ThirdArchospringCycle</defName>
         <genSteps>
-            <li>MSS_GenStep_ArchospringResearchBuildings_ThirdCycle</li>
+            <li>MSS_Thirst_GenStep_ArchospringResearchBuildings_ThirdCycle</li>
         </genSteps>
     </MapGeneratorDef>
 
     <!-- Archonexus research -->
     <GenStepDef>
-        <defName>MSS_GenStep_ArchospringResearchBuildings_SecondCycle</defName>
+        <defName>MSS_Thirst_GenStep_ArchospringResearchBuildings_SecondCycle</defName>
         <order>500</order>
         <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchospringResearchBuildings_SecondCycle">
             <validators>
@@ -28,7 +28,7 @@
     </GenStepDef>
 
     <GenStepDef>
-        <defName>MSS_GenStep_ArchospringResearchBuildings_ThirdCycle</defName>
+        <defName>MSS_Thirst_GenStep_ArchospringResearchBuildings_ThirdCycle</defName>
         <order>500</order>
         <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchospringResearchBuildings_ThirdCycle">
             <validators>

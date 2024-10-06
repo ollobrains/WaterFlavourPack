@@ -11,7 +11,7 @@ public class SitePartWorker_ArchoSite: SitePartWorker
 
     public override void PostMapGenerate(Map map)
     {
-        Building_ArchoMachine building = map.listerBuildings.AllColonistBuildingsOfType < Building_ArchoMachine>().FirstOrDefault() ?? map.listerBuildings.allBuildingsNonColonist.OfType<Building_ArchoMachine>().FirstOrDefault();
+        Building_ArchoMachine building = map.listerBuildings.AllColonistBuildingsOfType<Building_ArchoMachine>().FirstOrDefault() ?? map.listerBuildings.allBuildingsNonColonist.OfType<Building_ArchoMachine>().FirstOrDefault();
 
         if(building is null) return;
 

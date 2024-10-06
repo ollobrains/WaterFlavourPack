@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using RimWorld;
 using RimWorld.BaseGen;
-using RimWorld.Planet;
 using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.MapGen;
@@ -50,7 +49,7 @@ public class GenStep_ArchospringComponent: GenStep_ScattererBestFit
             sitePart = parms.sitePart
         };
         BaseGen.globalSettings.map = map;
-        BaseGen.symbolStack.Push("mss_thrist_archo_component", resolveParams);
+        BaseGen.symbolStack.Push("mss_thirst_archo_component", resolveParams);
         BaseGen.Generate();
         parms.sitePart.relicWasSpawned = true;
     }

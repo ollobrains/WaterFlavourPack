@@ -17,7 +17,7 @@ public class SitePartWorker_BarbCamp: SitePartWorker
         base.Init(site, sitePart);
 
         ThingDef compDef = QuestGen.slate.Get<ThingDef>("archospringComponent");
-        if (compDef == null) compDef = Thirst_Flavour_PackDefOf.MSS_Water_ComponentArcho;
+        if (compDef == null) compDef = Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho;
         sitePart.things = new ThingOwner<Thing>(sitePart);
 
         component = ThingMaker.MakeThing(compDef);

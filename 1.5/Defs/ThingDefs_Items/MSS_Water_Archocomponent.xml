@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <ThingDef ParentName="ResourceBase">
-        <defName>MSS_Water_ComponentArcho</defName>
+        <defName>MSS_Thirst_ComponentArcho</defName>
         <label>archotech component</label>
         <description>An Archotech component often used in ancient archo-machinery. Nobody really knows how they work, luckily they're plug-and-play.</description>
         <thingClass>Thirst_Flavour_Pack.VictoryQuest.Thing_ComponentArcho</thingClass>

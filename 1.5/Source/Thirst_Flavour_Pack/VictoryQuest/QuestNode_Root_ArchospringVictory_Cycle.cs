@@ -86,12 +86,12 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       part1.inSignalEnable = mapVisitedSignal;
       part1.inSignalDisable = activated;
       part1.interval = Thirst_Flavour_PackMod.settings.ArchoQuestComponentHuntInterval;
-      part1.archotechComponentDef = Thirst_Flavour_PackDefOf.MSS_Water_ComponentArcho;
+      part1.archotechComponentDef = Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho;
       part1.archotechComponentSlateName = "archotechComponent";
       part1.useMapParentThreatPoints = map?.Parent;
       part1.expiryInfoPartKey = "RelicInfoFound";
       part1.maxSuccessfulSubquests = 1;
-      part1.subquestDefs.AddRange(GetAllSubquests(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory));
+      part1.subquestDefs.AddRange(GetAllSubquests(Thirst_Flavour_PackDefOf.MSS_Thirst_EndGame_WaterVictory));
       part1.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       quest.AddPart(part1);
 

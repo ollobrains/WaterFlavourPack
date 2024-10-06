@@ -29,7 +29,7 @@ public class Reward_ArchospringMap : Reward
         get
         {
             yield return QuestPartUtility.GetStandardRewardStackElement(
-                "MSS_Reward_ArchospringMapPartLabel".Translate(currentPart, 3), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
+                "MSS_Thirst_Reward_ArchospringMapPartLabel".Translate(currentPart, 3), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
         }
     }
 
@@ -54,7 +54,7 @@ public class Reward_ArchospringMap : Reward
 
     public override string GetDescription(RewardsGeneratorParams parms)
     {
-        return "MSS_Reward_ArchospringMapPart".Translate(currentPart, 3);
+        return "MSS_Thirst_Reward_ArchospringMapPart".Translate(currentPart, 3);
     }
 
     public override void ExposeData()

@@ -2,7 +2,7 @@
 <Defs>
     <RuleDef>
         <defName>MSS_Thirst_Archo_Component</defName>
-        <symbol>mss_thrist_archo_component</symbol>
+        <symbol>mss_thirst_archo_component</symbol>
         <resolvers>
             <li Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.SymbolResolver_Interior_Component">
             </li>
@@ -49,7 +49,7 @@
 
   <QuestScriptDef>
     <defName>MSS_Thirst_Archospring_BarbarianCamp</defName>
-    <epicParent>MSS_EndGame_WaterVictory</epicParent>
+    <epicParent>MSS_Thirst_EndGame_WaterVictory</epicParent>
     <rootSelectionWeight>0.0</rootSelectionWeight>
     <rootMinPoints>350</rootMinPoints>
     <canGiveRoyalFavor>true</canGiveRoyalFavor>

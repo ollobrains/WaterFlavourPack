@@ -9,7 +9,7 @@ namespace Thirst_Flavour_Pack.HarmonyPatches;
 [HarmonyPatch(typeof(Site))]
 public static class Site_Patch
 {
-    public static List<SitePartDef> SitesToNotDespawn = [
+    public static HashSet<SitePartDef> SitesToNotDespawn = [
         Thirst_Flavour_PackDefOf.MSS_Thirst_ArchospringSite,
         Thirst_Flavour_PackDefOf.MSS_Thirst_Archospring_PowerRegulator_Site,
         Thirst_Flavour_PackDefOf.MSS_Thirst_Archospring_CatalyticSeparator_Site,

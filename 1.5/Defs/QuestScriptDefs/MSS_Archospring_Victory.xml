@@ -2,16 +2,16 @@
 <Defs>
 
     <IncidentDef ParentName="GiveQuestBase">
-        <defName>MSS_GiveQuest_EndGame_ArchospringVictory</defName>
+        <defName>MSS_Thirst_GiveQuest_EndGame_ArchospringVictory</defName>
         <label>archospring victory</label>
         <letterLabel>archospring victory</letterLabel>
-        <questScriptDef>MSS_EndGame_WaterVictory</questScriptDef>
+        <questScriptDef>MSS_Thirst_EndGame_WaterVictory</questScriptDef>
         <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
     </IncidentDef>
 
     <!-- Hidden quest that generates the subquests below -->
     <QuestScriptDef>
-        <defName>MSS_EndGame_WaterVictory</defName>
+        <defName>MSS_Thirst_EndGame_WaterVictory</defName>
         <epic>true</epic>
         <isRootSpecial>true</isRootSpecial>
         <defaultHidden>true</defaultHidden>
@@ -31,7 +31,7 @@
     </QuestScriptDef>
 
     <!-- Archonexus subquests -->
-    <QuestScriptDef Abstract="True" Name="MSS_EndGame_ArchospringVictory_Cycle">
+    <QuestScriptDef Abstract="True" Name="MSS_Thirst_EndGame_ArchospringVictory_Cycle">
         <isRootSpecial>true</isRootSpecial>
         <hideOnCleanup>true</hideOnCleanup>
         <endOnColonyMove>false</endOnColonyMove>
@@ -40,8 +40,8 @@
         <defaultHidden>false</defaultHidden>
     </QuestScriptDef>
 
-    <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">
-        <defName>MSS_EndGame_WaterVictory_PreCycle</defName>
+    <QuestScriptDef ParentName="MSS_Thirst_EndGame_ArchospringVictory_Cycle">
+        <defName>MSS_Thirst_EndGame_WaterVictory_PreCycle</defName>
         <affectedByPoints>false</affectedByPoints>
         <questNameRules>
             <rulesStrings>
@@ -71,8 +71,8 @@
         <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_ArchospringVictory_PreCycle" />
     </QuestScriptDef>
 
-  <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">
-    <defName>MSS_EndGame_WaterVictory_FirstCycle</defName>
+  <QuestScriptDef ParentName="MSS_Thirst_EndGame_ArchospringVictory_Cycle">
+    <defName>MSS_Thirst_EndGame_WaterVictory_FirstCycle</defName>
     <affectedByPoints>false</affectedByPoints>
       <questNameRules>
           <rulesStrings>
@@ -90,8 +90,8 @@
     <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_ArchospringVictory_FirstCycle" />
   </QuestScriptDef>
 
-  <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">
-    <defName>MSS_EndGame_WaterVictory_SecondCycle</defName>
+  <QuestScriptDef ParentName="MSS_Thirst_EndGame_ArchospringVictory_Cycle">
+    <defName>MSS_Thirst_EndGame_WaterVictory_SecondCycle</defName>
     <affectedByPoints>false</affectedByPoints>
 
       <questNameRules>
@@ -110,8 +110,8 @@
     <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_ArchospringVictory_SecondCycle" />
   </QuestScriptDef>
 
-  <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">
-    <defName>MSS_EndGame_WaterVictory_ThirdCycle</defName>
+  <QuestScriptDef ParentName="MSS_Thirst_EndGame_ArchospringVictory_Cycle">
+    <defName>MSS_Thirst_EndGame_WaterVictory_ThirdCycle</defName>
 
       <questNameRules>
           <rulesStrings>

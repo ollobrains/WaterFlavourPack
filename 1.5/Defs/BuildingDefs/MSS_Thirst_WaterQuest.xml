@@ -2,7 +2,7 @@
 <Defs>
 
 
-    <ThingDef Name="MSS_ArchoQuestBuilding" ParentName="BuildingBase" Abstract="True">
+    <ThingDef Name="MSS_Thirst_ArchoQuestBuilding" ParentName="BuildingBase" Abstract="True">
         <minifiedDef>MinifiedThing</minifiedDef>
         <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
         <castEdgeShadows>true</castEdgeShadows>
@@ -29,7 +29,7 @@
                 <priority>Preferred</priority>
                 <filter>
                     <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
+                        <li>MSS_Thirst_ComponentArcho</li>
                     </thingDefs>
                 </filter>
             </fixedStorageSettings>
@@ -38,15 +38,15 @@
                 <priority>Preferred</priority>
                 <filter>
                     <thingDefs>
-                        <li>MSS_Water_ComponentArcho</li>
+                        <li>MSS_Thirst_ComponentArcho</li>
                     </thingDefs>
                 </filter>
             </defaultStorageSettings>
         </building>
     </ThingDef>
 
-    <ThingDef ParentName="MSS_ArchoQuestBuilding">
-        <defName>MSS_PowerRegulator</defName>
+    <ThingDef ParentName="MSS_Thirst_ArchoQuestBuilding">
+        <defName>MSS_Thirst_PowerRegulator</defName>
         <minifiedDef>MinifiedThing</minifiedDef>
         <label>power regulator</label>
         <description>An ancient archotech power regulator</description>
@@ -58,8 +58,8 @@
         </graphicData>
     </ThingDef>
 
-    <ThingDef ParentName="MSS_ArchoQuestBuilding">
-        <defName>MSS_CatalyticSeparator</defName>
+    <ThingDef ParentName="MSS_Thirst_ArchoQuestBuilding">
+        <defName>MSS_Thirst_CatalyticSeparator</defName>
         <label>Catalytic Separator</label>
         <description>An ancient archotech catalytic separator</description>
 
@@ -70,8 +70,8 @@
         </graphicData>
     </ThingDef>
 
-    <ThingDef ParentName="MSS_ArchoQuestBuilding">
-        <defName>MSS_SterilizationPlant</defName>
+    <ThingDef ParentName="MSS_Thirst_ArchoQuestBuilding">
+        <defName>MSS_Thirst_SterilizationPlant</defName>
         <label>Sterilization Plant</label>
         <description>An ancient archotech sterilization plant</description>
 

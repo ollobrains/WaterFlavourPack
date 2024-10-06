@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using RimWorld;
+﻿using System.Collections.Generic;
 using RimWorld.Planet;
 using Verse;
 
@@ -14,7 +12,7 @@ public class ArchospringVictoryWorldComponent(World world) : WorldComponent(worl
 {
     public bool ArchoComponentSeenByPlayer => !ArchoComponentsSeenByPlayer.NullOrEmpty();
 
-    public List<Thing> ArchoComponentsSeenByPlayer = [];
+    public HashSet<Thing> ArchoComponentsSeenByPlayer = [];
 
 
     public Dictionary<ThingDef, int> BuildingComponentCount = new Dictionary<ThingDef, int>();

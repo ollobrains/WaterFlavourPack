@@ -37,10 +37,10 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
         archospringVictory.interval = Thirst_Flavour_PackMod.settings.ArchoQuestComponentHuntInterval; // interval between quests
         archospringVictory.maxSuccessfulSubquests = 4;
         archospringVictory.maxActiveSubquests = 1;
-        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_PreCycle);
-        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_FirstCycle);
-        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_SecondCycle);
-        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_ThirdCycle);
+        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_Thirst_EndGame_WaterVictory_PreCycle);
+        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_Thirst_EndGame_WaterVictory_FirstCycle);
+        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_Thirst_EndGame_WaterVictory_SecondCycle);
+        archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_Thirst_EndGame_WaterVictory_ThirdCycle);
 
         quest.AddPart(archospringVictory);
     }

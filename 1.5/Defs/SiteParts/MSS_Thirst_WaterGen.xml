@@ -45,7 +45,7 @@
         <linkWithSite>MSS_Thirst_Archospring_PowerRegulator_Site</linkWithSite>
         <order>1000</order>
         <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchoBuilding">
-            <BuildingDef>MSS_PowerRegulator</BuildingDef>
+            <BuildingDef>MSS_Thirst_PowerRegulator</BuildingDef>
         </genStep>
     </GenStepDef>
 
@@ -71,7 +71,7 @@
         <linkWithSite>MSS_Thirst_Archospring_CatalyticSeparator_Site</linkWithSite>
         <order>1000</order>
         <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchoBuilding">
-            <BuildingDef>MSS_CatalyticSeparator</BuildingDef>
+            <BuildingDef>MSS_Thirst_CatalyticSeparator</BuildingDef>
         </genStep>
     </GenStepDef>
 
@@ -97,7 +97,7 @@
         <linkWithSite>MSS_Thirst_Archospring_SterilizationPlant_Site</linkWithSite>
         <order>1000</order>
         <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchoBuilding">
-            <BuildingDef>MSS_SterilizationPlant</BuildingDef>
+            <BuildingDef>MSS_Thirst_SterilizationPlant</BuildingDef>
         </genStep>
     </GenStepDef>
 </Defs>
