@@ -4,7 +4,10 @@ using RimWorld.QuestGen;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestPart_SubquestGenerator_ArchospringVictory : QuestPart_SubquestGenerator//, ISignalReceiver
+/// <summary>
+/// Spawns the next subquest in the sequence
+/// </summary>
+public class QuestPart_SubquestGenerator_ArchospringVictory : QuestPart_SubquestGenerator
 {
     protected override Slate InitSlate()
     {

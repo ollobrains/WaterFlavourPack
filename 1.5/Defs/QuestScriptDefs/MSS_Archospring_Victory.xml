@@ -35,14 +35,13 @@
         <isRootSpecial>true</isRootSpecial>
         <hideOnCleanup>true</hideOnCleanup>
         <endOnColonyMove>false</endOnColonyMove>
-        <sendAvailableLetter>false</sendAvailableLetter>
+        <sendAvailableLetter>true</sendAvailableLetter>
         <defaultChallengeRating>4</defaultChallengeRating>
         <defaultHidden>false</defaultHidden>
     </QuestScriptDef>
 
     <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">
         <defName>MSS_EndGame_WaterVictory_PreCycle</defName>
-        <sendAvailableLetter>true</sendAvailableLetter>
         <affectedByPoints>false</affectedByPoints>
         <questNameRules>
             <rulesStrings>
@@ -74,7 +73,6 @@
 
   <QuestScriptDef ParentName="MSS_EndGame_ArchospringVictory_Cycle">
     <defName>MSS_EndGame_WaterVictory_FirstCycle</defName>
-    <sendAvailableLetter>true</sendAvailableLetter>
     <affectedByPoints>false</affectedByPoints>
       <questNameRules>
           <rulesStrings>

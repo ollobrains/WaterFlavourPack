@@ -30,5 +30,11 @@
     <MSS_Thirst_Settings_MaxUnsafeWaterPacks>Water packs needed for highest chance of contamination</MSS_Thirst_Settings_MaxUnsafeWaterPacks>
     <MSS_Thirst_Settings_DaysBetweenWaterDestruction>Min days between water destruction</MSS_Thirst_Settings_DaysBetweenWaterDestruction>
     <MSS_Thirst_Settings_BadWaterNoticingRollsPerDay>Times per day contamination can be noticed</MSS_Thirst_Settings_BadWaterNoticingRollsPerDay>
+    <MSS_Thirst_Settings_ArchoQuestComponentHuntInterval>Tick range for randomly generated archotech component quests</MSS_Thirst_Settings_ArchoQuestComponentHuntInterval>
+    <MSS_Thirst_Settings_ArchoQuestSubQuestInterval>Tick range for the main quests subquests</MSS_Thirst_Settings_ArchoQuestSubQuestInterval>
+
+    <GameOverArchotechInvokedIntro>You've activated the archospring. The ground rumbles. The machine whirs. The water bubbles?\n\nSuddenly the bubbles expand out like a shockwave. Once they settle, you swear the water left behind somehow looks safer. It feels safe. Like something has touched your mind to tell you "it's OK, go on, you'll be fine".\nYou test the water to see if these thoughts have any basis in reality. To your surprise, the water is safe. You check some contaminated water from your pack. It's safe too.\nCould this have been it? Did you just save the world's water?\n\n</GameOverArchotechInvokedIntro>
+    <GameOverArchotechInvokedEnding>\n</GameOverArchotechInvokedEnding>
+    <GameOverColonistsTranscended>A blinking prompt on a screen on one of the machines poses a question. It has cleansed the water in the immediate area, do you want to proceed to planet-wide cleansing, or maintain local only?\n\nIf you were to choose local only, you could have all the power you desired. Every colony, faction, tribe would be beholden to you for clean, safe water.\nOr you could be heroes, give the gift to the whole world, then return your old, but improved life.\n\nThese colonists have a decision to make:\n{0}</GameOverColonistsTranscended>
 
 </LanguageData>

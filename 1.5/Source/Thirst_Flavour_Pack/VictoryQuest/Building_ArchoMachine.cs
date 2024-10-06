@@ -6,6 +6,9 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
+/// <summary>
+/// Makes the archo buildings thing holders with appropriate jobs/actions so that we can put archo components in
+/// </summary>
 public class Building_ArchoMachine : Building,
     IThingHolderEvents<Thing_ComponentArcho>,
     IHaulEnroute,

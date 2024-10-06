@@ -21,7 +21,7 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
         timer.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted; // The hidden outer quest is automatically accepted
         timer.inSignalEnable = quest.AddedSignal; //enable immediately;
         timer.inSignalsDisable.Add(filterPassedSignal); // disable when the filter passes
-        timer.ticksInterval = new IntRange(60, 60); // Interval to refire at
+        timer.ticksInterval = new IntRange(60, 600); // Interval to refire at
         timer.outSignals.Add(timerFiredSignal); // signal to fire on interval
         quest.AddPart(timer);
 
@@ -34,7 +34,7 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
         //Start the main quest cycle
         QuestPart_SubquestGenerator_ArchospringVictory archospringVictory = new QuestPart_SubquestGenerator_ArchospringVictory();
         archospringVictory.inSignalEnable = filterPassedSignal;
-        archospringVictory.interval = new IntRange(0, 0); // interval between quests
+        archospringVictory.interval = Thirst_Flavour_PackMod.settings.ArchoQuestComponentHuntInterval; // interval between quests
         archospringVictory.maxSuccessfulSubquests = 4;
         archospringVictory.maxActiveSubquests = 1;
         archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_PreCycle);

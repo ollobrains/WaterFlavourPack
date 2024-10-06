@@ -3,11 +3,11 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
+/// <summary>
+/// Once enabled, checks every 60 ticks if the building we're interested in has the correct number of components. Once it does, completes and fires the output signal
+/// </summary>
 public class QuestPart_Activable_ArchoSpringBuilding( ThingDef def, int count = 3) : QuestPartActivable
 {
-    /// <summary>
-    /// Once enabled, checks every 60 ticks if the building we're interested in has the correct number of components. Once it does, completes and fires the output signal
-    /// </summary>
     public ThingDef Def = def;
     public int Count = count;
 

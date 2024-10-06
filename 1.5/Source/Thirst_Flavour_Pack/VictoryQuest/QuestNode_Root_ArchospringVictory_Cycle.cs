@@ -85,7 +85,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       QuestPart_SubquestGenerator_ArchoHunt part1 = new QuestPart_SubquestGenerator_ArchoHunt();
       part1.inSignalEnable = mapVisitedSignal;
       part1.inSignalDisable = activated;
-      part1.interval = new IntRange(600, 600);
+      part1.interval = Thirst_Flavour_PackMod.settings.ArchoQuestComponentHuntInterval;
       part1.archotechComponentDef = Thirst_Flavour_PackDefOf.MSS_Water_ComponentArcho;
       part1.archotechComponentSlateName = "archotechComponent";
       part1.useMapParentThreatPoints = map?.Parent;

@@ -7,11 +7,11 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
+/// <summary>
+/// Randomly spawn subquests at randomized intervals until we get the finished signal
+/// </summary>
 public class QuestPart_SubquestGenerator_ArchoHunt : QuestPart_SubquestGenerator
 {
-    /// <summary>
-    ///
-    /// </summary>
     private List<QuestScriptDef> questQueue = new List<QuestScriptDef>();
     public ThingDef archotechComponentDef;
     public string archotechComponentSlateName;

@@ -6,6 +6,10 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
+/// <summary>
+/// World component to track quest related details
+/// </summary>
+/// <param name="world"></param>
 public class ArchospringVictoryWorldComponent(World world) : WorldComponent(world)
 {
     public bool ArchoComponentSeenByPlayer => !ArchoComponentsSeenByPlayer.NullOrEmpty();

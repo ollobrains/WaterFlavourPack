@@ -9,35 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="rebuild">
+    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Start documenting as a sanity pass">
       <change beforePath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/BuildingDefs/MSS_Thirst_WaterQuest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/BuildingDefs/MSS_Thirst_WaterQuest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/SiteParts/MSS_Thirst_WaterGen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/SiteParts/MSS_Thirst_WaterGen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Archospring_Victory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Archospring_Victory.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/HarmonyPatches/Dialog_ChooseThingsForNewColony_Patch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/Settings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/ArchospringVictoryWorldComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/ArchospringVictoryWorldComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Comps/CompCatalyticSeparator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Comps/CompPowerRegulator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Comps/CompProperties_CatalyticSeparator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Comps/CompProperties_PowerRegulator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Comps/CompProperties_SterilizationPlant.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Comps/CompSterilizationPlant.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/GenStep_WaterGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/GenStep_ArchoSpring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/QuestNode_GenerateBarbarianSite.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Building_ArchoMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Building_ArchoMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Dialog_ChooseThingsForNewColony_ArchospringQuest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/SymbolResolver_Archospring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/SymbolResolver_Archospring.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_Cycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_Cycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_FirstCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_FirstCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_PreCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_PreCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_SecondCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_SecondCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_ThirdCycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_ThirdCycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPartActivable_Building.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Activable_ArchoComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPartActivable_BuildingUnavailable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPartActivable_BuildingUnavailable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Activable_ArchoSpringBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Activable_ArchoSpringBuilding.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Filter_ArchoComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Filter_ArchoComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Filter_ArchoSpringBuilding.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_NewColony_ArchospringVictory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_RequirementToAcceptAnyArchoComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_RequirementToAcceptBuildingHasComponents.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchoHunt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchoHunt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchospringVictory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchospringVictory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Screen_Archospring_SettlementCinematics.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Thing_ComponentArcho.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Thing_ComponentArcho.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Common/Languages/English/Keyed/MSS_Thirst_Misc_Gameplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Common/Languages/English/Keyed/MSS_Thirst_Misc_Gameplay.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/1.5/Assemblies/Thirst_Flavour_Pack-VEF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/1.5/Assemblies/Thirst_Flavour_Pack-VEF.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +46,9 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/AutoHomeAreaMaker.cs" root0="SKIP_HIGHLIGHTING" />
@@ -176,6 +170,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/StorytellerUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/TerrainDefOf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/ThingStyleHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/UniqueIDsManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/WorldObjectDefOf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Screen_ArchonexusSettlementCinematics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/AI/JobDriver.cs" root0="SKIP_HIGHLIGHTING" />
@@ -198,8 +193,11 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/GridsUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/IThingHolder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/IThingHolderEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/IntRange.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/IntVec3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ListerBuildings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Listing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Listing_Standard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Map.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/MapGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/NamedArgument.cs" root0="SKIP_HIGHLIGHTING" />
@@ -209,8 +207,10 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Rand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/RecipeWorker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Scribe_Collections.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Scribe_Universal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/TerrainDef.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/TerrainGrid.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Thing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingComp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingDef.cs" root0="SKIP_HIGHLIGHTING" />
@@ -221,8 +221,6 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/ThingWithComps.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/Verse/Traversability.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_NewColony_ArchospringVictory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Screen_Archospring_SettlementCinematics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/loadFolders.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Mods/WaterFlavourPack/loadFolders.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/07655ae2c3b84674896de716a913b2ee7a00/05/f75dacaf/0200000D.il" root0="FORCE_HIGHLIGHTING" />
@@ -525,7 +523,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728209477830</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Start documenting as a sanity pass">
+      <option name="closed" value="true" />
+      <created>1728215846932</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1728215846932</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +572,8 @@
     <MESSAGE value="Components haulable to buildings" />
     <MESSAGE value="More work/cleanup" />
     <MESSAGE value="rebuild" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild" />
+    <MESSAGE value="Start documenting as a sanity pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start documenting as a sanity pass" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -648,6 +655,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_SubquestGenerator.cs</url>
+          <line>94</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\Assembly-CSharp\RimWorld\QuestPart_SubquestGenerator.cs" containingFunctionPresentation="Method 'GenerateSubquest'">
+            <startOffsets>
+              <option value="3179" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3253" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="256" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

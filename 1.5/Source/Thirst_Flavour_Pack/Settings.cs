@@ -6,6 +6,8 @@ namespace Thirst_Flavour_Pack;
 
 public class Settings : ModSettings
 {
+    public Vector2 optionsScrollPosition;
+
     public int ThirstCasketHediffTickRate = 360;
     public int MaxSafeWaterInNet = 30;
     public int SafeWaterPacks = 10;
@@ -25,27 +27,30 @@ public class Settings : ModSettings
     public int WaterQuestItemsAllowed = 40;
     public int WaterQuestRelicsAllowed = 10;
 
+    public IntRange ArchoQuestComponentHuntInterval = new IntRange(3600, 108000); // default 1 min to 30 mins
+    public IntRange ArchoQuestSubQuestInterval = new IntRange(3600, 108000); // default 1 min to 30 mins
+
     public void DoWindowContents(Rect wrect)
     {
+        int labels = 8;
+        int intEntries = 6;
+        int intRanges = 2;
+        int gaps = 3;
+
+        float optionsViewRectHeight = (labels * 21.3333333f) +  (intEntries * 24f) + (intRanges * 32f) + (gaps * 12f) + 30f;
+        bool willHaveScrollbar = optionsViewRectHeight > wrect.height;
+        Rect viewRect = new Rect(wrect.x, wrect.y, wrect.width -  (willHaveScrollbar ? 26f : 0f), optionsViewRectHeight);
+        Widgets.BeginScrollView(wrect, ref optionsScrollPosition, viewRect);
+
         bufferIndex = 0;
         Listing_Standard options = new Listing_Standard();
-        options.Begin(wrect);
-
-        options.Label("MSS_Thirst_WaterQuestColonistsAllowed".Translate(WaterQuestColonistsAllowed));
-        options.IntAdjuster(ref WaterQuestColonistsAllowed, 1, 1);
-
-        options.Label("MSS_Thirst_WaterQuestAnimalsAllowed".Translate(WaterQuestAnimalsAllowed));
-        options.IntAdjuster(ref WaterQuestAnimalsAllowed, 1, 1);
-
-        options.Label("MSS_Thirst_WaterQuestItemsAllowed".Translate(WaterQuestItemsAllowed));
-        options.IntAdjuster(ref WaterQuestItemsAllowed, 1, 1);
-
-        options.Label("MSS_Thirst_WaterQuestRelicsAllowed".Translate(WaterQuestRelicsAllowed));
-        options.IntAdjuster(ref WaterQuestRelicsAllowed, 1, 1);
+        options.Begin(viewRect);
 
         options.Label("MSS_Thirst_ThirstCasketHediffTickRate".Translate(ThirstCasketHediffTickRate));
         options.IntEntry(ref ThirstCasketHediffTickRate, ref buffers[bufferIndex++], 1);
         if (ThirstCasketHediffTickRate < 0) ThirstCasketHediffTickRate = 0;
+
+        options.Gap();
 
         options.Label("MSS_Thirst_Settings_MaxSafeWaterInNet".Translate());
         options.IntEntry(ref MaxSafeWaterInNet, ref buffers[bufferIndex++], 1);
@@ -67,11 +72,21 @@ public class Settings : ModSettings
         options.IntEntry(ref BadWaterNoticingRollsPerDay, ref buffers[bufferIndex++], 1);
         if (BadWaterNoticingRollsPerDay < 1) BadWaterNoticingRollsPerDay = 1;
 
+        options.Gap();
+
+        options.Label("MSS_Thirst_Settings_ArchoQuestComponentHuntInterval".Translate());
+        options.IntRange(ref ArchoQuestComponentHuntInterval, 60, 864000);
+
+        options.Label("MSS_Thirst_Settings_ArchoQuestSubQuestInterval".Translate());
+        options.IntRange(ref ArchoQuestSubQuestInterval, 60, 864000);
+
         WaterContaminationIncident.WaterItemContaminationCurveReset = true;
 
         options.Gap();
 
         options.End();
+
+        Widgets.EndScrollView();
     }
 
     public override void ExposeData()
@@ -86,5 +101,7 @@ public class Settings : ModSettings
         Scribe_Values.Look(ref MaxUnsafeWaterPacks, "MaxUnsafeWaterPacks", 30);
         Scribe_Values.Look(ref DaysBetweenWaterDestruction, "DaysBetweenWaterDestruction", 10);
         Scribe_Values.Look(ref BadWaterNoticingRollsPerDay, "BadWaterNoticingRollsPerDay", 2);
+        Scribe_Values.Look(ref ArchoQuestComponentHuntInterval, "ArchoQuestComponentHuntInterval", new IntRange(3600, 108000));
+        Scribe_Values.Look(ref ArchoQuestSubQuestInterval, "ArchoQuestSubQuestInterval", new IntRange(3600, 108000));
     }
 }

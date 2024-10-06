@@ -41,32 +41,6 @@ public class SymbolResolver_Archospring: SymbolResolver
           }
       }
 
-      // // Add sleeping mechs
-      // float? threatPoints = rp.threatPoints;
-      // if (threatPoints.GetValueOrDefault() > (double) 0.0f & threatPoints.HasValue && Faction.OfMechanoids != null)
-      // {
-      //   string mechsWakeUpSignal = "ArchonexusMechanoidsWakeUp" + Find.UniqueIDsManager.GetNextSignalTagID();
-      //   ResolveParams triggerParams = rp with
-      //   {
-      //     rect = rp.rect.ExpandedBy(5),
-      //     rectTriggerSignalTag = mechsWakeUpSignal,
-      //     threatPoints = rp.threatPoints
-      //   };
-      //   BaseGen.symbolStack.Push("rectTrigger", triggerParams);
-      //   ResolveParams mechanoidSleepParams = rp with
-      //   {
-      //     sleepingMechanoidsWakeupSignalTag = mechsWakeUpSignal,
-      //     threatPoints = rp.threatPoints
-      //   };
-      //   BaseGen.symbolStack.Push("sleepingMechanoids", mechanoidSleepParams);
-      //   ResolveParams mechanoidWakeUpParams = rp with
-      //   {
-      //     sound = SoundDefOf.ArchonexusThreatsAwakened_Alarm,
-      //     soundOneShotActionSignalTag = mechsWakeUpSignal
-      //   };
-      //   BaseGen.symbolStack.Push("soundOneShotAction", mechanoidWakeUpParams);
-      // }
-
       Thing.allowDestroyNonDestroyable = true;
       foreach (IntVec3 intVec3 in GenRadial.RadialCellsAround(rp.rect.CenterCell, 50f, true))
       {
@@ -250,6 +224,32 @@ public class SymbolResolver_Archospring: SymbolResolver
               BaseGen.globalSettings.map.terrainGrid.SetUnderTerrain(rp.rect.CenterCell, TerrainDefOf.WaterShallow);
               BaseGen.globalSettings.map.terrainGrid.SetTerrain(rp.rect.CenterCell, TerrainDefOf.WaterShallow);
           }
+      }
+
+      // Add sleeping mechs
+      float? threatPoints = rp.threatPoints;
+      if (threatPoints.GetValueOrDefault() > (double) 0.0f & threatPoints.HasValue && Faction.OfMechanoids != null)
+      {
+          string mechsWakeUpSignal = MechanoidsWakeUpSignalPrefix + Find.UniqueIDsManager.GetNextSignalTagID();
+          ResolveParams triggerParams = rp with
+          {
+              rect = rp.rect.ExpandedBy(5),
+              rectTriggerSignalTag = mechsWakeUpSignal,
+              threatPoints = rp.threatPoints
+          };
+          BaseGen.symbolStack.Push("rectTrigger", triggerParams);
+          ResolveParams mechanoidSleepParams = rp with
+          {
+              sleepingMechanoidsWakeupSignalTag = mechsWakeUpSignal,
+              threatPoints = rp.threatPoints
+          };
+          BaseGen.symbolStack.Push("sleepingMechanoids", mechanoidSleepParams);
+          ResolveParams mechanoidWakeUpParams = rp with
+          {
+              sound = SoundDefOf.ArchonexusThreatsAwakened_Alarm,
+              soundOneShotActionSignalTag = mechsWakeUpSignal
+          };
+          BaseGen.symbolStack.Push("soundOneShotAction", mechanoidWakeUpParams);
       }
 
       List<CellRect> var;
