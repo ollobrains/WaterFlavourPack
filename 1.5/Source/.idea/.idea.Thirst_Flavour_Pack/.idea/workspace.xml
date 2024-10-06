@@ -9,26 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Start documenting as a sanity pass">
+    <list default="true" id="91958d70-7fba-412e-a626-0de9c7e6d476" name="Changes" comment="Fully working final quest. Still needs some variety in random component quests, but otherwise good.">
+      <change afterPath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Archospring_TradeRequest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/HarmonyPatches/Site_Patch.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Assemblies/Thirst_Flavour_Pack.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Archospring_Victory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Defs/QuestScriptDefs/MSS_Archospring_Victory.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Thirst_Flavour_Pack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/HarmonyPatches/Dialog_ChooseThingsForNewColony_Patch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/Settings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/ArchospringVictoryWorldComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/ArchospringVictoryWorldComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Building_ArchoMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Building_ArchoMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Dialog_ChooseThingsForNewColony_ArchospringQuest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/SymbolResolver_Archospring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/MapGen/SymbolResolver_Archospring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_Cycle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestNode_Root_ArchospringVictory_Cycle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPartActivable_BuildingUnavailable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPartActivable_BuildingUnavailable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Activable_ArchoSpringBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Activable_ArchoSpringBuilding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Filter_ArchoComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_Filter_ArchoComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchoHunt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchoHunt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchospringVictory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchospringVictory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Screen_Archospring_SettlementCinematics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Thing_ComponentArcho.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/Thing_ComponentArcho.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Common/Languages/English/Keyed/MSS_Thirst_Misc_Gameplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Common/Languages/English/Keyed/MSS_Thirst_Misc_Gameplay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Common/Languages/English/Keyed/MSS_Thirst_WaterQuest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Common/Languages/English/Keyed/MSS_Thirst_WaterQuest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/1.5/Assemblies/Thirst_Flavour_Pack-VEF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Compatibility/vanillaracesexpanded.sanguophage/1.5/Assemblies/Thirst_Flavour_Pack-VEF.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +37,8 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/AutoHomeAreaMaker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/BaseGen/BaseGen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/BaseGen/BaseGenUtility.cs" root0="SKIP_HIGHLIGHTING" />
@@ -62,6 +50,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Building_Bed.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Building_Bookcase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Building_TurretGun.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/CompHackable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/CompTransporter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Designator_Claim.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Designator_Uninstall.cs" root0="SKIP_HIGHLIGHTING" />
@@ -117,10 +106,12 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_Filter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_Misc.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_Requirements.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_Rewards.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestGen_Sites.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode_EvaluateSimpleCurve.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode_GenerateSite.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode_GiveRewards.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode_IsSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode_Root_ArchonexusVictory_SecondCycle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestGen/QuestNode_Root_ArchonexusVictory_ThirdCycle.cs" root0="SKIP_HIGHLIGHTING" />
@@ -531,7 +522,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728215846932</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fully working final quest. Still needs some variety in random component quests, but otherwise good.">
+      <option name="closed" value="true" />
+      <created>1728237848242</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1728237848242</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +572,8 @@
     <MESSAGE value="More work/cleanup" />
     <MESSAGE value="rebuild" />
     <MESSAGE value="Start documenting as a sanity pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start documenting as a sanity pass" />
+    <MESSAGE value="Fully working final quest. Still needs some variety in random component quests, but otherwise good." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully working final quest. Still needs some variety in random component quests, but otherwise good." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -657,17 +657,69 @@
           <option name="timeStamp" value="189" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/QuestPart_SubquestGenerator.cs</url>
-          <line>94</line>
-          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\Assembly-CSharp\RimWorld\QuestPart_SubquestGenerator.cs" containingFunctionPresentation="Method 'GenerateSubquest'">
+          <url>file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchoHunt.cs</url>
+          <line>49</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WaterFlavourPack\1.5\Source\Thirst_Flavour_Pack\VictoryQuest\QuestPart_SubquestGenerator_ArchoHunt.cs" containingFunctionPresentation="Method 'GetNextSubquestDef'">
             <startOffsets>
-              <option value="3179" />
+              <option value="1917" />
             </startOffsets>
             <endOffsets>
-              <option value="3253" />
+              <option value="1958" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="256" />
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Thirst_Flavour_Pack/VictoryQuest/QuestPart_SubquestGenerator_ArchoHunt.cs</url>
+          <line>48</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WaterFlavourPack\1.5\Source\Thirst_Flavour_Pack\VictoryQuest\QuestPart_SubquestGenerator_ArchoHunt.cs" containingFunctionPresentation="Method 'GetNextSubquestDef'">
+            <startOffsets>
+              <option value="1856" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1908" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Planet/MapParent.cs</url>
+          <line>93</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\Assembly-CSharp\RimWorld\Planet\MapParent.cs" containingFunctionPresentation="Method 'Abandon'">
+            <startOffsets>
+              <option value="2954" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2972" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="260" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../../../../../Assembly-CSharp/RimWorld/Planet/MapParent.cs</url>
+          <line>225</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\Assembly-CSharp\RimWorld\Planet\MapParent.cs" containingFunctionPresentation="Method 'CheckRemoveMapNow'">
+            <startOffsets>
+              <option value="8938" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8986" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="261" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Thirst_Flavour_Pack/HarmonyPatches/Site_Patch.cs</url>
+          <line>25</line>
+          <properties documentPath="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WaterFlavourPack\1.5\Source\Thirst_Flavour_Pack\HarmonyPatches\Site_Patch.cs" containingFunctionPresentation="Method 'ShouldRemoveMapNow_Postfix'">
+            <startOffsets>
+              <option value="908" />
+            </startOffsets>
+            <endOffsets>
+              <option value="925" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="268" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

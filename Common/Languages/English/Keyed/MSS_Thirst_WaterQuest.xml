@@ -30,4 +30,6 @@
 
     <MSS_Thirst_Letter_Site_Found_Title>{0} found!</MSS_Thirst_Letter_Site_Found_Title>
     <MSS_Thirst_Letter_Site_Found_Text>A {0} has been found!</MSS_Thirst_Letter_Site_Found_Text>
+
+    <MSS_Thirst_MessageComponentDiscovered>You've discovered an ancient archotech component!</MSS_Thirst_MessageComponentDiscovered>
 </LanguageData>

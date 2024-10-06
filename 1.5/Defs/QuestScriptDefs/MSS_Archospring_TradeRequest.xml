@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>MSS_Archospring_TradeRequest</defName>
+    <rootSelectionWeight>1.1</rootSelectionWeight>
+    <rootMinProgressScore>8</rootMinProgressScore>
+      <epicParent>MSS_EndGame_WaterVictory</epicParent>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Caravan to [settlement_label]</li>
+        <li>questName->Trade with [settlement_label]</li>
+        <li>questName->Selling to [settlement_label]</li>
+        <li>questName->Supplies for [settlement_label]</li>
+        <li>questName->A [special] [trade]</li>
+        <li>special->Special</li>
+        <li>special->Unique</li>
+        <li>special->Non-traditional</li>
+        <li>trade->Trade</li>
+        <li>trade->Exchange</li>
+        <li>trade->Deal</li>
+        <li>trade->Offer</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A nearby settlement, [settlement_label], has a special trade request. They would like to purchase:
+\n  [requestedThingCount]x [requestedThing_label] [qualityInfo](worth [requestedThingMarketValue_money])
+\nIf you want to make the trade, send a caravan with the requested items. The estimated travel time is [estimatedTravelTime_duration].</li>
+        <li>qualityInfo(requestedThingHasQuality==True,priority=1)->of normal+ quality </li>
+        <li>qualityInfo-></li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetNearbySettlement">
+          <allowActiveTradeRequest>false</allowActiveTradeRequest>
+          <maxTileDistance>32</maxTileDistance>
+          <storeAs>settlement</storeAs>
+          <storeFactionLeaderAs>asker</storeFactionLeaderAs>
+        </li>
+        <li Class="QuestNode_GetFactionOf">
+          <thing>$asker</thing>
+          <storeAs>faction</storeAs>
+        </li>
+        <li Class="QuestNode_Letter">
+          <inSignal>faction.BecameHostileToPlayer</inSignal>
+          <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+          <text TKey="LetterTextQuestFailed">[faction_name] became hostile to you.</text>
+        </li>
+        <li Class="QuestNode_End">
+          <inSignal>faction.BecameHostileToPlayer</inSignal>
+          <outcome>Fail</outcome>
+        </li>
+        <li Class="QuestNode_TradeRequest_RandomOfferDuration">
+          <settlement>$settlement</settlement>
+          <storeAs>timeout</storeAs>
+          <storeEstimatedTravelTimeAs>estimatedTravelTime</storeEstimatedTravelTimeAs>
+        </li>
+        <li Class="QuestNode_TradeRequest_GetRequestedThing">
+          <storeThingAs>requestedThing</storeThingAs>
+          <storeThingCountAs>requestedThingCount</storeThingCountAs>
+          <storeMarketValueAs>requestedThingMarketValue</storeMarketValueAs>
+          <storeHasQualityAs>requestedThingHasQuality</storeHasQualityAs>
+          <dontRequest>
+            <li>Leather_Patch</li>
+          </dontRequest>
+        </li>
+        <li Class="QuestNode_TradeRequest_Initiate">
+          <settlement>$settlement</settlement>
+          <requestedThingDef>$requestedThing</requestedThingDef>
+          <requestedThingCount>$requestedThingCount</requestedThingCount>
+          <duration>$timeout</duration>
+        </li>
+
+        <!-- Rewards -->
+        <li Class="QuestNode_GenerateThing">
+            <storeAs>componentReward</storeAs>
+            <def>MSS_Water_ComponentArcho</def>
+            <stackCount>1</stackCount>
+        </li>
+
+        <li Class="QuestNode_AddToList">
+            <name>componentRewards</name>
+            <value>$componentReward</value>
+        </li>
+
+        <li Class="QuestNode_AddItemsReward">
+            <items>$componentRewards</items>
+            <inSignalChoiceUsed>settlement.TradeRequestFulfilled</inSignalChoiceUsed>
+        </li>
+
+        <!-- End conditions -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>$timeout</delayTicks>
+          <isQuestTimeout>true</isQuestTimeout>
+          <outSignalComplete>TradeRequestTimeout</outSignalComplete>
+        </li>
+
+        <li Class="QuestNode_End">
+          <inSignal>settlement.TradeRequestFulfilled</inSignal>
+          <outcome>Success</outcome>
+          <sendStandardLetter>true</sendStandardLetter>
+        </li>
+
+        <li Class="QuestNode_End">
+          <inSignal>TradeRequestTimeout</inSignal>
+            <outcome>Fail</outcome>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>
