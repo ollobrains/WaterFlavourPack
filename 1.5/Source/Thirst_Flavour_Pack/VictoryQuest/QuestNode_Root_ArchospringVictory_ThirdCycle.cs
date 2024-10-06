@@ -7,12 +7,8 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 
 public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_ArchospringVictory_Cycle
 {
-    protected override int WaterCycle => 3;
-    protected override string QuestSignal => "SterilizationPlantBuilt";
+    protected override int QuestCycle => 3;
     protected override QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding => new QuestPart_Activable_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_SterilizationPlant, 3);
-
-    protected override QuestPart_RequirementToAcceptBuildingHasComponents Requirement =>
-        new QuestPart_RequirementToAcceptBuildingHasComponents(Thirst_Flavour_PackDefOf.MSS_SterilizationPlant);
 
     protected override SitePartDef CurrentSitePartDef => Thirst_Flavour_PackDefOf.MSS_Thirst_Archospring_SterilizationPlant_Site;
     protected override QuestPartActivable_BuildingUnavailable BuildingFilter => new QuestPartActivable_BuildingUnavailable(Thirst_Flavour_PackDefOf.MSS_SterilizationPlant);
@@ -28,24 +24,32 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
       Quest quest = QuestGen.quest;
       Slate slate = QuestGen.slate;
 
-      float num1 = slate.Get<float>("points");
-      Faction faction = slate.Get<Faction>("roughTribe");
+      // Fire up the dialog and a letter
+      quest.DialogWithCloseBehavior(
+          "[questDescriptionBeforeAccepted]",
+          inSignal: quest.AddedSignal,
+          signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly,
+          closeAction: QuestPartDialogCloseAction.CloseActionKey.ArchonexusVictorySound3rd);
+
+      quest.Letter(LetterDefOf.PositiveEvent, text: "[questAcceptedLetterText]", label: "[questAcceptedLetterLabel]");
+
+
+      // grab a free tile for the site
       int tile;
       TryFindSiteTile(out tile);
-      if (faction != null)
-        quest.RequirementsToAcceptFactionRelation(faction, FactionRelationKind.Ally, true);
-      quest.DialogWithCloseBehavior("[questDescriptionBeforeAccepted]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly, closeAction: QuestPartDialogCloseAction.CloseActionKey.ArchonexusVictorySound3rd);
-      quest.Letter(LetterDefOf.PositiveEvent, text: "[questAcceptedLetterText]", label: "[questAcceptedLetterLabel]");
-      float num2 = Find.Storyteller.difficulty.allowViolentQuests ? num1 * ThreatPointsFactor : 0.0f;
+
+      float raidPoints = slate.Get<float>("points");
+      float adjustedRaidPoints = Find.Storyteller.difficulty.allowViolentQuests ? raidPoints * ThreatPointsFactor : 0.0f;
       SitePartParams parms = new SitePartParams
       {
-        threatPoints = num2
+        threatPoints = adjustedRaidPoints
       };
       Site site = QuestGen_Sites.GenerateSite(Gen.YieldSingle(new SitePartDefWithParams(Thirst_Flavour_PackDefOf.MSS_Thirst_ArchospringSite, parms)), tile, Faction.OfAncients);
-      if (num1 <= 0.0 && Find.Storyteller.difficulty.allowViolentQuests)
+      if (raidPoints <= 0.0 && Find.Storyteller.difficulty.allowViolentQuests)
         quest.SetSitePartThreatPointsToCurrent(site, Thirst_Flavour_PackDefOf.MSS_Thirst_ArchospringSite, map.Parent, threatPointsFactor: ThreatPointsFactor);
       quest.SpawnWorldObject(site);
-      slate.Set("factionless", faction == null);
+
+      slate.Set("factionless", true);
       slate.Set("threatsEnabled", Find.Storyteller.difficulty.allowViolentQuests);
     }
 

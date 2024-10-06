@@ -11,29 +11,30 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
         if (!ModLister.CheckIdeology("Archonexus victory"))
             return;
         Quest quest = QuestGen.quest;
-        Slate slate = QuestGen.slate;
 
-        string playerFoundArchoComponent = QuestGen.GenerateNewSignal("PlayerFoundArchoComponent");
-        string outerNodeCompleted = QuestGen.GenerateNewSignal("OuterNodeCompleted");
+        // precreate our signals
+        string timerFiredSignal = QuestGen.GenerateNewSignal("TimerFired");
+        string filterPassedSignal = QuestGen.GenerateNewSignal("FilterPassed");
 
-        QuestPart_PassOutInterval part2 = new QuestPart_PassOutInterval(); // Keep retrying until we move on.
-        part2.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted; // The hidden outer quest is automatically accepted
-        part2.inSignalEnable = quest.AddedSignal; //playerFoundArchoComponent;
-        part2.inSignalsDisable.Add(outerNodeCompleted);
-        part2.ticksInterval = new IntRange(60, 60);
-        part2.outSignals.Add(playerFoundArchoComponent);
-        quest.AddPart(part2);
+        // Acts as a timer, outputting it's signal based on the ticksInterval - allows us to keep retrying the filter
+        QuestPart_PassOutInterval timer = new QuestPart_PassOutInterval(); // Keep retrying until we move on.
+        timer.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted; // The hidden outer quest is automatically accepted
+        timer.inSignalEnable = quest.AddedSignal; //enable immediately;
+        timer.inSignalsDisable.Add(filterPassedSignal); // disable when the filter passes
+        timer.ticksInterval = new IntRange(60, 60); // Interval to refire at
+        timer.outSignals.Add(timerFiredSignal); // signal to fire on interval
+        quest.AddPart(timer);
 
-        QuestPart_Filter_ArchoComponent part3 = new QuestPart_Filter_ArchoComponent(); // Validate that the player has seen a component
-        part3.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted; // The hidden outer quest is automatically accepted
-        part3.inSignal = playerFoundArchoComponent;
-        part3.outSignal = outerNodeCompleted;
-        quest.AddPart(part3);
+        QuestPart_Filter_ArchoComponent filter = new QuestPart_Filter_ArchoComponent(); // Validate that the player has seen a component
+        filter.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted; // The hidden outer quest is automatically accepted
+        filter.inSignal = timerFiredSignal; // Accept signal timer
+        filter.outSignal = filterPassedSignal; // output signal to timer and victory quest
+        quest.AddPart(filter);
 
         //Start the main quest cycle
         QuestPart_SubquestGenerator_ArchospringVictory archospringVictory = new QuestPart_SubquestGenerator_ArchospringVictory();
-        archospringVictory.inSignalEnable = part3.outSignal; //slate.Get<string>("inSignal");
-        archospringVictory.interval = new IntRange(0, 0);
+        archospringVictory.inSignalEnable = filterPassedSignal;
+        archospringVictory.interval = new IntRange(0, 0); // interval between quests
         archospringVictory.maxSuccessfulSubquests = 4;
         archospringVictory.maxActiveSubquests = 1;
         archospringVictory.subquestDefs.Add(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory_PreCycle);

@@ -56,10 +56,6 @@
             <texPath>Things/Building/Special/MSS_Water_PowerRegulator</texPath>
             <drawSize>(3,3)</drawSize>
         </graphicData>
-
-        <comps>
-            <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_PowerRegulator"/>
-        </comps>
     </ThingDef>
 
     <ThingDef ParentName="MSS_ArchoQuestBuilding">
@@ -72,10 +68,6 @@
             <texPath>Things/Building/Special/MSS_Water_CatalyticSeparator</texPath>
             <drawSize>(3,3)</drawSize>
         </graphicData>
-
-        <comps>
-            <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_CatalyticSeparator"/>
-        </comps>
     </ThingDef>
 
     <ThingDef ParentName="MSS_ArchoQuestBuilding">
@@ -88,9 +80,5 @@
             <texPath>Things/Building/Special/MSS_Water_SterilizationPlant</texPath>
             <drawSize>(3,3)</drawSize>
         </graphicData>
-
-        <comps>
-            <li Class="Thirst_Flavour_Pack.VictoryQuest.Comps.CompProperties_SterilizationPlant"/>
-        </comps>
     </ThingDef>
 </Defs>

@@ -5,7 +5,7 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.MapGen;
 
-public class GenStep_WaterGenerator : GenStep_Archonexus
+public class GenStep_ArchoSpring : GenStep_Archonexus
 {
     protected override void ScatterAt(IntVec3 c, Map map, GenStepParams parms, int stackCount = 1)
     {

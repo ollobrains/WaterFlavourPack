@@ -13,18 +13,29 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
 {
     protected Map map;
 
+    // Signal name for tracking destruction of the archo buildings in order to reset quests
     public static string BuildingDestroyedGlobalSignal = "ArchoBuildingDestroyed";
 
-    protected abstract int WaterCycle { get; }
-    protected abstract string QuestSignal { get; }
+    // The current part of the quest cycles
+    protected abstract int QuestCycle { get; }
+
+    // Once enabled, checks if the building has the correct amount of components every 60 ticks, and if it does, completes itself then emits the outsignal
     protected abstract QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding { get; }
-    protected abstract QuestPart_RequirementToAcceptBuildingHasComponents Requirement { get; }
+
+    // A filter on the global building destroyed signal to determine if the building we're interested in was destroyed, and if it is, raises it's own signal
+    // This lets us act on our specific building being destroyed, without having to worry about raising specific signals
     protected abstract QuestPartActivable_BuildingUnavailable BuildingFilter { get; }
+
+    // The def of the relevant building, e.g. Power Regulator
     protected abstract ThingDef BuildingDef { get; }
 
+    // The SitePartDef we should use to create the quest site
     protected abstract SitePartDef CurrentSitePartDef { get; }
 
+    // Should we spawn the site
     protected abstract bool SpawnSite { get; }
+
+    // Should we trigger the success condition (used for the third part)
     protected abstract bool SetSuccess { get; }
 
 
@@ -34,8 +45,10 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       Slate slate = QuestGen.slate;
       map = QuestGen_Get.GetMap();
 
+      // pre-create any signals we need
       string activated = QuestGen.GenerateNewSignal("ArchoBuildingComplete");
-      string mapVisitedSignal = BuildingDef.defName + "_MapVisited";
+      string mapVisitedSignal = BuildingDef.defName + "_MapVisited"; // global, so don't use QuestGen.GenerateNewSignal
+      string bldDestroyedSignal = QuestGen.GenerateNewSignal("Building_Destroyed");
 
       if (SpawnSite)
       {
@@ -62,14 +75,11 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
 
 
       // Intercept the building destroyed signal, and check if it applies to us. If so, reset the quest to not accepted so we can try again.
-      string bldDestroyedSignal = QuestGen.GenerateNewSignal("Building_Destroyed");
       QuestPartActivable_BuildingUnavailable filter = BuildingFilter;
       filter.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       filter.inSignalEnable = QuestGen.GenerateNewSignal(BuildingDestroyedGlobalSignal);
       filter.outSignalsCompleted.Add(bldDestroyedSignal);
       quest.SetQuestNotYetAccepted(bldDestroyedSignal);
-
-      // quest.AddPart(Requirement);
 
       // Spawn subquests at random intervals that can give components
       QuestPart_SubquestGenerator_ArchoHunt part1 = new QuestPart_SubquestGenerator_ArchoHunt();
@@ -82,7 +92,6 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       part1.expiryInfoPartKey = "RelicInfoFound";
       part1.maxSuccessfulSubquests = 1;
       part1.subquestDefs.AddRange(GetAllSubquests(Thirst_Flavour_PackDefOf.MSS_EndGame_WaterVictory));
-
       part1.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       quest.AddPart(part1);
 
@@ -106,11 +115,10 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
         rewards = {
           new Reward_ArchospringMap
           {
-              currentPart = WaterCycle
+              currentPart = QuestCycle
           }
         }
       });
-      List<Map> maps = Find.Maps;
 
       slate.Set("inSignal", activated);
     }

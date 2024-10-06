@@ -5,12 +5,8 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 
 public class QuestNode_Root_ArchospringVictory_FirstCycle: QuestNode_Root_ArchospringVictory_Cycle
 {
-    protected override int WaterCycle => 1;
-    protected override string QuestSignal => "PowerRegulatorBuilt";
+    protected override int QuestCycle => 1;
     protected override QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding => new QuestPart_Activable_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_PowerRegulator, 3);
-
-    protected override QuestPart_RequirementToAcceptBuildingHasComponents Requirement =>
-        new QuestPart_RequirementToAcceptBuildingHasComponents(Thirst_Flavour_PackDefOf.MSS_PowerRegulator);
 
     protected override QuestPartActivable_BuildingUnavailable BuildingFilter => new QuestPartActivable_BuildingUnavailable(Thirst_Flavour_PackDefOf.MSS_PowerRegulator);
     protected override ThingDef BuildingDef => Thirst_Flavour_PackDefOf.MSS_PowerRegulator;

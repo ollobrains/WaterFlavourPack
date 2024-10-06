@@ -9,6 +9,9 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 
 public class QuestPart_SubquestGenerator_ArchoHunt : QuestPart_SubquestGenerator
 {
+    /// <summary>
+    ///
+    /// </summary>
     private List<QuestScriptDef> questQueue = new List<QuestScriptDef>();
     public ThingDef archotechComponentDef;
     public string archotechComponentSlateName;

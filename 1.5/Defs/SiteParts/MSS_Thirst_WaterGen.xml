@@ -20,7 +20,7 @@
         <defName>MSS_Thirst_WaterGen</defName>
         <linkWithSite>MSS_Thirst_ArchospringSite</linkWithSite>
         <order>1000</order>
-        <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_WaterGenerator" />
+        <genStep Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.GenStep_ArchoSpring" />
     </GenStepDef>
 
 
