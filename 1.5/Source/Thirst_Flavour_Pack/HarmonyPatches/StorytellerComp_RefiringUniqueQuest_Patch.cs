@@ -40,7 +40,7 @@ public static class StorytellerComp_RefiringUniqueQuest_Patch
             if (quest != null)
             {
                 if (Props.refireEveryDays >= 0.0 && quest.State != QuestState.EndedSuccess && quest.State != QuestState.Ongoing && quest.State != QuestState.NotYetAccepted &&
-                    quest.cleanupTick >= 0 && IntervalsPassed == (int) (quest.cleanupTick + Props.refireEveryDays * 60000.0) / 1000)
+                    quest.cleanupTick >= 0 && IntervalsPassed >= (int) (quest.cleanupTick + Props.refireEveryDays * 60000.0) / 1000)
                 {
                     __result = [new FiringIncident(incident, __instance, parms)];
                 }
@@ -48,7 +48,7 @@ public static class StorytellerComp_RefiringUniqueQuest_Patch
             else
             {
                 if (!(bool) generateSkipped.Value.GetValue(__instance)
-                        ? IntervalsPassed == (int) (Props.minDaysPassed * 60.0) + 1
+                        ? IntervalsPassed >= (int) (Props.minDaysPassed * 60.0) + 1
                         : GenTicks.TicksGame >= Props.minDaysPassed * 60000.0)
                 {
                     __result = [new FiringIncident(incident, __instance, parms)];

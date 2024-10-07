@@ -10,11 +10,14 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 public class QuestPartActivable_BuildingUnavailable(ThingDef buildingDef): QuestPartActivable
 {
     public ThingDef BuildingDef = buildingDef;
+    public int NextCheck = 600;
 
     public override void QuestPartTick()
     {
-        if (Find.TickManager.TicksGame % 60 != 0)
+        if (Find.TickManager.TicksGame < NextCheck)
             return;
+
+        NextCheck += 600;
 
         if(Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.GetWithFallback(BuildingDef, false))
             Complete();
@@ -24,5 +27,6 @@ public class QuestPartActivable_BuildingUnavailable(ThingDef buildingDef): Quest
     {
         base.ExposeData();
         Scribe_Defs.Look(ref BuildingDef, "BuildingDef");
+        Scribe_Values.Look(ref NextCheck, "NextCheck");
     }
 }
