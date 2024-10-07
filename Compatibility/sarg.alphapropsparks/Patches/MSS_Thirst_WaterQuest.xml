@@ -54,37 +54,4 @@
             </li>
         </value>
     </Operation>
-
-    <!-- <Operation Class="PatchOperationAdd"> -->
-    <!--     <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath> -->
-    <!--     <value> -->
-    <!--         <li Class="CompProperties_FleckEmitter"> -->
-    <!--             <fleck>AP_WaterSprout_FleckLarge</fleck> -->
-    <!--             <emissionInterval>60</emissionInterval> -->
-    <!--             <offset>(-2.2,0,-0.9)</offset> -->
-    <!--         </li> -->
-    <!--     </value> -->
-    <!-- </Operation> -->
-    <!-- -->
-    <!-- <Operation Class="PatchOperationAdd"> -->
-    <!--     <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath> -->
-    <!--     <value> -->
-    <!--         <li Class="CompProperties_FleckEmitter"> -->
-    <!--             <fleck>AP_WaterSprout_FleckLarge</fleck> -->
-    <!--             <emissionInterval>60</emissionInterval> -->
-    <!--             <offset>(2.5,0,-1.5)</offset> -->
-    <!--         </li> -->
-    <!--     </value> -->
-    <!-- </Operation> -->
-    <!-- -->
-    <!-- <Operation Class="PatchOperationAdd"> -->
-    <!--     <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath> -->
-    <!--     <value> -->
-    <!--         <li Class="CompProperties_FleckEmitter"> -->
-    <!--             <fleck>AP_WaterSprout_FleckLarge</fleck> -->
-    <!--             <emissionInterval>60</emissionInterval> -->
-    <!--             <offset>(2.5,0,0.5)</offset> -->
-    <!--         </li> -->
-    <!--     </value> -->
-    <!-- </Operation> -->
 </Patch>

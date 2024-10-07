@@ -18,26 +18,20 @@ public class Settings : ModSettings
     private string[] buffers = new string[32];
     private int bufferIndex = 0;
 
-    public int WaterQuestBuildingsRequiredFirstCycle = 3;
-    public int WaterQuestBuildingsRequiredSecondCycle = 3;
-    public int WaterQuestBuildingsRequiredThirdCycle = 3;
-
-    public int WaterQuestColonistsAllowed = 10;
-    public int WaterQuestAnimalsAllowed = 10;
-    public int WaterQuestItemsAllowed = 40;
-    public int WaterQuestRelicsAllowed = 10;
+    public int ArchotechComponentsToCompleteBuilding = 3;
 
     public IntRange ArchoQuestComponentHuntInterval = new IntRange(3600, 108000); // default 1 min to 30 mins
     public IntRange ArchoQuestSubQuestInterval = new IntRange(3600, 108000); // default 1 min to 30 mins
 
     public void DoWindowContents(Rect wrect)
     {
-        int labels = 8;
+        int labels = 9;
+        int intAdjuster = 6;
         int intEntries = 6;
         int intRanges = 2;
         int gaps = 3;
 
-        float optionsViewRectHeight = (labels * 21.3333333f) +  (intEntries * 24f) + (intRanges * 32f) + (gaps * 12f) + 30f;
+        float optionsViewRectHeight = (labels * 21.3333333f) + (intAdjuster * 24f) + (intEntries * 24f) + (intRanges * 32f) + (gaps * 12f) + 30f;
         bool willHaveScrollbar = optionsViewRectHeight > wrect.height;
         Rect viewRect = new Rect(wrect.x, wrect.y, wrect.width -  (willHaveScrollbar ? 26f : 0f), optionsViewRectHeight);
         Widgets.BeginScrollView(wrect, ref optionsScrollPosition, viewRect);
@@ -74,6 +68,9 @@ public class Settings : ModSettings
 
         options.Gap();
 
+        options.Label("".Translate(ArchotechComponentsToCompleteBuilding));
+        options.IntAdjuster(ref ArchotechComponentsToCompleteBuilding, 1);
+
         options.Label("MSS_Thirst_Settings_ArchoQuestComponentHuntInterval".Translate());
         options.IntRange(ref ArchoQuestComponentHuntInterval, 60, 864000);
 
@@ -91,16 +88,13 @@ public class Settings : ModSettings
 
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref WaterQuestColonistsAllowed, "WaterQuestColonistsAllowed", 10);
-        Scribe_Values.Look(ref WaterQuestAnimalsAllowed, "WaterQuestAnimalsAllowed", 10);
-        Scribe_Values.Look(ref WaterQuestItemsAllowed, "WaterQuestItemsAllowed", 40);
-        Scribe_Values.Look(ref WaterQuestRelicsAllowed, "WaterQuestRelicsAllowed", 10);
         Scribe_Values.Look(ref ThirstCasketHediffTickRate, "ThirstCasketHediffTickRate", 360);
         Scribe_Values.Look(ref MaxSafeWaterInNet, "MaxSafeWaterInNet", 30);
         Scribe_Values.Look(ref SafeWaterPacks, "SafeWaterPacks", 10);
         Scribe_Values.Look(ref MaxUnsafeWaterPacks, "MaxUnsafeWaterPacks", 30);
         Scribe_Values.Look(ref DaysBetweenWaterDestruction, "DaysBetweenWaterDestruction", 10);
         Scribe_Values.Look(ref BadWaterNoticingRollsPerDay, "BadWaterNoticingRollsPerDay", 2);
+        Scribe_Values.Look(ref ArchotechComponentsToCompleteBuilding, "ArchotechComponentsToCompleteBuilding", 3);
         Scribe_Values.Look(ref ArchoQuestComponentHuntInterval, "ArchoQuestComponentHuntInterval", new IntRange(3600, 108000));
         Scribe_Values.Look(ref ArchoQuestSubQuestInterval, "ArchoQuestSubQuestInterval", new IntRange(3600, 108000));
     }

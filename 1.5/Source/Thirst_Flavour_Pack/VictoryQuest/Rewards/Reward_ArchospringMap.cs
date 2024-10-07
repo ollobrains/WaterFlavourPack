@@ -11,7 +11,7 @@ namespace Thirst_Flavour_Pack.VictoryQuest.Rewards;
 public class Reward_ArchospringMap : Reward
 {
     public int currentPart = 1;
-    private const int totalParts = 3;
+    private const int totalParts = 3; // total quest parts
     private static Texture2D icon;
 
     private static Texture2D Icon
@@ -29,7 +29,7 @@ public class Reward_ArchospringMap : Reward
         get
         {
             yield return QuestPartUtility.GetStandardRewardStackElement(
-                "MSS_Thirst_Reward_ArchospringMapPartLabel".Translate(currentPart, 3), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
+                "MSS_Thirst_Reward_ArchospringMapPartLabel".Translate(currentPart, totalParts), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
         }
     }
 
@@ -38,7 +38,7 @@ public class Reward_ArchospringMap : Reward
         RewardsGeneratorParams parms,
         out float valueActuallyUsed)
     {
-        throw new NotImplementedException();
+        valueActuallyUsed = rewardValue;
     }
 
     public override IEnumerable<QuestPart> GenerateQuestParts(
@@ -49,12 +49,12 @@ public class Reward_ArchospringMap : Reward
         RulePack customLetterLabelRules,
         RulePack customLetterTextRules)
     {
-        throw new NotImplementedException();
+        yield break;
     }
 
     public override string GetDescription(RewardsGeneratorParams parms)
     {
-        return "MSS_Thirst_Reward_ArchospringMapPart".Translate(currentPart, 3);
+        return "MSS_Thirst_Reward_ArchospringMapPart".Translate(currentPart, totalParts);
     }
 
     public override void ExposeData()

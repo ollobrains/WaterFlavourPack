@@ -28,27 +28,33 @@ public class SymbolResolver_ArchoBuilding: SymbolResolver
       MajorSupersturctureSites.Clear();
 
       Thing.allowDestroyNonDestroyable = true;
-      foreach (IntVec3 intVec3 in GenRadial.RadialCellsAround(rp.rect.CenterCell, 10f, true))
+      try
       {
-          BaseGen.globalSettings.map.roofGrid.SetRoof(intVec3, null);
-
-          List<Thing> thingsAt = intVec3.GetThingList(BaseGen.globalSettings.map);
-          List<Thing> thingsToDestroy = new List<Thing>();
-          thingsToDestroy.AddRange(thingsAt);
-
-          foreach (Thing thing in thingsToDestroy)
+          foreach (IntVec3 intVec3 in GenRadial.RadialCellsAround(rp.rect.CenterCell, 10f, true))
           {
-              try
+              BaseGen.globalSettings.map.roofGrid.SetRoof(intVec3, null);
+
+              List<Thing> thingsAt = intVec3.GetThingList(BaseGen.globalSettings.map);
+              List<Thing> thingsToDestroy = new List<Thing>();
+              thingsToDestroy.AddRange(thingsAt);
+
+              foreach (Thing thing in thingsToDestroy)
               {
-                  thing.Destroy(DestroyMode.Vanish);
-              }
-              catch (Exception e)
-              {
-                  Log.Error($"Exception thrown while trying to destroy thing: {e}. Continuing");
+                  try
+                  {
+                      thing.Destroy(DestroyMode.Vanish);
+                  }
+                  catch (Exception e)
+                  {
+                      Log.Error($"Exception thrown while trying to destroy thing: {e}. Continuing");
+                  }
               }
           }
       }
-      Thing.allowDestroyNonDestroyable = false;
+      finally
+      {
+          Thing.allowDestroyNonDestroyable = false;
+      }
 
       // Add corpses
       ResolveParams corpseParams = rp with

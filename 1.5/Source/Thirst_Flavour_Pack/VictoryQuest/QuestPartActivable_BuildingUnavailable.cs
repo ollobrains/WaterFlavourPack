@@ -13,11 +13,11 @@ public class QuestPartActivable_BuildingUnavailable(ThingDef buildingDef): Quest
 
     public override void QuestPartTick()
     {
-        bool val = Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.GetWithFallback(BuildingDef, false);
-
-        if (Find.TickManager.TicksGame % 60 != 0 || val)
+        if (Find.TickManager.TicksGame % 60 != 0)
             return;
-        Complete();
+
+        if(Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.GetWithFallback(BuildingDef, false))
+            Complete();
     }
 
     public override void ExposeData()

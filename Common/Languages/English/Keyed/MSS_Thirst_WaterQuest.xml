@@ -24,7 +24,7 @@
     <MSS_Thirst_WaterQuestItemsAllowed>Items allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestItemsAllowed>
     <MSS_Thirst_WaterQuestRelicsAllowed>Relics allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestRelicsAllowed>
 
-    <MSS_Thirst_BuildingContainsComponents>Contains {0} components</MSS_Thirst_BuildingContainsComponents>
+    <MSS_Thirst_BuildingContainsComponents>Contains {0}/{1} components</MSS_Thirst_BuildingContainsComponents>
 
     <MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>You have {0}/{1} of the required Archotech Components for the {2}</MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>
 

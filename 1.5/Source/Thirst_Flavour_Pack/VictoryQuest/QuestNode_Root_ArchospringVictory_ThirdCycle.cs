@@ -8,7 +8,7 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_ArchospringVictory_Cycle
 {
     protected override int QuestCycle => 3;
-    protected override QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding => new QuestPart_Activable_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_Thirst_SterilizationPlant, 3);
+    protected override QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding => new QuestPart_Activable_ArchoSpringBuilding(Thirst_Flavour_PackDefOf.MSS_Thirst_SterilizationPlant);
 
     protected override SitePartDef CurrentSitePartDef => Thirst_Flavour_PackDefOf.MSS_Thirst_Archospring_SterilizationPlant_Site;
     protected override QuestPartActivable_BuildingUnavailable BuildingFilter => new QuestPartActivable_BuildingUnavailable(Thirst_Flavour_PackDefOf.MSS_Thirst_SterilizationPlant);

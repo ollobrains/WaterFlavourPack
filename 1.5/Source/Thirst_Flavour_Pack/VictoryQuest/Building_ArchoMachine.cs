@@ -49,10 +49,10 @@ public class Building_ArchoMachine : Building,
 
     public bool Accepts(Thing t)
     {
-        return (innerContainer.InnerListForReading.Count < 3 || innerContainer.InnerListForReading.Contains(t)) && GetStoreSettings().AllowedToAccept(t) && innerContainer.CanAcceptAnyOf(t);
+        return (innerContainer.InnerListForReading.Count < Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding || innerContainer.InnerListForReading.Contains(t)) && GetStoreSettings().AllowedToAccept(t) && innerContainer.CanAcceptAnyOf(t);
     }
 
-    public int SpaceRemainingFor(ThingDef _) => 3 - innerContainer.InnerListForReading.Count;
+    public int SpaceRemainingFor(ThingDef _) => Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding - innerContainer.InnerListForReading.Count;
 
     public void Notify_ItemAdded(Thing_ComponentArcho item)
     {
@@ -62,6 +62,7 @@ public class Building_ArchoMachine : Building,
 
     public void Notify_ItemRemoved(Thing_ComponentArcho item)
     {
+        Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingComponentCount.SetOrAdd(def, innerContainer.Count);
     }
 
     public Building_ArchoMachine()
@@ -109,7 +110,7 @@ public class Building_ArchoMachine : Building,
     {
         StringBuilder sb = new StringBuilder(base.GetInspectString());
 
-        sb.Append("MSS_Thirst_BuildingContainsComponents".Translate(innerContainer.Count));
+        sb.Append("MSS_Thirst_BuildingContainsComponents".Translate(innerContainer.Count, Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding));
 
         return sb.ToString();
     }
@@ -127,7 +128,7 @@ public class Building_ArchoMachine : Building,
 
         Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.SetOrAdd(def, false);
 
-        if(innerContainer.Count < 3)
+        if(innerContainer.Count < Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding)
             Find.SignalManager.SendSignal(new Signal(QuestNode_Root_ArchospringVictory_Cycle.BuildingDestroyedGlobalSignal, new SignalArgs(new NamedArgument(def, "buildingDef")), global: true));
     }
 }

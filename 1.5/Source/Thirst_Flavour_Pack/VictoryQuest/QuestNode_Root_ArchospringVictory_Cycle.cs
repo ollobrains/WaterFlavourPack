@@ -14,7 +14,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
     protected Map map;
 
     // Signal name for tracking destruction of the archo buildings in order to reset quests
-    public static string BuildingDestroyedGlobalSignal = "ArchoBuildingDestroyed";
+    public static string BuildingDestroyedGlobalSignal = "MSS_Thirst_ArchoBuildingDestroyed";
 
     // The current part of the quest cycles
     protected abstract int QuestCycle { get; }
@@ -46,7 +46,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       map = QuestGen_Get.GetMap();
 
       // pre-create any signals we need
-      string activated = QuestGen.GenerateNewSignal("ArchoBuildingComplete");
+      string activated = QuestGen.GenerateNewSignal("MSS_Thirst_ArchoBuildingComplete");
       string mapVisitedSignal = BuildingDef.defName + "_MapVisited"; // global, so don't use QuestGen.GenerateNewSignal
       string bldDestroyedSignal = QuestGen.GenerateNewSignal("Building_Destroyed");
 
@@ -87,7 +87,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       part1.inSignalDisable = activated;
       part1.interval = Thirst_Flavour_PackMod.settings.ArchoQuestComponentHuntInterval;
       part1.archotechComponentDef = Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho;
-      part1.archotechComponentSlateName = "archotechComponent";
+      part1.archotechComponentSlateName = "MSS_Thirst_ArchospringComponent";
       part1.useMapParentThreatPoints = map?.Parent;
       part1.expiryInfoPartKey = "RelicInfoFound";
       part1.maxSuccessfulSubquests = 1;
@@ -95,7 +95,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       part1.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       quest.AddPart(part1);
 
-      // Check if the 3 components are in place, then fire the ArchoBuildingComplete signal
+      // Check if the components are in place, then fire the ArchoBuildingComplete signal
       QuestPart_Activable_ArchoSpringBuilding buildingComplete = Activable_ArchoSpringBuilding;
       buildingComplete.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       // always listen, just in case the player beats us to adding the components before accepting
