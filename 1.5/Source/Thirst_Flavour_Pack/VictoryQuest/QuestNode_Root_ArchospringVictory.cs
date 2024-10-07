@@ -1,4 +1,6 @@
-﻿using RimWorld;
+﻿using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
 using RimWorld.QuestGen;
 using Verse;
 
@@ -11,6 +13,10 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
         if (!ModLister.CheckIdeology("Archonexus victory"))
             return;
         Quest quest = QuestGen.quest;
+        Slate slate = QuestGen.slate;
+        Map map = QuestGen_Get.GetMap();
+
+        slate.Set("map", map);
 
         // precreate our signals
         string timerFiredSignal = QuestGen.GenerateNewSignal("TimerFired");

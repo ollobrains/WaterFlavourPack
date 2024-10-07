@@ -32,4 +32,6 @@
     <MSS_Thirst_Letter_Site_Found_Text>A {0} has been found!</MSS_Thirst_Letter_Site_Found_Text>
 
     <MSS_Thirst_MessageComponentDiscovered>You've discovered an ancient archotech component!</MSS_Thirst_MessageComponentDiscovered>
+
+    <MSS_Thirst_FactionRelations_DescriptionPart>You currently have {0} goodwiil with {1} making you {2}. You need {3} more goodwill to become {4}.</MSS_Thirst_FactionRelations_DescriptionPart>
 </LanguageData>
