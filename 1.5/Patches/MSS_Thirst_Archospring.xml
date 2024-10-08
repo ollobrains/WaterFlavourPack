@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/JobDef[defName="ActivateArchonexusCore"]/driverClass</xpath>
+        <value>
+            <driverClass>Thirst_Flavour_Pack.VictoryQuest.JobDriver_ActivateArchospring</driverClass>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/JobDef[defName="ActivateArchonexusCore"]/reportString</xpath>
+        <value>
+            <reportString>activating archospring.</reportString>
+        </value>
+    </Operation>
+
+</Patch>

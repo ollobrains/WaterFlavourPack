@@ -1,17 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
     <ThingDef Name="MSS_Thirst_ArchoQuestBuilding" ParentName="BuildingBase" Abstract="True">
         <minifiedDef>MinifiedThing</minifiedDef>
         <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
-        <castEdgeShadows>true</castEdgeShadows>
+        <castEdgeShadows>false</castEdgeShadows>
         <altitudeLayer>Building</altitudeLayer>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
         <useHitPoints>true</useHitPoints>
         <rotatable>false</rotatable>
-        <size>(3,3)</size>
+        <size>(7,7)</size>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
             <MaxHitPoints>30000</MaxHitPoints>
@@ -54,7 +52,7 @@
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <texPath>Things/Building/Special/MSS_Water_PowerRegulator</texPath>
-            <drawSize>(3,3)</drawSize>
+            <drawSize>(7,7)</drawSize>
         </graphicData>
     </ThingDef>
 
@@ -66,7 +64,7 @@
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <texPath>Things/Building/Special/MSS_Water_CatalyticSeparator</texPath>
-            <drawSize>(3,3)</drawSize>
+            <drawSize>(7,7)</drawSize>
         </graphicData>
     </ThingDef>
 
@@ -78,7 +76,7 @@
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <texPath>Things/Building/Special/MSS_Water_SterilizationPlant</texPath>
-            <drawSize>(3,3)</drawSize>
+            <drawSize>(7,7)</drawSize>
         </graphicData>
     </ThingDef>
 </Defs>

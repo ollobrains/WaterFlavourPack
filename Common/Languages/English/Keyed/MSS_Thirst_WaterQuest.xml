@@ -34,4 +34,12 @@
     <MSS_Thirst_MessageComponentDiscovered>You've discovered an ancient archotech component!</MSS_Thirst_MessageComponentDiscovered>
 
     <MSS_Thirst_FactionRelations_DescriptionPart>You currently have {0} goodwiil with {1} making you {2}. You need {3} more goodwill to become {4}.</MSS_Thirst_FactionRelations_DescriptionPart>
+
+    <MSS_Thirst_Settings_EnableFinalQuestFight>Enable a final raid on the final quest?</MSS_Thirst_Settings_EnableFinalQuestFight>
+    <MSS_Thirst_Settings_ArchoQuestFinalFightRaidFactor>Random multiplier range for final fight raid points</MSS_Thirst_Settings_ArchoQuestFinalFightRaidFactor>
+    <MSS_Thirst_Settings_FinalFightFaction>Faction to raid in the final fight</MSS_Thirst_Settings_FinalFightFaction>
+
+    <MSS_Thirst_ActivateArchospringText>The Archospring is activating. This will send out a wideband signal planet wide. You can be guaranteed that a raid is incoming.\n\nA raid is incoming within the next 10 minutes. Defend the Archospring!</MSS_Thirst_ActivateArchospringText>
+
+    <MSS_Thirst_ArchospringSite>The Archospring</MSS_Thirst_ArchospringSite>
 </LanguageData>
