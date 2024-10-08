@@ -5,7 +5,7 @@ using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
-public class QuestPart_Activalble_FactionRelations(Faction targetFaction, Faction questGiverFaction, FactionRelationKind kind): QuestPartActivable
+public class QuestPart_Activable_FactionRelations(Faction targetFaction, Faction questGiverFaction, FactionRelationKind kind): QuestPartActivable
 {
     public Faction TargetFaction = targetFaction;
     public Faction QuestGiverFaction = questGiverFaction;
@@ -13,17 +13,22 @@ public class QuestPart_Activalble_FactionRelations(Faction targetFaction, Factio
 
     public override IEnumerable<Faction> InvolvedFactions => [TargetFaction, QuestGiverFaction];
 
-    public int NextCheck = 60;
+    public int NextCheck = 300;
 
     public override void QuestPartTick()
     {
         if(Find.TickManager.TicksGame < NextCheck)
             return;
 
-        NextCheck += 60;
+        NextCheck += 300;
 
-        if(TargetFaction.PlayerRelationKind == RelationKind)
-            Complete();
+        switch (RelationKind)
+        {
+            case FactionRelationKind.Neutral when TargetFaction.GoodwillWith(Faction.OfPlayer) >= 0:
+            case FactionRelationKind.Ally when TargetFaction.GoodwillWith(Faction.OfPlayer) >= 75:
+                Complete();
+                break;
+        }
     }
 
     public override void ExposeData()

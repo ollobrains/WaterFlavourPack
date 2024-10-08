@@ -15,7 +15,6 @@ public class QuestPart_Activable_ArchoSpringBuilding(ThingDef def) : QuestPartAc
     {
         base.ExposeData();
         Scribe_Defs.Look(ref Def, "Def");
-        Scribe_Values.Look(ref NextCheck, "NextCheck");
     }
 
     public override void QuestPartTick()

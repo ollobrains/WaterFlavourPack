@@ -30,7 +30,7 @@ public class QuestNode_Root_BecomeNeutral: QuestNode
         FactionRelationKind targetRelationKind = Rand.Bool ? FactionRelationKind.Neutral : FactionRelationKind.Ally;
         slate.Set("targetRelationKind", targetRelationKind);
 
-        QuestPart_Activalble_FactionRelations questCompleteActivable = new QuestPart_Activalble_FactionRelations(targetFaction, asker.Faction, targetRelationKind);
+        QuestPart_Activable_FactionRelations questCompleteActivable = new QuestPart_Activable_FactionRelations(targetFaction, asker.Faction, targetRelationKind);
         questCompleteActivable.inSignalEnable = quest.InitiateSignal;
         questCompleteActivable.outSignalsCompleted.Add(relationReached);
 
