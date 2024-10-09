@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <!-- Poisoned Water Pack, gathered directly from the environment, highest chance of food poisoning and gives bad mood debuff -->
   <ThingDef>
     <defName>MSS_Unsafe_Water</defName>
     <label>Poisoned Water pack</label>
@@ -31,7 +32,7 @@
       <Flammability>0.7</Flammability>
       <Nutrition>0.05</Nutrition>
       <Beauty>-6</Beauty>
-      <MarketValue>0.00</MarketValue>
+      <MarketValue>0.01</MarketValue>
       <FoodPoisonChanceFixedHuman>0.75</FoodPoisonChanceFixedHuman>
     </statBases>
     <thingCategories>
@@ -44,7 +45,7 @@
       <specialThoughtDirect>IngestedHemogenPack</specialThoughtDirect>
       <ingestSound>HemogenPack_Consume</ingestSound>
       <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_OffsetHemogen">
+        <li Class="IngestionOutcomeDoer_OffsetHemogen">     <!-- C# Stuff Please: Must be swapped to new water offset system -->
           <offset>0.05</offset>
         </li>
       </outcomeDoers>
@@ -52,6 +53,167 @@
     <comps>
       <li Class="CompProperties_Forbiddable"/>
       <li Class="CompProperties_FoodPoisonable" />
+    </comps>
+  </ThingDef>
+  <!-- Standard Water Pack -->
+  <ThingDef>
+    <defName>MSS_Thirst_WaterPack</defName>
+    <label>Water pack</label>
+    <description>A package of water in a specialized container that prevents spoilage. Water drinkers can consume it to restore their internal water stores and stave off dehydration. It can be administered via an operation to reverse dehydration.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <stackLimit>10</stackLimit>
+    <tickerType>Rare</tickerType>
+    <possessionCount>5</possessionCount>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <graphicData>
+      <texPath>Things/Item/Resource/WaterPack</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <DeteriorationRate>5</DeteriorationRate>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <Nutrition>0.05</Nutrition>
+      <Beauty>0</Beauty>
+      <MarketValue>150</MarketValue>
+    </statBases>
+    <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <specialThoughtDirect>MSS_Thirst_IngestedWaterPack</specialThoughtDirect>
+      <ingestSound>HemogenPack_Consume</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_OffsetHemogen">     <!-- C# Stuff Please: Needs separate OutcomeDoer to offset water bar, stats are correct -->
+          <offset>0.2</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+  <!-- Crude Water Pack (Poisoned Water -> Crude Water with basic technology) -->
+  <ThingDef>
+    <defName>MSS_Thirst_CrudeWaterPack</defName>
+    <label>Crude Water pack</label>
+    <description>Crudely refined water, a fair amount of contaminants have been removed but a significant risk of food poisoning is still present. People feel unwell an sluggish after drinking crude water.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <stackLimit>10</stackLimit>
+    <tickerType>Rare</tickerType>
+    <possessionCount>5</possessionCount>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <graphicData>
+      <texPath>Things/Item/Resource/CrudeWater</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <DeteriorationRate>5</DeteriorationRate>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <Nutrition>0.05</Nutrition>
+      <Beauty>0</Beauty>
+      <MarketValue>15</MarketValue>
+      <FoodPoisonChanceFixedHuman>0.25</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <specialThoughtDirect>MSS_Thirst_IngestedCrudeWaterPack</specialThoughtDirect>
+      <ingestSound>HemogenPack_Consume</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_OffsetHemogen">     <!-- C# Stuff Please: Needs separate OutcomeDoer to offset water bar, stats are correct -->
+          <offset>0.1</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+  <!-- Refined Water Pack (Crude Water -> Refined Water with refineries) -->
+  <ThingDef>
+    <defName>MSS_Thirst_RefinedWaterPack</defName>
+    <label>Artificial Water pack</label>
+    <description>Artificial water, most contaminants have been revoved with only a minor risk of poisoning remaining. Refreshing, and restores hydration, but tastes awful.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <stackLimit>10</stackLimit>
+    <tickerType>Rare</tickerType>
+    <possessionCount>5</possessionCount>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <graphicData>
+      <texPath>Things/Item/Resource/ArtificialWaterPack</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <DeteriorationRate>5</DeteriorationRate>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <Nutrition>0.05</Nutrition>
+      <Beauty>0</Beauty>
+      <MarketValue>15</MarketValue>
+      <FoodPoisonChanceFixedHuman>0.05</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <specialThoughtDirect>MSS_Thirst_IngestedArtificialWaterPack</specialThoughtDirect>
+      <ingestSound>HemogenPack_Consume</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_OffsetHemogen">     <!-- C# Stuff Please: Needs separate OutcomeDoer to offset water bar, stats are correct -->
+          <offset>0.15</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
     </comps>
   </ThingDef>
 </Defs>
