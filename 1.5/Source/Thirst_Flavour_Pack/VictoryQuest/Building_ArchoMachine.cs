@@ -28,7 +28,7 @@ public class Building_ArchoMachine : Building,
 
     public bool IsComplete()
     {
-        return innerContainer.Count >= 3;
+        return innerContainer.Count >= Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding;
     }
 
     public ThingOwner GetDirectlyHeldThings() => innerContainer;
