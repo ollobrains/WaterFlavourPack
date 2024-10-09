@@ -19,7 +19,7 @@ public class QuestPart_Activable_FactionRelations(Faction targetFaction, Faction
         if(Find.TickManager.TicksGame < NextCheck)
             return;
 
-        NextCheck += 300;
+        NextCheck = Find.TickManager.TicksGame + 300;
 
         switch (RelationKind)
         {

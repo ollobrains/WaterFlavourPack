@@ -22,7 +22,7 @@ public class QuestPart_Activable_ArchoSpringBuilding(ThingDef def) : QuestPartAc
         if(Find.TickManager.TicksGame < NextCheck)
             return;
 
-        NextCheck += 600;
+        NextCheck = Find.TickManager.TicksGame + 600;
 
         if (Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingComponentCount.GetWithFallback(Def, 0) < Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding)
             return;
