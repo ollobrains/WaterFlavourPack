@@ -1,4 +1,5 @@
 using RimWorld;
+using RimWorld.BaseGen;
 using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.MapGen;
@@ -7,6 +8,6 @@ public class GenStep_ArchospringResearchBuildings_ThirdCycle: GenStep_Archonexus
 {
     protected override void ScatterAt(IntVec3 loc, Map map, GenStepParams parms, int count = 1)
     {
-        RimWorld.BaseGen.BaseGen.Generate();
+        BaseGen.Generate();
     }
 }

@@ -19,7 +19,7 @@ public class QuestPart_SubquestGenerator_ArchoHunt : QuestPart_SubquestGenerator
 
     public override IEnumerable<GlobalTargetInfo> QuestLookTargets
     {
-        get => Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentsSeenByPlayer.Select(t=>(GlobalTargetInfo)t);
+        get => Find.World.GetComponent<ArchospringVictoryWorldComponent>().ArchoComponentsSeenByPlayer.Where(t=>t.ParentHolder is not Building_ArchoMachine).Select(t=>(GlobalTargetInfo)t).Take(3);
     }
     public override IEnumerable<Dialog_InfoCard.Hyperlink> Hyperlinks
     {

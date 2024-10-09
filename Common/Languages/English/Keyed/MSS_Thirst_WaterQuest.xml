@@ -37,7 +37,7 @@
 
     <MSS_Thirst_Settings_EnableFinalQuestFight>Enable a final raid on the final quest?</MSS_Thirst_Settings_EnableFinalQuestFight>
     <MSS_Thirst_Settings_ArchoQuestFinalFightRaidFactor>Random multiplier range for final fight raid points</MSS_Thirst_Settings_ArchoQuestFinalFightRaidFactor>
-    <MSS_Thirst_Settings_FinalFightFaction>Faction to raid in the final fight</MSS_Thirst_Settings_FinalFightFaction>
+    <MSS_Thirst_Settings_FinalFightFaction>Faction to raid in the final fight. You probably shouldn't use this unless keyz has told you to.</MSS_Thirst_Settings_FinalFightFaction>
 
     <MSS_Thirst_ActivateArchospringText>The Archospring is activating. This will send out a wideband signal planet wide. You can be guaranteed that a raid is incoming.\n\nA raid is incoming within the next 10 minutes. Defend the Archospring!</MSS_Thirst_ActivateArchospringText>
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
@@ -47,13 +46,12 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
 
       // pre-create any signals we need
       string activated = QuestGen.GenerateNewSignal("MSS_Thirst_ArchoBuildingComplete");
-      string mapVisitedSignal = BuildingDef.defName + "_MapVisited"; // global, so don't use QuestGen.GenerateNewSignal
+      string mapVisitedSignal = $"{BuildingDef.defName}_MapVisited"; // global, so don't use QuestGen.GenerateNewSignal
       string bldDestroyedSignal = QuestGen.GenerateNewSignal("Building_Destroyed");
 
       if (SpawnSite)
       {
-          int tile;
-          TryFindSiteTile(out tile);
+          TryFindSiteTile(out int tile);
 
           SitePartParams parms = new SitePartParams();
           Site site = QuestGen_Sites.GenerateSite(Gen.YieldSingle(new SitePartDefWithParams(CurrentSitePartDef, parms)), tile, Faction.OfAncients);
@@ -124,14 +122,14 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
     }
 
 
-    public bool TryFindSiteTile(out int tile, bool exitOnFirstTileFound = false)
+    public static bool TryFindSiteTile(out int tile, bool exitOnFirstTileFound = false)
     {
         return TileFinder.TryFindNewSiteTile(out tile, 10, 40, exitOnFirstTileFound: exitOnFirstTileFound);
     }
 
     protected override bool TestRunInt(Slate slate) => QuestGen_Get.GetMap() != null;
 
-    public IEnumerable<QuestScriptDef> GetAllSubquests(QuestScriptDef parent)
+    public static IEnumerable<QuestScriptDef> GetAllSubquests(QuestScriptDef parent)
     {
         return DefDatabase<QuestScriptDef>.AllDefs.Where(q => q.epicParent == parent);
     }

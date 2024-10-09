@@ -33,9 +33,9 @@ public class GenStep_ArchospringComponent: GenStep_ScattererBestFit
         if (terrain != null && (terrain.IsWater || terrain.IsRoad))
             return true;
         List<Thing> thingList = cell.GetThingList(map);
-        for (int index = 0; index < thingList.Count; ++index)
+        foreach (Thing t in thingList)
         {
-            if (thingList[index].def.IsBuildingArtificial || thingList[index].def.building != null && thingList[index].def.building.isNaturalRock)
+            if (t.def.IsBuildingArtificial || t.def.building != null && t.def.building.isNaturalRock)
                 return true;
         }
         return false;

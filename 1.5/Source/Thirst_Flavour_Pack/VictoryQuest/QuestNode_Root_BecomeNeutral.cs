@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
-using RimWorld.Planet;
 using RimWorld.QuestGen;
-using UnityEngine;
 using Verse;
-using Verse.Grammar;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
@@ -50,7 +46,7 @@ public class QuestNode_Root_BecomeNeutral: QuestNode
         RewardsGeneratorParams rgp = new RewardsGeneratorParams();
         rgp.giveToCaravan = false;
 
-        foreach (QuestPart questPart in reward.GenerateQuestParts(0, rgp, (string) null, (string) null, (RulePack) null, (RulePack) null))
+        foreach (QuestPart questPart in reward.GenerateQuestParts(0, rgp, null, null, null, null))
         {
             QuestGen.quest.AddPart(questPart);
             choice.questParts.Add(questPart);
@@ -61,7 +57,6 @@ public class QuestNode_Root_BecomeNeutral: QuestNode
 
     private Pawn FindAsker()
     {
-        Faction result;
-        return Find.FactionManager.AllFactionsVisible.Where(f => f.def.humanlikeFaction && !f.IsPlayer && !f.HostileTo(Faction.OfPlayer) && f.def.techLevel > TechLevel.Neolithic && f.leader != null && !f.temporary && !f.Hidden).TryRandomElement(out result) ? result.leader : null;
+        return Find.FactionManager.AllFactionsVisible.Where(f => f.def.humanlikeFaction && !f.IsPlayer && !f.HostileTo(Faction.OfPlayer) && f.def.techLevel > TechLevel.Neolithic && f.leader != null && !f.temporary && !f.Hidden).TryRandomElement(out Faction result) ? result.leader : null;
     }
 }

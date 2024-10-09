@@ -1,6 +1,6 @@
-﻿using Verse;
+﻿using HarmonyLib;
 using UnityEngine;
-using HarmonyLib;
+using Verse;
 
 namespace Thirst_Flavour_Pack;
 

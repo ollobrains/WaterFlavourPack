@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using JetBrains.Annotations;
 using RimWorld;
 using Thirst_Flavour_Pack.HarmonyPatches;
@@ -58,7 +56,7 @@ public class Settings : ModSettings
 
         if (showFactionSelector)
         {
-            optionsViewRectHeight += 25f;
+            optionsViewRectHeight += 50f;
         }
 
         bool willHaveScrollbar = optionsViewRectHeight > wrect.height;
@@ -116,11 +114,15 @@ public class Settings : ModSettings
 
         if (showFactionSelector)
         {
-            Rect dropdownRect = options.GetRect(25f);
-            Widgets.Label(dropdownRect, "MSS_Thirst_Settings_FinalFightFaction".Translate() + ": ");
+            Rect rowRect = options.GetRect(50f);
+            Rect labelRect = rowRect;
+            labelRect.xMax = labelRect.center.x;
+            Rect dropdownRect = rowRect;
             dropdownRect.xMin = dropdownRect.center.x;
 
-            Widgets.Dropdown(rect, finalFightFaction, fac => fac,
+            Widgets.Label(labelRect, "MSS_Thirst_Settings_FinalFightFaction".Translate() + ": ");
+
+            Widgets.Dropdown(dropdownRect, finalFightFaction, fac => fac,
                 _ => Find.FactionManager.AllFactionsListForReading.Select(faction => new Widgets.DropdownMenuElement<Faction> { option = new FloatMenuOption(faction.Name, () =>
                 {
                     finalFightFaction = faction;

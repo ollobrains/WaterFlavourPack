@@ -14,4 +14,10 @@
         </value>
     </Operation>
 
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/WorldObjectDef[defName="Site"]/comps</xpath>
+        <value>
+            <li Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.WorldObjectCompProperties_DefeatAllEnemiesArchospringQuest" />
+        </value>
+    </Operation>
 </Patch>

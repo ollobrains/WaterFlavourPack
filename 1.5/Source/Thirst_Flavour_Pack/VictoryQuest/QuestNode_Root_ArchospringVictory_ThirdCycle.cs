@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
-using Thirst_Flavour_Pack.VictoryQuest.Rewards;
+using Thirst_Flavour_Pack.VictoryQuest.MapGen;
 using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
@@ -26,7 +25,7 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
     private static FloatRange RandomRaidPointsFactorRange => Thirst_Flavour_PackMod.settings.FinalFightRaidFactor;
 
     public static string ArchospringActivatingSignal = "MSS_Thirst_ArchospringActivating";
-    public static string AllEnemiesDefeatedOutSignal = "MSS_Thirst_AllEnemiesDefeated";
+    public static string AllEnemiesDefeatedOutSignal => DefeatAllEnemiesArchospringQuestComp.AllEnemiesDefeated_Archospring_Signal;
 
     public Lazy<FieldInfo> QuestPart_PassOutInterval_currentInterval = new Lazy<FieldInfo>(() => AccessTools.Field(typeof(QuestPart_PassOutInterval), "currentInterval"));
 
@@ -43,8 +42,6 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
           enemyFaction = Find.FactionManager.RandomEnemyFaction();
       }
 
-      string enemyDefeatedSignal = QuestGenUtility.HardcodedSignalWithQuestID("site.AllEnemiesDefeated");
-
       // Fire up the dialog and a letter
       quest.DialogWithCloseBehavior(
           "[questDescriptionBeforeAccepted]",
@@ -56,8 +53,7 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
 
 
       // grab a free tile for the site
-      int tile;
-      TryFindSiteTile(out tile);
+      TryFindSiteTile(out int tile);
 
       float raidPoints = slate.Get<float>("points");
       float adjustedRaidPoints = Find.Storyteller.difficulty.allowViolentQuests ? raidPoints * ThreatPointsFactor : 0.0f;
@@ -70,12 +66,15 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
         quest.SetSitePartThreatPointsToCurrent(site, Thirst_Flavour_PackDefOf.MSS_Thirst_ArchospringSite, map.Parent, threatPointsFactor: ThreatPointsFactor);
       quest.SpawnWorldObject(site);
 
+
       if (Find.Storyteller.difficulty.allowViolentQuests && Thirst_Flavour_PackMod.settings.EnableFinalQuestFight)
       {
           string doRaidSignal = QuestGen.GenerateNewSignal("MSS_Thirst_DoRaid");
 
+          // Pop up a dialog to explain that a raid is incoming
           quest.Dialog("MSS_Thirst_ActivateArchospringText".Translate(), inSignal: ArchospringActivatingSignal);
 
+          // Use this as a delay to pause the raid until 5-10 minutes have passed
           QuestPart_PassOutInterval delay = new QuestPart_PassOutInterval();
           delay.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
           delay.inSignalEnable = ArchospringActivatingSignal;
@@ -85,42 +84,40 @@ public class QuestNode_Root_ArchospringVictory_ThirdCycle: QuestNode_Root_Archos
 
           // force set the interval so that it doesn't fire immediately
           QuestPart_PassOutInterval_currentInterval.Value.SetValue(delay, delay.ticksInterval.RandomInRange);
-
           quest.AddPart(delay);
 
-          DefeatAllEnemiesQuestComp comp = site.GetComponent<DefeatAllEnemiesQuestComp>();
-
+          // Once the raid has started, tell the comp to start monitoring for all enemies defeated
+          DefeatAllEnemiesArchospringQuestComp comp = site.GetComponent<DefeatAllEnemiesArchospringQuestComp>();
           QuestPart_ActionOnSignal action = new QuestPart_ActionOnSignal();
           action.inSignal = doRaidSignal;
           action.inSignalEnable = ArchospringActivatingSignal;
           action.action = () =>
           {
-              comp.StartQuest(Faction.OfPlayer, -1, []);
+              comp.StartQuest();
           };
 
           quest.AddPart(action);
 
+          // actually trigger the raid
           quest.RandomRaid(site, RandomRaidPointsFactorRange * raidPoints, enemyFaction, doRaidSignal,
               PawnsArrivalModeDefOf.EdgeWalkIn,
               RaidStrategyDefOf.ImmediateAttack);
 
-          quest.SignalPass(null, enemyDefeatedSignal, AllEnemiesDefeatedOutSignal);
+          // trigger the ending
+          QuestPart_Ending ending = new QuestPart_Ending();
+          ending.inSignal = AllEnemiesDefeatedOutSignal;
+
+          quest.AddPart(ending);
       }
       else
       {
-          quest.SignalPass(null, ArchospringActivatingSignal, AllEnemiesDefeatedOutSignal);
+          // trigger the ending
+          QuestPart_Ending ending = new QuestPart_Ending();
+          ending.inSignal = ArchospringActivatingSignal;
+
+          quest.AddPart(ending);
       }
 
-
-      quest.AnySignal([ArchospringActivatingSignal], () =>
-      {
-          Building_ArchonexusCore spring = map.listerThings.GetThingsOfType<Building_ArchonexusCore>().FirstOrDefault();
-
-          if (spring != null)
-          {
-              ArchonexusCountdown.InitiateCountdown(spring);
-          }
-      });
 
       slate.Set("factionless", true);
       slate.Set("threatsEnabled", Find.Storyteller.difficulty.allowViolentQuests);

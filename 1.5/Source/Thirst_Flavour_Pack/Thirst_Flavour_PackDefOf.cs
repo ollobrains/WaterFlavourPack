@@ -1,15 +1,12 @@
 ﻿using RimWorld;
 using Verse;
+// ReSharper disable UnassignedField.Global
 
 namespace Thirst_Flavour_Pack;
 
 [DefOf]
 public static class Thirst_Flavour_PackDefOf
 {
-    // Remember to annotate any Defs that require a DLC as needed e.g.
-    // [MayRequireBiotech]
-    // public static GeneDef YourPrefix_YourGeneDefName;
-
     public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory;
     public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory_PreCycle;
     public static QuestScriptDef MSS_Thirst_EndGame_WaterVictory_FirstCycle;

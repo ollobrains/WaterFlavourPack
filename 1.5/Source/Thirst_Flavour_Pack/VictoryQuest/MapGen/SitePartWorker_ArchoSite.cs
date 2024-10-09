@@ -15,6 +15,6 @@ public class SitePartWorker_ArchoSite: SitePartWorker
 
         if(building is null) return;
 
-        Find.SignalManager.SendSignal(new Signal(building.def.defName + "_MapVisited", true));
+        Find.SignalManager.SendSignal(new Signal($"{building.def.defName}_MapVisited", true));
     }
 }

@@ -26,6 +26,11 @@ public class Building_ArchoMachine : Building,
         ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, GetDirectlyHeldThings());
     }
 
+    public bool IsComplete()
+    {
+        return innerContainer.Count >= 3;
+    }
+
     public ThingOwner GetDirectlyHeldThings() => innerContainer;
 
     public void Notify_SettingsChanged()

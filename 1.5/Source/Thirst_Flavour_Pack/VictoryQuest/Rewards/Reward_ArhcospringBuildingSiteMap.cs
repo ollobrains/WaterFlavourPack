@@ -26,7 +26,7 @@ public class Reward_ArhcospringBuildingSiteMap : Reward
         get
         {
             yield return QuestPartUtility.GetStandardRewardStackElement(
-                "MSS_Thirst_Reward_ArchospringSignalLocationLabel".Translate(), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
+                "MSS_Thirst_Reward_ArchospringSignalLocationLabel".Translate(), Icon, () => $"{GetDescription(default).CapitalizeFirst()}.", null);
         }
     }
 

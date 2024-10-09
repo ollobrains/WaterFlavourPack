@@ -16,8 +16,7 @@ public class SitePartWorker_BarbCamp: SitePartWorker
     {
         base.Init(site, sitePart);
 
-        ThingDef compDef = QuestGen.slate.Get<ThingDef>("MSS_Thirst_ArchospringComponent");
-        if (compDef == null) compDef = Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho;
+        ThingDef compDef = QuestGen.slate.Get<ThingDef>("MSS_Thirst_ArchospringComponent") ?? Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho;
         sitePart.things = new ThingOwner<Thing>(sitePart);
 
         component = ThingMaker.MakeThing(compDef).MakeMinified();
@@ -26,7 +25,7 @@ public class SitePartWorker_BarbCamp: SitePartWorker
 
     public override void SitePartWorkerTick(SitePart sitePart)
     {
-        if (!componentObtainedSignalSent && component.holdingOwner != null && component.holdingOwner.Owner is Pawn_InventoryTracker pawnInv && pawnInv.pawn.Faction == Faction.OfPlayer)
+        if (!componentObtainedSignalSent && component.holdingOwner is { Owner: Pawn_InventoryTracker pawnInv } && pawnInv.pawn.Faction == Faction.OfPlayer)
         {
             QuestUtility.SendQuestTargetSignals(sitePart.site.questTags, ComponentObtainedSignal, component.LabelCap);
             componentObtainedSignalSent = true;

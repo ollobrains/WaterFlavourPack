@@ -2,13 +2,20 @@ using System;
 using RimWorld;
 using Verse;
 
-namespace Thirst_Flavour_Pack.VictoryQuest.Rewards;
+namespace Thirst_Flavour_Pack.VictoryQuest;
 
+/// <summary>
+/// Run arbitrary action on signal
+/// </summary>
 public class QuestPart_ActionOnSignal: QuestPartActivable
 {
     public string inSignal;
     public Action action;
 
+    public void DoEnable()
+    {
+        Enable(new SignalArgs());
+    }
     protected override void ProcessQuestSignal(Signal signal)
     {
         base.ProcessQuestSignal(signal);
@@ -28,6 +35,6 @@ public class QuestPart_ActionOnSignal: QuestPartActivable
     public override void AssignDebugData()
     {
         base.AssignDebugData();
-        this.inSignal = "DebugSignal" + (object) Rand.Int;
+        inSignal = $"DebugSignal{Rand.Int}";
     }
 }

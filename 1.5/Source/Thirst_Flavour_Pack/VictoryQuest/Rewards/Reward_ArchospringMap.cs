@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -29,7 +28,7 @@ public class Reward_ArchospringMap : Reward
         get
         {
             yield return QuestPartUtility.GetStandardRewardStackElement(
-                "MSS_Thirst_Reward_ArchospringMapPartLabel".Translate(currentPart, totalParts), Icon, () => GetDescription(default(RewardsGeneratorParams)).CapitalizeFirst() + ".", null);
+                "MSS_Thirst_Reward_ArchospringMapPartLabel".Translate(currentPart, totalParts), Icon, () => $"{GetDescription(default).CapitalizeFirst()}.", null);
         }
     }
 

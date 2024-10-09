@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using RimWorld.BaseGen;
-using UnityEngine;
 using Verse;
 
 namespace Thirst_Flavour_Pack.VictoryQuest.MapGen;
@@ -13,8 +12,8 @@ public class SymbolResolver_ArchoBuilding: SymbolResolver
     private const int SuperstructureDistance = 11;
     private const int MinorSuperstructureDistance = 28;
     private const int MinorSuperstructureCount = 9;
-    private static List<CellRect> MinorSupersturctureSites = new List<CellRect>();
-    private static List<CellRect> MajorSupersturctureSites = new List<CellRect>();
+    private static List<CellRect> MinorSupersturctureSites = [];
+    private static List<CellRect> MajorSupersturctureSites = [];
     private const string MechanoidsWakeUpSignalPrefix = "ArchonexusMechanoidsWakeUp";
 
     public TerrainDef BaseTerrainDef => TerrainDefOf.FlagstoneSandstone;
@@ -104,9 +103,8 @@ public class SymbolResolver_ArchoBuilding: SymbolResolver
       foreach (IntVec3 cell in outerRadial)
       {
           List<Thing> things = cell.GetThingList(BaseGen.globalSettings.map);
-          for (int i = 0; i < things.Count; i++)
+          foreach (Thing thing in things)
           {
-              Thing thing = things[i];
               if (thing.def.category == ThingCategory.Plant && thing.def != ThingDefOf.Plant_TreeAnima)
                   thing.Destroy();
           }
@@ -118,8 +116,8 @@ public class SymbolResolver_ArchoBuilding: SymbolResolver
               BaseGen.globalSettings.map.terrainGrid.SetTerrain(cell, TerrainDefOf.SoilRich);
           }
       }
-      List<CellRect> var;
-      if (!MapGenerator.TryGetVar("UsedRects", out var))
+
+      if (!MapGenerator.TryGetVar("UsedRects", out List<CellRect> var))
       {
           var = [];
           MapGenerator.SetVar("UsedRects", var);

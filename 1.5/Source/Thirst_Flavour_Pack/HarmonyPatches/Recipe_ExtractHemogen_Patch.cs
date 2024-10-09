@@ -75,7 +75,7 @@ public static class Recipe_ExtractHemogen_Patch
         {
             if (!(bool)PawnHasEnoughBloodForExtraction.Value.Invoke(__instance, [pawn]))
             {
-                Messages.Message( "MessagePawnHadNotEnoughBloodToProduceHemogenPack".Translate(pawn.Named("PAWN")), (LookTargets) (Thing) pawn, MessageTypeDefOf.NeutralEvent);
+                Messages.Message( "MessagePawnHadNotEnoughBloodToProduceHemogenPack".Translate(pawn.Named("PAWN")), (Thing) pawn, MessageTypeDefOf.NeutralEvent);
             }
             else
             {
