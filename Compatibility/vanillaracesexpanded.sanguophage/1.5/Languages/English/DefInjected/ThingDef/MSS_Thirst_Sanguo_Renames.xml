@@ -14,4 +14,8 @@
     <VRE_HemogenDrain.description>A hopper-like storage basin meant to return safe water into the network, filling up connected vats.</VRE_HemogenDrain.description>
     <VRE_Draincasket.label>Thirstcasket</VRE_Draincasket.label>
     <VRE_Draincasket.description>A sinister contraption designed to extract safe water from an individual while maintaining their life force at the barest minimum. The contraption turns the imprisoned into a makeshift water production facility, hijacking the metabolic process to maintain near total water retention in the imprisoned, allowing for extraction without the risk of death, as long as the imprisoned is kept sufficiently fed.\n\nProduces 2 safe water packs a day as long as the occupant has food and the casket is connected to a water network. If deprived of food, the casket will kill its occupant in around 2 days.\n\nIf you have Vanilla Nutrient Paste Expanded it will draw nutrients from that network, as long as there is more than 1 meal unit available.</VRE_Draincasket.description>
+    <VRE_HemogenPack_Animal.label>Crude Water</VRE_HemogenPack_Animal.label>
+    <VRE_HemogenPack_Animal.description>Crudely refined water, a fair amount of contaminants have been removed but a significant risk of food poisoning is still present. People feel unwell an sluggish after drinking crude water.</VRE_HemogenPack_Animal.description>
+    <VRE_HemogenPack_Corpse.label>Artificial Water</VRE_HemogenPack_Corpse.label>
+    <VRE_HemogenPack_Corpse.description>Artificial water, most contaminants have been revoved with only a minor risk of poisoning remaining. Refreshing, and restores hydration, but tastes awful.</VRE_HemogenPack_Corpse.description>
 </LanguageData>

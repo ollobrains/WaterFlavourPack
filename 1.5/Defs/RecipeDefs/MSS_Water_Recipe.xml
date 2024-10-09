@@ -4,7 +4,7 @@
     <RecipeDef>
         <defName>MSS_Thirst_Refine_Unsafe_Water</defName>
         <label>refine unsafe water into safe water packs</label>
-        <description>A process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though complex distillation.</description>
+        <description>A process which refines Crude Water into Refined Water though complex distillation, removing the majority of contaminants but leaving an unpleasant aftertaste.</description>
         <jobString>refining unsafe water.</jobString>
         <effectWorking>Cook</effectWorking>
         <soundWorking>Recipe_Cremate</soundWorking>
@@ -14,7 +14,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>MSS_Unsafe_Water</li>
+                        <li>VRE_HemogenPack_Animal</li>
                     </thingDefs>
                 </filter>
                 <count>10</count>
@@ -22,11 +22,11 @@
         </ingredients>
         <fixedIngredientFilter>
             <thingDefs>
-                <li>MSS_Unsafe_Water</li>
+                <li>VRE_HemogenPack_Animal</li>
             </thingDefs>
         </fixedIngredientFilter>
         <products>
-            <HemogenPack>1</HemogenPack>
+            <VRE_HemogenPack_Corpse>1</VRE_HemogenPack_Corpse>
         </products>
         <recipeUsers>
             <li>BiofuelRefinery</li>
@@ -35,9 +35,9 @@
 
     <RecipeDef>
         <defName>MSS_Thirst_Refine_Unsafe_Water_Tribal</defName>
-        <label>boil unsafe water into safe water packs</label>
-        <description>An extremely slow process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water by condensing droplets of steam on primative metal panels.</description>
-        <jobString>refining unsafe water.</jobString>
+        <label>boil poison water</label>
+        <description>An extremely slow process which boils Poison Water leaving Crude Water by condensing droplets of steam on primative metal panels. Crude Water is marginally safer than Poison Water.</description>
+        <jobString>refining Poison Water.</jobString>
         <effectWorking>Cook</effectWorking>
         <soundWorking>Recipe_Cremate</soundWorking>
         <workAmount>10000</workAmount>
@@ -58,7 +58,7 @@
             </thingDefs>
         </fixedIngredientFilter>
         <products>
-            <HemogenPack>1</HemogenPack>
+            <VRE_HemogenPack_Animal>5</VRE_HemogenPack_Animal>
         </products>
         <recipeUsers>
             <li>Campfire</li>
@@ -68,9 +68,9 @@
 
     <RecipeDef>
         <defName>MSS_Thirst_Refine_Unsafe_Water_Industrial</defName>
-        <label>condense unsafe water into safe water packs</label>
-        <description>A slow process which refines vast amounts of contaminated water into a small, but risk-free, amount of safe water though a long series of boiling and reboiling in sterile pots.</description>
-        <jobString>refining unsafe water.</jobString>
+        <label>condense Poisoned Water</label>
+        <description>A slow process which purifies Poison Water into Crude Water, though a long series of boiling and reboiling in sterile pots.</description>
+        <jobString>refining poison water.</jobString>
         <effectWorking>Cook</effectWorking>
         <soundWorking>Recipe_Cremate</soundWorking>
         <workAmount>6000</workAmount>
@@ -91,7 +91,7 @@
             </thingDefs>
         </fixedIngredientFilter>
         <products>
-            <HemogenPack>1</HemogenPack>
+            <VRE_HemogenPack_Animal>5</VRE_HemogenPack_Animal>
         </products>
         <recipeUsers>
             <li>ElectricStove</li>
@@ -102,8 +102,8 @@
 
     <RecipeDef>
         <defName>MSS_Thirst_Drill_Water</defName>
-        <label>Drill for Water</label>
-        <description>Tap into underground reservoirs of contaminated water supplies and collect it for refining.</description>
+        <label>Drill for Poison Water</label>
+        <description>Tap into large underground reservoirs of Poison Water supplies and rapidly collect it for refining.</description>
         <jobString>drilling for unsafe water.</jobString>
         <effectWorking>Smelt</effectWorking>
         <soundWorking>Recipe_Machining</soundWorking>
@@ -119,9 +119,9 @@
 
     <RecipeDef>
         <defName>MSS_Thirst_Bucket_Water</defName>
-        <label>Crank well for Water</label>
-        <description>Cast a bucket down into an aquifier of contaminated water and collect it for refining.</description>
-        <jobString>cracking well for unsafe water.</jobString>
+        <label>Crank well for Poison Water</label>
+        <description>Cast a bucket down into an aquifier of Poison Water and collect it for refining.</description>
+        <jobString>cracking well for Poison Water.</jobString>
         <effectWorking>Smelt</effectWorking>
         <soundWorking>Recipe_Machining</soundWorking>
         <workAmount>1000</workAmount>
@@ -135,7 +135,7 @@
     </RecipeDef>
 
     <RecipeDef Name="MSS_Thirst_GatherWaterDig" Abstract="True">
-        <jobString>digging for contaminated water.</jobString>
+        <jobString>digging for Poison Water.</jobString>
         <workAmount>1600</workAmount>
         <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
         <effectWorking>Smith</effectWorking>
@@ -150,15 +150,15 @@
 
     <RecipeDef ParentName="MSS_Thirst_GatherWaterDig">
         <defName>MSS_Thirst_Dig_Water_Unsafe</defName>
-        <label>Dig for contaminated water</label>
-        <description>Dig holes to extract contaminated water from the environment. Yields less water than gathering directly from water sources at a Water Spot.</description>
+        <label>Dig for Poison Water water</label>
+        <description>Dig holes to extract Poison Water from the environment. Yields less water than gathering directly from water sources at a Water Spot.</description>
         <products>
             <MSS_Unsafe_Water>1</MSS_Unsafe_Water>
         </products>
     </RecipeDef>
 
     <RecipeDef Name="MSS_Thirst_GatherWaterBase" Abstract="True">
-        <jobString>gathering contaminated water.</jobString>
+        <jobString>gathering Poison Water.</jobString>
         <workAmount>1000</workAmount>
         <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
         <effectWorking>Smith</effectWorking>
@@ -173,8 +173,8 @@
 
     <RecipeDef ParentName="MSS_Thirst_GatherWaterBase">
         <defName>MSS_Thirst_Gather_Water_Unsafe</defName>
-        <label>Gather contaminated water</label>
-        <description>Gather contaminated water from available water sources.</description>
+        <label>Gather Poison Water</label>
+        <description>Quickly gather contaminated water from available water sources.</description>
         <products>
             <MSS_Unsafe_Water>3</MSS_Unsafe_Water>
         </products>
