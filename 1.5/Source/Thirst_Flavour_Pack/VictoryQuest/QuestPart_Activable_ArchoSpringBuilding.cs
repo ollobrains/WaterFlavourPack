@@ -26,6 +26,9 @@ public class QuestPart_Activable_ArchoSpringBuilding(ThingDef def) : QuestPartAc
 
         if (Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingComponentCount.GetWithFallback(Def, 0) < Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding)
             return;
+
+
+        ModLog.Debug($"{Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding} components placed in {def.LabelCap}, moving quest on.");
         Complete();
     }
 }

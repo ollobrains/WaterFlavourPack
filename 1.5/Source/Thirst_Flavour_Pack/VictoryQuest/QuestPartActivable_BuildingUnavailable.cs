@@ -19,8 +19,11 @@ public class QuestPartActivable_BuildingUnavailable(ThingDef buildingDef): Quest
 
         NextCheck += 600;
 
-        if(Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.GetWithFallback(BuildingDef, false))
+        if (Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingAvailable.GetWithFallback(BuildingDef, false))
+        {
+            ModLog.Debug($"{BuildingDef} is now available, proceeding with quest.");
             Complete();
+        }
     }
 
     public override void ExposeData()

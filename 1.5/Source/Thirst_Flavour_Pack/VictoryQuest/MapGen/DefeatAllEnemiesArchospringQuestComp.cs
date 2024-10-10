@@ -43,6 +43,7 @@ public class DefeatAllEnemiesArchospringQuestComp : WorldObjectComp
             return;
         SignalArgs args = new SignalArgs();
         // Send the current map as a signal arg so that the archospring building can be grabbed
+        ModLog.Debug($"All enemies on map defeated, firing \"{AllEnemiesDefeated_Archospring_Signal}\" signal");
         args.Add(new NamedArgument(mapParent.Map, "map"));
         Find.SignalManager.SendSignal(new Signal(AllEnemiesDefeated_Archospring_Signal, args, true));
         StopQuest();

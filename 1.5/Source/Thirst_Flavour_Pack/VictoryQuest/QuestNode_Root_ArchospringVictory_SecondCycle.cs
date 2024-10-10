@@ -17,6 +17,7 @@ public class QuestNode_Root_ArchospringVictory_SecondCycle: QuestNode_Root_Archo
     protected override bool SetSuccess => true;
     protected override void RunInt()
     {
+        ModLog.Debug("QuestNode_Root_ArchospringVictory_SecondCycle.RunInt");
         base.RunInt();
         Quest quest = QuestGen.quest;
 

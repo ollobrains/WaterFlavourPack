@@ -10,6 +10,7 @@ public class QuestNode_Root_BecomeNeutral: QuestNode
 {
     protected override void RunInt()
     {
+        ModLog.Debug("Spawning Become Neutral/Ally quest");
         Quest quest = QuestGen.quest;
         Slate slate = QuestGen.slate;
         Map map = QuestGen_Get.GetMap();

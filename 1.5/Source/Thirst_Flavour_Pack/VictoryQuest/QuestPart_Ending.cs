@@ -25,6 +25,7 @@ public class QuestPart_Ending: QuestPart
 
             if (spring != null)
             {
+                ModLog.Debug("Firing end screen");
                 HasFired = true;
                 ArchonexusCountdown.InitiateCountdown(spring);
             }

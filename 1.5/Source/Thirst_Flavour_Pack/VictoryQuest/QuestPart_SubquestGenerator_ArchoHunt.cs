@@ -50,6 +50,7 @@ public class QuestPart_SubquestGenerator_ArchoHunt : QuestPart_SubquestGenerator
         if (!nextSubquestDef.CanRun(InitSlate()))
             return null;
         questQueue.RemoveAt(0);
+        ModLog.Debug($"Generating new random subquest with {nextSubquestDef.defName}");
         return nextSubquestDef;
     }
 

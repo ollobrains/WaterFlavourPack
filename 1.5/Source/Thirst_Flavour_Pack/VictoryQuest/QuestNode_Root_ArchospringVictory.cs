@@ -10,6 +10,7 @@ public class QuestNode_Root_ArchospringVictory: QuestNode
     {
         if (!ModLister.CheckIdeology("Archonexus victory"))
             return;
+        ModLog.Debug("Generating Archospring Victory Quest");
         Quest quest = QuestGen.quest;
         Slate slate = QuestGen.slate;
         Map map = QuestGen_Get.GetMap();

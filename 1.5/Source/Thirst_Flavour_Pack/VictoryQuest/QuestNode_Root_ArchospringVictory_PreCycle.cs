@@ -7,6 +7,7 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 public class QuestNode_Root_ArchospringVictory_PreCycle : QuestNode
 { protected override void RunInt()
     {
+        ModLog.Debug("QuestNode_Root_ArchospringVictory_PreCycle.RunInt");
         Quest quest = QuestGen.quest;
 
         quest.RewardChoice().choices.Add(new QuestPart_Choice.Choice { rewards = { new Reward_ArhcospringBuildingSiteMap() } });

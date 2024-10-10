@@ -21,6 +21,7 @@ public class QuestPart_ActionOnSignal: QuestPartActivable
         base.ProcessQuestSignal(signal);
         if (signal.tag != inSignal)
             return;
+        ModLog.Debug($"Signal \"{signal}\" called, triggering action \"{action}\" ");
         action?.Invoke();
         Complete(signal.args);
     }
