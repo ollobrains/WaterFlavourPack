@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Name="MSS_Thirst_ArchoQuestBuilding" ParentName="BuildingBase" Abstract="True">
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Building_ArchoMachine</thingClass>
+        <castEdgeShadows>false</castEdgeShadows>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <useHitPoints>true</useHitPoints>
+        <rotatable>false</rotatable>
+        <size>(7,7)</size>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>30000</MaxHitPoints>
+            <Mass>1</Mass>
+            <Flammability>0</Flammability>
+            <WorkToMake>105000</WorkToMake>
+            <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">40</StyleDominance>
+        </statBases>
+        <thingCategories>
+            <li>BuildingsPower</li>
+        </thingCategories>
+
+        <building>
+            <fixedStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Thirst_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </fixedStorageSettings>
+
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <thingDefs>
+                        <li>MSS_Thirst_ComponentArcho</li>
+                    </thingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+    </ThingDef>
+
+    <ThingDef ParentName="MSS_Thirst_ArchoQuestBuilding">
+        <defName>MSS_Thirst_PowerRegulator</defName>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <label>power regulator</label>
+        <description>An ancient archotech power regulator</description>
+
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/Special/MSS_Water_PowerRegulator</texPath>
+            <drawSize>(7,7)</drawSize>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="MSS_Thirst_ArchoQuestBuilding">
+        <defName>MSS_Thirst_CatalyticSeparator</defName>
+        <label>Catalytic Separator</label>
+        <description>An ancient archotech catalytic separator</description>
+
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/Special/MSS_Water_CatalyticSeparator</texPath>
+            <drawSize>(7,7)</drawSize>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="MSS_Thirst_ArchoQuestBuilding">
+        <defName>MSS_Thirst_SterilizationPlant</defName>
+        <label>Sterilization Plant</label>
+        <description>An ancient archotech sterilization plant</description>
+
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/Special/MSS_Water_SterilizationPlant</texPath>
+            <drawSize>(7,7)</drawSize>
+        </graphicData>
+    </ThingDef>
+</Defs>
