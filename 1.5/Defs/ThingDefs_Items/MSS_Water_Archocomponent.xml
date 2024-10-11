@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="ResourceBase">
+        <defName>MSS_Thirst_ComponentArcho</defName>
+        <label>archotech component</label>
+        <description>An Archotech component often used in ancient archo-machinery. Nobody really knows how they work, luckily they're plug-and-play.</description>
+        <thingClass>Thirst_Flavour_Pack.VictoryQuest.Thing_ComponentArcho</thingClass>
+        <graphicData>
+            <texPath>Things/Item/Resource/ArchotechComponent/MSS_Water_ArchotechComponent</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <stackLimit>1</stackLimit>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <statBases>
+            <MaxHitPoints>70</MaxHitPoints>
+            <MarketValue>4000</MarketValue>
+            <Mass>1.9</Mass>
+            <Flammability>0.1</Flammability>
+            <DeteriorationRate>0.1</DeteriorationRate>
+        </statBases>
+        <intricate>true</intricate>
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+    </ThingDef>
+</Defs>

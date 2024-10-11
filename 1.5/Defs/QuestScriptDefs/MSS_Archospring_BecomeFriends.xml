@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <QuestScriptDef>
+        <defName>MSS_Thirst_Archospring_BecomeFriends</defName>
+        <rootSelectionWeight>1.1</rootSelectionWeight>
+        <rootMinProgressScore>8</rootMinProgressScore>
+        <epicParent>MSS_Thirst_EndGame_WaterVictory</epicParent>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <expireDaysRange>4~8</expireDaysRange>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->Peaceful negotiations</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <!-- Asker is null -->
+                <li>questDescription(askerIsNull==true)->An anonymous AI has reached out with an odd request. It would like you to become [targetRelationKind] with [targetFaction_name]. In exchange it will send you an archotech component. It avoids all your questions about the deal.\n\nIf you accept, it will deliver the archotech component by transport pod.</li>
+
+                <!-- Leader asker -->
+                <li>questDescription(asker_factionLeader==true)->[asker_faction_leaderTitle] [asker_nameFull] of [asker_faction_name] has an odd request. [asker_pronoun] would like you to become [targetRelationKind] with [targetFaction_name]. In exchange they will send you an archotech component. When pressed for more details, [asker_pronoun] avoids the question. There is desperation in [asker_possessive] voice.\n\nIf you accept, [asker_nameFull] will deliver the archotech components by transport pod.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="Thirst_Flavour_Pack.VictoryQuest.QuestNode_Root_BecomeNeutral" />
+    </QuestScriptDef>
+</Defs>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <MSS_Thirst_QuestPowerRegRequired>{0} power regulators built. You currently have {1}.</MSS_Thirst_QuestPowerRegRequired>
+    <MSS_Thirst_QuestCatalyticSeparatorRequired>{0} catalytic separators built. You currently have {1}.</MSS_Thirst_QuestCatalyticSeparatorRequired>
+    <MSS_Thirst_QuestSterilizationPlantRequired>{0} sterilization plants built. You currently have {1}.</MSS_Thirst_QuestSterilizationPlantRequired>
+
+    <MSS_Thirst_LetterTextReqReached>You have reached the requirement for the quest '{0}'. You can now accept the quest.</MSS_Thirst_LetterTextReqReached>
+    <MSS_Thirst_Reward_ArchospringMapPart>A map part</MSS_Thirst_Reward_ArchospringMapPart>
+    <MSS_Thirst_Reward_ArchospringMapPartLabel>Map part {0}/{1}</MSS_Thirst_Reward_ArchospringMapPartLabel>
+    <MSS_Thirst_Reward_ArchospringSignalLocationLabel>Signal Location</MSS_Thirst_Reward_ArchospringSignalLocationLabel>
+    <MSS_Thirst_Reward_ArchospringSignalLocationDesc>The location of the signal that the Archotech component is interacting with</MSS_Thirst_Reward_ArchospringSignalLocationDesc>
+    <MSS_Thirst_Reward_ArchospringInfo>Information</MSS_Thirst_Reward_ArchospringInfo>
+
+    <MSS_Thirst_BuildingRequiresComponents>The {0} has {1}/{2} of it's required components.</MSS_Thirst_BuildingRequiresComponents>
+    <MSS_Thirst_BuildingRequired>No {0} available.</MSS_Thirst_BuildingRequired>
+
+    <MSS_Thirst_SoldColonyDescription>You manage to escape unscathed. Pick your next base carefully!</MSS_Thirst_SoldColonyDescription>
+
+    <MSS_Thirst_ChooseThingsForNewColonyTitle>Escape!</MSS_Thirst_ChooseThingsForNewColonyTitle>
+    <MSS_Thirst_ChooseThingsForNewColonyDesc>The rumblings from underground came to a head as you activated the last machine, the violent shaking tearing your colony apart. You quickly gather as many people, animals, vehicles and possesions as you can.\n\nSelect what to take below.</MSS_Thirst_ChooseThingsForNewColonyDesc>
+
+    <MSS_Thirst_WaterQuestColonistsAllowed>Colonists allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestColonistsAllowed>
+    <MSS_Thirst_WaterQuestAnimalsAllowed>Animals allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestAnimalsAllowed>
+    <MSS_Thirst_WaterQuestItemsAllowed>Items allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestItemsAllowed>
+    <MSS_Thirst_WaterQuestRelicsAllowed>Relics allowed to escape map on final quest [{0}]</MSS_Thirst_WaterQuestRelicsAllowed>
+
+    <MSS_Thirst_BuildingContainsComponents>Contains {0}/{1} components</MSS_Thirst_BuildingContainsComponents>
+
+    <MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>You have {0}/{1} of the required Archotech Components for the {2}</MSS_Thirst_QuestPart_Filter_PowerRegulator_DescPart>
+
+    <MSS_Thirst_Letter_Site_Found_Title>{0} found!</MSS_Thirst_Letter_Site_Found_Title>
+    <MSS_Thirst_Letter_Site_Found_Text>A {0} has been found!</MSS_Thirst_Letter_Site_Found_Text>
+
+    <MSS_Thirst_MessageComponentDiscovered>You've discovered an ancient archotech component!</MSS_Thirst_MessageComponentDiscovered>
+
+    <MSS_Thirst_FactionRelations_DescriptionPart>You currently have {0} goodwiil with {1} making you {2}. You need {3} more goodwill to become {4}.</MSS_Thirst_FactionRelations_DescriptionPart>
+
+    <MSS_Thirst_Settings_EnableFinalQuestFight>Enable a final raid on the final quest?</MSS_Thirst_Settings_EnableFinalQuestFight>
+    <MSS_Thirst_Settings_ArchoQuestFinalFightRaidFactor>Random multiplier range for final fight raid points</MSS_Thirst_Settings_ArchoQuestFinalFightRaidFactor>
+    <MSS_Thirst_Settings_FinalFightFaction>Faction to raid in the final fight. You probably shouldn't use this unless keyz has told you to.</MSS_Thirst_Settings_FinalFightFaction>
+
+    <MSS_Thirst_ActivateArchospringText>The Archospring is activating. This will send out a wideband signal planet wide. You can be guaranteed that a raid is incoming.\n\nA raid is incoming within the next 10 minutes. Defend the Archospring!</MSS_Thirst_ActivateArchospringText>
+
+    <MSS_Thirst_ArchospringSite>The Archospring</MSS_Thirst_ArchospringSite>
+</LanguageData>
