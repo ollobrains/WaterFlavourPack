@@ -3,9 +3,13 @@ using Verse;
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
 /// <summary>
-/// Doesn't do anything extra, but lets us use type checks
+/// Lets us use type checks, and overrides CanStackWith to always return false
 /// </summary>
 public class Thing_ComponentArcho: ThingWithComps
 {
+    public override bool CanStackWith(Thing other)
+    {
+        return false;
+    }
 
 }

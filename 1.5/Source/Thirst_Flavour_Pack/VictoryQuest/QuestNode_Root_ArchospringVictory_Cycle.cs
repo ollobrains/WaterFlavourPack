@@ -18,8 +18,17 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
     // The current part of the quest cycles
     protected abstract int QuestCycle { get; }
 
-    // Once enabled, checks if the building has the correct amount of components every 60 ticks, and if it does, completes itself then emits the outsignal
-    protected abstract QuestPart_Activable_ArchoSpringBuilding Activable_ArchoSpringBuilding { get; }
+    // The signal that's raised when the building is complete
+    public static string ArchoBuildingMapVisitedSignalForDef(ThingDef def)
+    {
+        return $"{def.defName}_MapVisited";
+    }
+
+    // The signal that's raised when the building is complete
+    public static string ArchoBuildingCompleteSignalForDef(ThingDef def)
+    {
+        return $"{def.defName}_ArchoBuildingComplete";
+    }
 
     // A filter on the global building destroyed signal to determine if the building we're interested in was destroyed, and if it is, raises it's own signal
     // This lets us act on our specific building being destroyed, without having to worry about raising specific signals
@@ -45,9 +54,12 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       map = QuestGen_Get.GetMap();
 
       // pre-create any signals we need
-      string activated = QuestGen.GenerateNewSignal("MSS_Thirst_ArchoBuildingComplete");
-      string mapVisitedSignal = $"{BuildingDef.defName}_MapVisited"; // global, so don't use QuestGen.GenerateNewSignal
+      string mapVisitedSignal = ArchoBuildingMapVisitedSignalForDef(BuildingDef); // global, so don't use QuestGen.GenerateNewSignal
+      string bldCompleteSignal = ArchoBuildingCompleteSignalForDef(BuildingDef);
+
+      // Local signal
       string bldDestroyedSignal = QuestGen.GenerateNewSignal("Building_Destroyed");
+      string questOver = QuestGen.GenerateNewSignal("QuestOver");
 
       if (SpawnSite)
       {
@@ -82,7 +94,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       // Spawn subquests at random intervals that can give components
       QuestPart_SubquestGenerator_ArchoHunt part1 = new QuestPart_SubquestGenerator_ArchoHunt();
       part1.inSignalEnable = mapVisitedSignal;
-      part1.inSignalDisable = activated;
+      part1.inSignalDisable = bldCompleteSignal;
       part1.interval = Thirst_Flavour_PackMod.settings.ArchoQuestComponentHuntInterval;
       part1.archotechComponentDef = Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho;
       part1.archotechComponentSlateName = "MSS_Thirst_ArchospringComponent";
@@ -93,21 +105,16 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       part1.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       quest.AddPart(part1);
 
-      // Check if the components are in place, then fire the ArchoBuildingComplete signal
-      QuestPart_Activable_ArchoSpringBuilding buildingComplete = Activable_ArchoSpringBuilding;
-      buildingComplete.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
-      // always listen, just in case the player beats us to adding the components before accepting
-      buildingComplete.inSignalEnable = mapVisitedSignal;
-      buildingComplete.outSignalsCompleted.Add(activated);
-      quest.AddPart(buildingComplete);
-
       // End the quest here if appropriate
       if (SetSuccess)
-          quest.End(QuestEndOutcome.Success, inSignal:activated, sendStandardLetter: true);
+      {
+          quest.SignalPass(inSignal:bldCompleteSignal, outSignal:questOver);
+          quest.End(QuestEndOutcome.Success, inSignal: questOver, sendStandardLetter: true);
+      }
 
       // set up the "reward"
       QuestPart_Choice choice = quest.RewardChoice();
-      choice.inSignalChoiceUsed = activated;
+      choice.inSignalChoiceUsed = bldCompleteSignal;
       choice.choices.Add(new QuestPart_Choice.Choice
       {
         rewards = {
@@ -118,7 +125,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
         }
       });
 
-      slate.Set("inSignal", activated);
+      slate.Set("inSignal", bldCompleteSignal);
     }
 
 

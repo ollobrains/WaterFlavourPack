@@ -13,13 +13,13 @@ public class Building_ArchoMachine : Building,
     IThingHolderEvents<Thing_ComponentArcho>,
     IHaulEnroute,
     IHaulDestination,
-    IHaulSource,
+    IThingHolder,
     ISearchableContents
 {
     private ThingOwner<Thing_ComponentArcho> innerContainer;
     private StorageSettings settings;
 
-    public ThingOwner SearchableContents => innerContainer;
+    public ThingOwner SearchableContents => null;
 
     public void GetChildHolders(List<IThingHolder> outChildren)
     {
@@ -35,9 +35,6 @@ public class Building_ArchoMachine : Building,
 
     public void Notify_SettingsChanged()
     {
-        if (!Spawned)
-            return;
-        MapHeld.listerHaulables.Notify_HaulSourceChanged(this);
     }
 
     public bool StorageTabVisible => false;
@@ -62,12 +59,14 @@ public class Building_ArchoMachine : Building,
     public void Notify_ItemAdded(Thing_ComponentArcho item)
     {
         MapHeld.listerHaulables.Notify_AddedThing(item);
-        Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingComponentCount.SetOrAdd(def, innerContainer.Count);
+        ModLog.Debug($"Building_ArchoMachine.Notify_ItemAdded: {item.LabelCap}. Current Count: {innerContainer.InnerListForReading.Count}");
+
+        if(innerContainer.Count >= Thirst_Flavour_PackMod.settings.ArchotechComponentsToCompleteBuilding)
+            Find.SignalManager.SendSignal(new Signal(QuestNode_Root_ArchospringVictory_Cycle.ArchoBuildingCompleteSignalForDef(def), new SignalArgs(new NamedArgument(this, "building")), true));
     }
 
     public void Notify_ItemRemoved(Thing_ComponentArcho item)
     {
-        Find.World.GetComponent<ArchospringVictoryWorldComponent>().BuildingComponentCount.SetOrAdd(def, innerContainer.Count);
     }
 
     public Building_ArchoMachine()
@@ -91,8 +90,8 @@ public class Building_ArchoMachine : Building,
 
     public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
     {
-        foreach (FloatMenuOption floatMenuOption in HaulSourceUtility.GetFloatMenuOptions(this, selPawn))
-            yield return floatMenuOption;
+        // foreach (FloatMenuOption floatMenuOption in HaulSourceUtility.GetFloatMenuOptions(this, selPawn))
+            // yield return floatMenuOption;
 
         foreach (Thing_ComponentArcho component in (IEnumerable<Thing_ComponentArcho>) innerContainer.InnerListForReading)
         {

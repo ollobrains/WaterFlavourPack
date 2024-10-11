@@ -103,8 +103,9 @@ public class SymbolResolver_ArchoBuilding: SymbolResolver
       foreach (IntVec3 cell in outerRadial)
       {
           List<Thing> things = cell.GetThingList(BaseGen.globalSettings.map);
-          foreach (Thing thing in things)
+          for (int i = 0; i < things.Count; i++)
           {
+              Thing thing = things[i];
               if (thing.def.category == ThingCategory.Plant && thing.def != ThingDefOf.Plant_TreeAnima)
                   thing.Destroy();
           }

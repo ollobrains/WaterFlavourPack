@@ -21,7 +21,7 @@ public static class StorytellerComp_RefiringUniqueQuest_Patch
         StorytellerCompProperties_RefiringUniqueQuest Props = __instance.props as StorytellerCompProperties_RefiringUniqueQuest;
         IncidentDef incident = Props?.incident;
 
-        if (Props == null || incident is not { defName: "GiveQuest_EndGame_ArchonexusVictory" })
+        if (Props == null || incident is not ({ defName: "MSS_Thirst_GiveQuest_EndGame_ArchospringVictory" } or { defName: "GiveQuest_EndGame_ArchonexusVictory"}))
         {
             return true;
         }

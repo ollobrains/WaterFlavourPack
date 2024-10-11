@@ -14,15 +14,12 @@ public class ArchospringVictoryWorldComponent(World world) : WorldComponent(worl
 
     public HashSet<Thing> ArchoComponentsSeenByPlayer = [];
 
-
-    public Dictionary<ThingDef, int> BuildingComponentCount = new Dictionary<ThingDef, int>();
     public Dictionary<ThingDef, bool> BuildingAvailable = new Dictionary<ThingDef, bool>();
 
     public override void ExposeData()
     {
         base.ExposeData();
         Scribe_Collections.Look(ref ArchoComponentsSeenByPlayer, "ArchoComponentsSeenByPlayer", LookMode.Reference);
-        Scribe_Collections.Look(ref BuildingComponentCount, "BuildingComponentCount", LookMode.Def, LookMode.Value);
         Scribe_Collections.Look(ref BuildingAvailable, "BuildingAvailable", LookMode.Def, LookMode.Value);
     }
 }
