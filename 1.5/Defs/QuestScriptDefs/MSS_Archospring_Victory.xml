@@ -52,11 +52,6 @@
             <rulesStrings>
                 <!-- description -->
                 <li>questDescription->One of your colonists has discovered an ancient Archotech Component. It appears to be receiving a signal from an unknown origin. Rumours have linked these components to water somehow - maybe you should investigate?</li>
-
-
-                <!-- quest descriptions -->
-                <li>questDescriptionBeforeAccepted-> [questDescription]</li>
-                <li>questDescriptionAfterAccepted-> [questDescription]</li>
             </rulesStrings>
         </questDescriptionRules>
         <questContentRules>

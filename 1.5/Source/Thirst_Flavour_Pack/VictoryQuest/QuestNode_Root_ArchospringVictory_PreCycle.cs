@@ -12,10 +12,8 @@ public class QuestNode_Root_ArchospringVictory_PreCycle : QuestNode
 
         quest.RewardChoice().choices.Add(new QuestPart_Choice.Choice { rewards = { new Reward_ArhcospringBuildingSiteMap() } });
 
-        quest.DialogWithCloseBehavior("[questDescriptionBeforeAccepted]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly,
+        quest.DialogWithCloseBehavior("[questDescription]", inSignal: quest.AddedSignal, signalListMode: QuestPart.SignalListenMode.NotYetAcceptedOnly,
             closeAction: QuestPartDialogCloseAction.CloseActionKey.None);
-        quest.DescriptionPart("[questDescriptionBeforeAccepted]", quest.AddedSignal, quest.InitiateSignal, QuestPart.SignalListenMode.OngoingOrNotYetAccepted);
-        quest.DescriptionPart("[questDescriptionAfterAccepted]", quest.InitiateSignal, signalListenMode: QuestPart.SignalListenMode.OngoingOrNotYetAccepted);
         quest.Letter(LetterDefOf.PositiveEvent, text: "[questAcceptedLetterText]", label: "[questAcceptedLetterLabel]");
 
         quest.End(QuestEndOutcome.Success, inSignal: quest.InitiateSignal);
