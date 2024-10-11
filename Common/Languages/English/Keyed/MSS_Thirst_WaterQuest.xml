@@ -42,4 +42,10 @@
     <MSS_Thirst_ActivateArchospringText>The Archospring is activating. This will send out a wideband signal planet wide. You can be guaranteed that a raid is incoming.\n\nA raid is incoming within the next 10 minutes. Defend the Archospring!</MSS_Thirst_ActivateArchospringText>
 
     <MSS_Thirst_ArchospringSite>The Archospring</MSS_Thirst_ArchospringSite>
+
+    <MSS_Thirst_HaulComponentToArchoBuilding>Install archotech component ({0})</MSS_Thirst_HaulComponentToArchoBuilding>
+    <MSS_Thirst_CannotHaulComponentToArchoBuilding>{0} cannot install ({1})</MSS_Thirst_CannotHaulComponentToArchoBuilding>
+    <MSS_Thirst_UnknownReasonForNoHaul>Unknown</MSS_Thirst_UnknownReasonForNoHaul>
+    <MSS_Thirst_IncapableOfManipulation>Incapable of manipulation</MSS_Thirst_IncapableOfManipulation>
+    <MSS_Thirst_CannotReach>Cannot reach destination</MSS_Thirst_CannotReach>
 </LanguageData>

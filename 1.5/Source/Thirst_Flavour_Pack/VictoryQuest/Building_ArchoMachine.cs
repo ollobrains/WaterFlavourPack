@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace Thirst_Flavour_Pack.VictoryQuest;
 
@@ -12,8 +14,8 @@ namespace Thirst_Flavour_Pack.VictoryQuest;
 public class Building_ArchoMachine : Building,
     IThingHolderEvents<Thing_ComponentArcho>,
     IHaulEnroute,
+    IHaulSource,
     IHaulDestination,
-    IThingHolder,
     ISearchableContents
 {
     private ThingOwner<Thing_ComponentArcho> innerContainer;
@@ -90,8 +92,34 @@ public class Building_ArchoMachine : Building,
 
     public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
     {
-        // foreach (FloatMenuOption floatMenuOption in HaulSourceUtility.GetFloatMenuOptions(this, selPawn))
-            // yield return floatMenuOption;
+        foreach (Pawn pawn in Map.PlayerPawnsForStoryteller.Where(p=>p.inventory.innerContainer.Contains(Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho)))
+        {
+            foreach (Thing component in pawn.inventory.innerContainer.Where(thing => thing.def == Thirst_Flavour_PackDefOf.MSS_Thirst_ComponentArcho))
+            {
+                string reason = "MSS_Thirst_UnknownReasonForNoHaul";
+
+                bool canHaul = true;
+
+                if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
+                {
+                    canHaul = false;
+                    reason = "MSS_Thirst_IncapableOfManipulation";
+                }else if (!pawn.CanReach(this, PathEndMode.ClosestTouch, pawn.NormalMaxDanger()))
+                {
+                    canHaul = false;
+                    reason = "MSS_Thirst_CannotReach";
+                }
+
+                void Action()
+                {
+                    Job job = HaulAIUtility.HaulToContainerJob(pawn, component, this);
+                    pawn.jobs.StartJob(job);
+                }
+
+                yield return new FloatMenuOption(canHaul ? "MSS_Thirst_HaulComponentToArchoBuilding".Translate(pawn.Name.ToStringShort) : "MSS_Thirst_CannotHaulComponentToArchoBuilding".Translate(pawn.Name.ToStringShort, reason.Translate()), canHaul ? Action : null);
+            }
+
+        }
 
         foreach (Thing_ComponentArcho component in (IEnumerable<Thing_ComponentArcho>) innerContainer.InnerListForReading)
         {

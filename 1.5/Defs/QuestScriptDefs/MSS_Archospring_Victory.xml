@@ -59,7 +59,7 @@
 
                 <!-- letters -->
                 <li>questAcceptedLetterLabel-> archotech power regulator discovered</li>
-                <li>questAcceptedLetterText->[questDescriptionBeforeAccepted]</li>
+                <li>questAcceptedLetterText->[questDescription]</li>
 
             </rulesStrings>
         </questContentRules>
