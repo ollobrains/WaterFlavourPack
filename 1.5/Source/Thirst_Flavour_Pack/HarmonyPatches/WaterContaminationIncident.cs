@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
@@ -26,7 +27,7 @@ public class WaterContaminationIncident
                     new CurvePoint(Thirst_Flavour_PackMod.settings.SafeWaterPacks, 0),
                     new CurvePoint(
                         Thirst_Flavour_PackMod.settings.SafeWaterPacks +
-                        (Thirst_Flavour_PackMod.settings.MaxUnsafeWaterPacks - Thirst_Flavour_PackMod.settings.SafeWaterPacks / 2f), 0.2f),
+                        (Thirst_Flavour_PackMod.settings.MaxUnsafeWaterPacks - Thirst_Flavour_PackMod.settings.SafeWaterPacks) / 2f, 0.2f),
                     new CurvePoint(Thirst_Flavour_PackMod.settings.MaxUnsafeWaterPacks, 0.9f)
                 ]);
             }
@@ -41,19 +42,31 @@ public class WaterContaminationIncident
         if (!(__instance.offset > 0f) || GenTicks.TicksGame <= NextWaterContaminationTick) return;
         NextWaterContaminationTick = GenTicks.TicksGame + 60000 / Thirst_Flavour_PackMod.settings.BadWaterNoticingRollsPerDay; // Don't check every time just a few times a day
 
-        List<Thing> things = Find.CurrentMap.listerThings.ThingsOfDef(ingested.def);
-        float chance = WaterItemContaminationCurve.Evaluate(things.Select(t => t.stackCount).Sum());
-        ModLog.Debug($"Water contamination chance: {chance} for {things.Count} items");
+        List<Thing> things = Find.CurrentMap.listerThings.ThingsOfDef(ingested.def).Where(w => !w.Destroyed).ToList();
+        int totalThings = things.Select(t => t.stackCount).Sum();
+        float chance = WaterItemContaminationCurve.Evaluate(totalThings);
+        ModLog.Debug($"Water contamination chance: {chance} for {totalThings} items in {things.Count} stacks");
         if (!Rand.Chance(chance)) return;
 
-        List<Thing> toDestroy = things.TakeRandom(Mathf.Clamp(Mathf.CeilToInt(things.Count * chance), 1, things.Count - 1)).ToList();
+        int thingsToDestroy = Math.Max(Mathf.CeilToInt(chance * totalThings), 1);
         int destroyedCount = 0;
-        foreach (Thing thing in toDestroy)
+        foreach (Thing thing in things)
         {
-            destroyedCount += thing.stackCount;
-            thing.Destroy(DestroyMode.Vanish);
+            if (destroyedCount >= thingsToDestroy) break;
+            if (thing.stackCount <= thingsToDestroy - destroyedCount)
+            {
+                destroyedCount += thing.stackCount;
+                thing.Destroy();
+            }
+            else
+            {
+                Thing partialStack = thing.SplitOff(thingsToDestroy - destroyedCount);
+                destroyedCount += partialStack.stackCount;
+                partialStack.Destroy();
+            }
         }
 
+        if (destroyedCount <= 0) return;
         NextWaterContaminationTick = GenTicks.TicksGame + 60000 * Thirst_Flavour_PackMod.settings.DaysBetweenWaterDestruction;
 
         Find.LetterStack.ReceiveLetter("MSS_Thirst_Incident_ContaminationLetterLabel".Translate(),

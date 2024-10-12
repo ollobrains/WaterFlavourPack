@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-    <RecipeDef>
+    <RecipeDef MayRequire="vanillaracesexpanded.sanguophage">
         <defName>MSS_Thirst_Refine_Unsafe_Water</defName>
         <label>refine unsafe water into safe water packs</label>
         <description>A process which refines Crude Water into Refined Water though complex distillation, removing the majority of contaminants but leaving an unpleasant aftertaste.</description>
@@ -17,7 +17,7 @@
                         <li>VRE_HemogenPack_Animal</li>
                     </thingDefs>
                 </filter>
-                <count>10</count>
+                <count>5</count>
             </li>
         </ingredients>
         <fixedIngredientFilter>
@@ -33,7 +33,7 @@
         </recipeUsers>
     </RecipeDef>
 
-    <RecipeDef>
+    <RecipeDef MayRequire="vanillaracesexpanded.sanguophage">
         <defName>MSS_Thirst_Refine_Unsafe_Water_Tribal</defName>
         <label>boil poison water</label>
         <description>An extremely slow process which boils Poison Water leaving Crude Water by condensing droplets of steam on primative metal panels. Crude Water is marginally safer than Poison Water.</description>
@@ -66,7 +66,7 @@
         </recipeUsers>
     </RecipeDef>
 
-    <RecipeDef>
+    <RecipeDef MayRequire="vanillaracesexpanded.sanguophage">
         <defName>MSS_Thirst_Refine_Unsafe_Water_Industrial</defName>
         <label>condense Poisoned Water</label>
         <description>A slow process which purifies Poison Water into Crude Water, though a long series of boiling and reboiling in sterile pots.</description>
@@ -113,7 +113,7 @@
             <MSS_Unsafe_Water>5</MSS_Unsafe_Water>
         </products>
         <recipeUsers>
-            <li>MSS_Thirst_Industrial_Water_Drill</li>
+            <li>MSS_Thirst_Drill</li>
         </recipeUsers>
     </RecipeDef>
 
@@ -167,7 +167,7 @@
         <workSkill>Crafting</workSkill>
         <workSkillLearnFactor>0</workSkillLearnFactor>
         <recipeUsers>
-            <li>MSS_Thirst_WaterSpot</li>
+            <li>MSS_Thirst_Dig_Spot</li>
         </recipeUsers>
     </RecipeDef>
 
