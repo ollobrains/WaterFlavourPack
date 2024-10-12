@@ -44,7 +44,7 @@
     <surfaceType>Item</surfaceType>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <recipes>
-      <li>MSS_Thirst_Drill_Water</li>
+      <!-- <li>MSS_Thirst_Drill_Water</li> -->
     </recipes>
     <inspectorTabs>
       <li>ITab_Bills</li>
@@ -339,5 +339,5 @@
       <li>ExoticBuilding</li>
     </tradeTags>
   </ThingDef>
-  
+
 </Defs>
