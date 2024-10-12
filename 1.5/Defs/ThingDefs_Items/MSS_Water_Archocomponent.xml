@@ -3,7 +3,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>MSS_Thirst_ComponentArcho</defName>
         <label>archotech component</label>
-        <description>An Archotech component often used in ancient archo-machinery. Nobody really knows how they work, luckily they're plug-and-play.</description>
+        <description>An Archotech component often used in ancient archo-machinery. Nobody really knows how they work, luckily they're plug-and-play.\n\nCannot be crafted until you've found one.</description>
         <thingClass>Thirst_Flavour_Pack.VictoryQuest.Thing_ComponentArcho</thingClass>
         <graphicData>
             <texPath>Things/Item/Resource/ArchotechComponent/MSS_Water_ArchotechComponent</texPath>
@@ -29,4 +29,59 @@
         </tradeTags>
         <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
     </ThingDef>
+
+    <RecipeDef>
+        <defName>MSS_Thirst_Make_ComponentArcho</defName>
+        <label>make archotech component</label>
+        <workerClass>Thirst_Flavour_Pack.VictoryQuest.RecipeWorker_ComponentArcho</workerClass>
+        <description>Make an archotech component.</description>
+        <jobString>Making archotech component.</jobString>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <workAmount>25000</workAmount>
+        <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>AIPersonaCore</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentSpacer</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Plasteel</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>ComponentSpacer</li>
+                <li>AIPersonaCore</li>
+                <li>Plasteel</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <MSS_Thirst_ComponentArcho>1</MSS_Thirst_ComponentArcho>
+        </products>
+        <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+        <skillRequirements>
+            <Crafting>12</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <displayPriority>11</displayPriority>
+    </RecipeDef>
 </Defs>

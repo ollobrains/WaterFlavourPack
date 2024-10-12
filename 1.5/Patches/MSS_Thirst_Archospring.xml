@@ -20,4 +20,13 @@
             <li Class="Thirst_Flavour_Pack.VictoryQuest.MapGen.WorldObjectCompProperties_DefeatAllEnemiesArchospringQuest" />
         </value>
     </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="FabricationBench"]/recipes</xpath>
+        <value>
+            <li>MSS_Thirst_Make_ComponentArcho</li>
+        </value>
+    </Operation>
+
+
 </Patch>

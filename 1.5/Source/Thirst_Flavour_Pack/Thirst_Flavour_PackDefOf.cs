@@ -34,5 +34,6 @@ public static class Thirst_Flavour_PackDefOf
 
     public static SitePartDef MSS_Thirst_BarbCamp;
 
+    public static RecipeDef MSS_Thirst_Make_ComponentArcho;
     static Thirst_Flavour_PackDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(Thirst_Flavour_PackDefOf));
 }
