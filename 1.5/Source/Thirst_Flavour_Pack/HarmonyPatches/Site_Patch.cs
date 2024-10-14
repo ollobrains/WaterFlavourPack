@@ -32,7 +32,7 @@ public static class Site_Patch
         {
             // Do auto-remove when complete.
             Building_ArchoMachine bld = __instance.Map.listerThings.GetThingsOfType<Building_ArchoMachine>().FirstOrDefault();
-            if (bld != null && bld.IsComplete() && !__instance.Map.mapPawns.AnyColonistSpawned)
+            if (bld != null && bld.IsComplete() && !__instance.Map.mapPawns.AnyColonistSpawned && !__instance.Map.PlayerPawnsForStoryteller.Any())
             {
                 __result = true;
                 return;
