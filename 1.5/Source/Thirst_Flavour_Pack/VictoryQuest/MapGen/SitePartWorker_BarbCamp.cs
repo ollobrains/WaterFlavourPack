@@ -12,6 +12,8 @@ public class SitePartWorker_BarbCamp: SitePartWorker
 
     public bool componentObtainedSignalSent = false;
 
+    public int NextCheck = 60;
+
     public override void Init(Site site, SitePart sitePart)
     {
         base.Init(site, sitePart);
@@ -25,10 +27,14 @@ public class SitePartWorker_BarbCamp: SitePartWorker
 
     public override void SitePartWorkerTick(SitePart sitePart)
     {
-        if (!componentObtainedSignalSent && component.holdingOwner is { Owner: Pawn_InventoryTracker pawnInv } && pawnInv.pawn.Faction == Faction.OfPlayer)
+        if (Find.TickManager.TicksGame > NextCheck)
         {
-            QuestUtility.SendQuestTargetSignals(sitePart.site.questTags, ComponentObtainedSignal, component.LabelCap);
-            componentObtainedSignalSent = true;
+            NextCheck = Find.TickManager.TicksGame + 60;
+            if (!componentObtainedSignalSent && sitePart.site.Map != null && !sitePart.site.Map.mapPawns.AllHumanlike.Any(p=>p.Faction.HostileTo(Faction.OfPlayer)))
+            {
+                QuestUtility.SendQuestTargetSignals(sitePart.site.questTags, ComponentObtainedSignal);
+                componentObtainedSignalSent = true;
+            }
         }
     }
 }

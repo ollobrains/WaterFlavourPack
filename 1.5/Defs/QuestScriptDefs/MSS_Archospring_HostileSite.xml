@@ -50,9 +50,9 @@
   <QuestScriptDef>
     <defName>MSS_Thirst_Archospring_BarbarianCamp</defName>
     <epicParent>MSS_Thirst_EndGame_WaterVictory</epicParent>
-    <rootSelectionWeight>0.0</rootSelectionWeight>
+    <rootSelectionWeight>1.1</rootSelectionWeight>
     <rootMinPoints>350</rootMinPoints>
-    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+      <defaultChallengeRating>1</defaultChallengeRating>
     <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">MSS_Thirst_Raided_BarbCamp</successHistoryEvent>
     <questNameRules>
       <rulesStrings>
@@ -67,7 +67,7 @@
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. Apparently, [siteFaction_pawnsPlural] based in a nearby camp have been raiding their caravans. The camp is controlled by [siteFaction_name].\n[asker_nameDef] is asking us to destroy the camp, which means eliminating all enemies and turrets. [asker_label] says that [sitePart0_description].\n[asker_label] also says that the camp is guarding a priceless archotech artifact.</li>
+        <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. Apparently, [siteFaction_pawnsPlural] based in a nearby camp have been raiding their caravans. The camp is controlled by [siteFaction_name].\n[asker_nameDef] is asking us to destroy the camp, which means eliminating all enemies and turrets. [asker_label] says that [sitePart0_description].\n[asker_label] also says they are willing to give you a priceless Archotech component, and tha the camp may be guarding their own archotech artifact.</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="QuestNode_Sequence">
@@ -158,6 +158,23 @@
           </node>
         </li>
 
+        <!-- Rewards -->
+        <li Class="QuestNode_GenerateThing">
+            <storeAs>componentReward</storeAs>
+            <def>MSS_Thirst_ComponentArcho</def>
+            <stackCount>1</stackCount>
+        </li>
+
+        <li Class="QuestNode_AddToList">
+            <name>componentRewards</name>
+            <value>$componentReward</value>
+        </li>
+
+        <li Class="QuestNode_AddItemsReward">
+            <items>$componentRewards</items>
+            <inSignalChoiceUsed>site.ArchospringComponentObtained</inSignalChoiceUsed>
+        </li>
+
         <li Class="QuestNode_Signal">
             <inSignal>site.ArchospringComponentObtained</inSignal>
             <node Class="QuestNode_Sequence">
@@ -165,23 +182,6 @@
                     <li Class="QuestNode_Notify_PlayerRaidedSomeone">
                         <getRaidersFromMapParent>$site</getRaidersFromMapParent>
                     </li>
-                    <!-- <li Class="QuestNode_GiveRewards"> -->
-                    <!--     <parms> -->
-                    <!--         <allowGoodwill>true</allowGoodwill> -->
-                    <!--         <allowRoyalFavor>true</allowRoyalFavor> -->
-                    <!--         <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal> -->
-                    <!--     </parms> -->
-                    <!--     <addCampLootReward>true</addCampLootReward> -->
-                    <!--     <customLetterLabel TKey="LetterLabelPaymentArrived">Payment arrived</customLetterLabel> -->
-                    <!--     <customLetterText TKey="LetterTextPaymentArrived">You have defeated the bandit camp!\n\nThe payment from [asker_faction_name] has arrived.</customLetterText> -->
-                    <!--     <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter"> -->
-                    <!--         <letterDef>ChoosePawn</letterDef> -->
-                    <!--         <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label> -->
-                    <!--         <text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text> -->
-                    <!--         <useColonistsOnMap>$site</useColonistsOnMap> -->
-                    <!--         <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal> -->
-                    <!--     </nodeIfChosenPawnSignalUsed> -->
-                    <!-- </li> -->
                 </nodes>
             </node>
         </li>
