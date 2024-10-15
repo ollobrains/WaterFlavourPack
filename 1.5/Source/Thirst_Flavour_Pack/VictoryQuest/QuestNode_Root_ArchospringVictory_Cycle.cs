@@ -100,7 +100,7 @@ public abstract class QuestNode_Root_ArchospringVictory_Cycle: QuestNode
       part1.archotechComponentSlateName = "MSS_Thirst_ArchospringComponent";
       part1.useMapParentThreatPoints = map?.Parent;
       part1.expiryInfoPartKey = "RelicInfoFound";
-      part1.maxSuccessfulSubquests = 1;
+      part1.maxSuccessfulSubquests = 3;
       part1.subquestDefs.AddRange(GetAllSubquests(Thirst_Flavour_PackDefOf.MSS_Thirst_EndGame_WaterVictory));
       part1.signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted;
       quest.AddPart(part1);
