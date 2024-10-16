@@ -2,4 +2,10 @@
 <LanguageData>
     <SteamGeyser.label>Sulfur Geyser</SteamGeyser.label>
     <SteamGeyser.description>A natural source of high-pressure steam. Geothermal generators can harness the sulfuric power. Rooms built over this will rapidly cook.</SteamGeyser.description>
+    <ArchonexusCore.label>Archospring</ArchonexusCore.label>
+    <ArchonexusCore.label>An extremely powerful planet spanning machine piggybacking off of reverse engineered and jury-rigged Archotechnology. Most habitable planets throughout the galaxy have been found to have an Archonexus somewhere either on their surface or hidden beneath eons of tectonic activity, and this one has been repurposed to produce a limitless and uninteruptable supply of fresh, clean water.</ArchonexusCore.label>
+    <MajorArchotechStructure.label>Archofiltration System</MajorArchotechStructure.label>
+    <MajorArchotechStructure.description>It's original purpose long forgotten and overwritten, this reverse engineered Archo-building has been turned into a planet-spanning filtration system capable of producing limitless clean water.</MajorArchotechStructure.description>
+    <ArchotechTower.description>An Archotech power capable of generating infinite but very specific power solely compatible with the surrounding archostructures. The energy has no clear source nor any way to be harnessed, redirected, or otherwise interrupted.</ArchotechTower.description>
+    <ArchotechTower.label>Archotech Power Pylon</ArchotechTower.label>
 </LanguageData>
