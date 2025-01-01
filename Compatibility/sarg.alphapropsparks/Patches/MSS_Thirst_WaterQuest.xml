@@ -1,57 +1,86 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
-        <value>
-            <li Class="CompProperties_FleckEmitter">
-                <fleck>AP_WaterSproutLateral_Fleck</fleck>
-                <emissionInterval>60</emissionInterval>
-                <offset>(2,0,1.5)</offset>
-            </li>
-        </value>
-    </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
-        <value>
-            <li Class="CompProperties_FleckEmitter">
-                <fleck>AP_WaterSproutLateralInverted_Fleck</fleck>
-                <emissionInterval>60</emissionInterval>
-                <offset>(-2,0,1.5)</offset>
-            </li>
-        </value>
-    </Operation>
+  <!-- 
+    Adds multiple fleck emitter comps to the 'ArchonexusCore'.
+    Each <Operation> appends one new fleck emitter with its unique offset 
+    and emission parameters.
+  -->
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
-        <value>
-            <li Class="CompProperties_FleckEmitter">
-                <fleck>AP_SmallWaterSproutAnimated_Fleck</fleck>
-                <emissionInterval>60</emissionInterval>
-                <offset>(2,0,0)</offset>
-            </li>
-        </value>
-    </Operation>
+  <!-- =========================================================
+       Fleck Emitter: WaterSprout Lateral
+       Sprays sideways water effect at position (2,0,1.5)
+      ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
+    <value>
+      <li Class="CompProperties_FleckEmitter">
+        <fleck>AP_WaterSproutLateral_Fleck</fleck>
+        <emissionInterval>60</emissionInterval>
+        <offset>(2,0,1.5)</offset>
+        <!-- Optional: <fleckScale>1.0</fleckScale> or <randomRotation>true</randomRotation> -->
+      </li>
+    </value>
+  </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
-        <value>
-            <li Class="CompProperties_FleckEmitter">
-                <fleck>AP_SmallWaterSproutAnimatedInverted_Fleck</fleck>
-                <emissionInterval>60</emissionInterval>
-                <offset>(-2,0,0)</offset>
-            </li>
-        </value>
-    </Operation>
+  <!-- =========================================================
+       Fleck Emitter: WaterSprout Lateral Inverted
+       Sprays sideways water effect mirrored at position (-2,0,1.5)
+      ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
+    <value>
+      <li Class="CompProperties_FleckEmitter">
+        <fleck>AP_WaterSproutLateralInverted_Fleck</fleck>
+        <emissionInterval>60</emissionInterval>
+        <offset>(-2,0,1.5)</offset>
+      </li>
+    </value>
+  </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
-        <value>
-            <li Class="CompProperties_FleckEmitter">
-                <fleck>AP_WaterSprout_FleckLarge</fleck>
-                <emissionInterval>60</emissionInterval>
-                <offset>(0,0,-2)</offset>
-            </li>
-        </value>
-    </Operation>
+  <!-- =========================================================
+       Fleck Emitter: Small Water Sprout Animated
+       Sprays a smaller animated effect at position (2,0,0)
+      ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
+    <value>
+      <li Class="CompProperties_FleckEmitter">
+        <fleck>AP_SmallWaterSproutAnimated_Fleck</fleck>
+        <emissionInterval>60</emissionInterval>
+        <offset>(2,0,0)</offset>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- =========================================================
+       Fleck Emitter: Small Water Sprout Animated Inverted
+       Same effect mirrored at position (-2,0,0)
+      ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
+    <value>
+      <li Class="CompProperties_FleckEmitter">
+        <fleck>AP_SmallWaterSproutAnimatedInverted_Fleck</fleck>
+        <emissionInterval>60</emissionInterval>
+        <offset>(-2,0,0)</offset>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- =========================================================
+       Fleck Emitter: Large Water Sprout
+       A single large vertical water effect at position (0,0,-2)
+      ========================================================= -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="ArchonexusCore"]/comps</xpath>
+    <value>
+      <li Class="CompProperties_FleckEmitter">
+        <fleck>AP_WaterSprout_FleckLarge</fleck>
+        <emissionInterval>60</emissionInterval>
+        <offset>(0,0,-2)</offset>
+      </li>
+    </value>
+  </Operation>
+
 </Patch>
